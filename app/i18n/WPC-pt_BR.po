@@ -1,0 +1,581 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WPC - The Best Checkout Page Customizer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-12 23:58+0000\n"
+"PO-Revision-Date: 2020-10-13 00:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: Português do Brasil\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.4.3; wp-5.0.10"
+
+#: app/setup/admin.php:17
+msgid "WC Premium Checkout"
+msgstr ""
+
+#: app/setup/admin.php:18
+msgid "Premium Checkout"
+msgstr ""
+
+#: app/setup/admin.php:203
+msgid "By"
+msgstr ""
+
+#: app/setup/admin.php:224
+msgid "View Demo ⧉"
+msgstr "Ver Demo ⧉"
+
+#: app/setup/admin.php:231
+#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:194
+msgid "Manage"
+msgstr "Gerenciar"
+
+#: app/setup/admin.php:239
+msgid "Install"
+msgstr "Instalar"
+
+#: app/setup/admin.php:346
+msgid "Sorry, you are not allowed to install plugins on this site."
+msgstr "Desculpe, você não tem permissão para instalar plug-ins neste site."
+
+#: app/setup/admin.php:355
+msgid "WPC Plugin Installation"
+msgstr "WPC Instalação de plugin"
+
+#: app/setup/admin.php:361
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Instalando o plug-in: %s"
+
+#: app/setup/admin.php:389
+msgid "Activate Plugin"
+msgstr "Ativar Plugin"
+
+#: app/setup/admin.php:390
+msgid "Return to WPC Page"
+msgstr "Retornar para a página do WPC"
+
+#: app/setup/admin.php:411
+msgid "Sorry, you are not allowed to activate this plugin."
+msgstr "Desculpe, você não tem permissão para ativar este plugin."
+
+#: app/setup/check.php:21
+#, php-format
+msgid ""
+"The version of PHP on your host is not compatible with the <code>%1$s</code> "
+"plugin. Contact your host to resolve the issue."
+msgstr ""
+"A versão do PHP em seu host não é compatível com o plugin <code>%1$s</code>. "
+"Entre em contato com seu host para resolver o problema."
+
+#: app/setup/check.php:36
+#, php-format
+msgid ""
+"The version of WordPress on your host is not compatible with the <code>"
+"%1$s</code> plugin. Update your WordPress to resolve the issue."
+msgstr ""
+"A versão do WordPress em seu host não é compatível com o plug-in <code>"
+"%1$s</code>. Atualize seu WordPress para resolver o problema."
+
+#: app/setup/check.php:51
+#, php-format
+msgid ""
+"The version of WooCommerce on your WordPress is not compatible with the "
+"<code>%1$s</code> plugin. Update your WooCommerce to resolve the issue."
+msgstr ""
+"A versão do WooCommerce em seu WordPress não é compatível com o plugin  "
+"<code>%1$s</code>. Atualize seu WooCommerce para resolver o problema."
+
+#: app/setup/check.php:85
+#, php-format
+msgid ""
+"<code>%3$s</code> cannot work. Install and activate the following plugin: <a "
+"href=\"%1$s\">%2$s</a> to fix."
+msgstr ""
+"<code>%3$s</code> não pode funcionar. Instale e ative o seguinte plugin: <a "
+"href=\"%1$s\">%2$s</a> para corrigir."
+
+#: app/setup/customize.php:17
+msgid ""
+"Premium Checkout is the best plugin for checkout customization. Use to "
+"create beautiful checkouts."
+msgstr ""
+"Premium Checkout é o melhor plugin para personalização de checkout. Use para "
+"criar belos layouts de checkouts."
+
+#: app/setup/customize.php:28
+msgid "Enable / Disable"
+msgstr "Habilitar / Desabilitar"
+
+#: app/setup/customize.php:48
+msgid "Check to enable"
+msgstr "Marque para habilitar"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:13
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:127
+msgid "Fields Manager"
+msgstr "Gerente de Campos"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:14
+msgid ""
+"Embedded extension for manage checkout fields. Support for new fields, field "
+"removal, field masks, pattern validation and HTML attribute customization."
+msgstr ""
+"Extensão incorporada para gerenciar campos de checkout. Suporte para novos "
+"campos, remoção de campos, máscaras de campo, pattern validação e "
+"customização de atributos HTML."
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:66
+msgid "Do you want to restore the initial settings?"
+msgstr "Você quer restaurar as configurações iniciais?"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:128
+msgid "Use these options to manage checkout fields."
+msgstr "Use essas opções para gerenciar os campos de checkout."
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:141
+msgid "Add Field Group"
+msgstr "Adicionar Grupo de Campos"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:142
+msgid "Add a new group to organize custom fields."
+msgstr "Adicione um novo grupo para organizar campos personalizados."
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:144
+msgid "Group Title"
+msgstr "Título do Grupo"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:145
+msgid "Field Title"
+msgstr "Título do Campo"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:151
+msgid "Field ID"
+msgstr "ID do Campo"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:157
+msgid "Priority"
+msgstr "Prioridade"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:163
+msgid "Type"
+msgstr "Tipo"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:166
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:227
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:236
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:246
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:151
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:158
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:165
+msgid "Default"
+msgstr "Padrão"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:167
+#: app/inc/Controls/wpc-field-group/class-wpc-control-field-group.php:140
+msgid "Text"
+msgstr ""
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:168
+msgid "Password"
+msgstr ""
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:169
+msgid "E-mail"
+msgstr ""
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:170
+msgid "Phone"
+msgstr ""
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:171
+msgid "Textarea"
+msgstr ""
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:172
+msgid "Select"
+msgstr ""
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:173
+msgid "Radio"
+msgstr ""
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:174
+msgid "Date"
+msgstr ""
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:175
+msgid "Date and Time"
+msgstr ""
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:180
+msgid "Options"
+msgstr "Opções"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:185
+msgid "Default Value"
+msgstr "Valor Padrão"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:190
+msgid "Placeholder"
+msgstr ""
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:195
+msgid "Class"
+msgstr ""
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:200
+msgid "Pattern Validation"
+msgstr "Pattern Validação"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:205
+msgid "Validation Error Message"
+msgstr "Mensagem de Erro de Validação"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:210
+msgid "Input Mask"
+msgstr "Máscara de Entrada"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:215
+msgid "Required"
+msgstr "Requerido"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:218
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:237
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:247
+msgid "Yes"
+msgstr "Sim"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:219
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:238
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:248
+msgid "No"
+msgstr "Não"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:224
+msgid "Visibility at checkout"
+msgstr "Visível no Checkout"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:228
+msgid "Hidden"
+msgstr "Escondido"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:233
+msgid "Display in Emails"
+msgstr "Exibir em E-mails"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:243
+msgid "Display in Order Detail Pages"
+msgstr "Exibir na Página de Pedido"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:259
+msgid ">> Reset Settings"
+msgstr ">> Redefinir Configurações"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:284
+msgid "Billing Fields"
+msgstr "Campos de Cobrança"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:285
+msgid "Shipping Fields"
+msgstr "Campos de Envio"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:286
+msgid "Additional Fields"
+msgstr "Campos Adicionais"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:287
+msgid "Account Fields"
+msgstr "Campos da Conta"
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:574
+msgid "Settings have been reset."
+msgstr "As configurações foram redefinidas."
+
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:579
+msgid "There was a problem with the process. The settings have not been reset."
+msgstr ""
+"Ocorreu um problema com o processo. As configurações não foram redefinidas."
+
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:14
+msgid "Onepage Checkout"
+msgstr ""
+
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:18
+msgid "The Onepage Checkout theme for WPC"
+msgstr "O tema Onepage Checkout para WPC"
+
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:99
+msgid "Checkout Editor"
+msgstr "Checkout Editor"
+
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:133
+msgid "Logo"
+msgstr ""
+
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:139
+msgid "Primary Color"
+msgstr "Cor Primária"
+
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:145
+msgid "Button Place Order Color"
+msgstr "Cor do Botão Finalizar Compra"
+
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:151
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:158
+msgid "White"
+msgstr "Branco"
+
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:152
+msgid "Background"
+msgstr ""
+
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:159
+msgid "Header"
+msgstr ""
+
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:165
+msgid "Inline"
+msgstr ""
+
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:166
+msgid "Form Layout"
+msgstr ""
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:14
+msgid "Theme Compatibility"
+msgstr "Compatibilidade de Tema"
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:15
+msgid ""
+"Embedded extension for help avoid conflicts caused by CSS styles and JS "
+"scripts that affect the look and functionalities of the checkout theme."
+msgstr ""
+"Extensão incorporada para ajudar a evitar conflitos causados por estilos CSS "
+"e scripts JS que afetam a aparência e as funcionalidades do tema de checkout."
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:90
+msgid "Compatibility"
+msgstr "Compatibilidade"
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:91
+msgid ""
+"These options help to avoid conflicts caused by CSS styles and JS scripts "
+"that affect the theme appearance and functionality at checkout."
+msgstr ""
+"Essas opções ajudam a evitar conflitos causados por estilos CSS e scripts JS "
+"que afetam a aparência e funcionalidade do tema no checkout."
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:126
+msgid "Remove CSS in Checkout"
+msgstr "Remover CSS no Checkout"
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:129
+msgid "Select styles to remove from the checkout."
+msgstr "Selecione os estilos para remover do checkout."
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:135
+msgid "Remove JS in Checkout"
+msgstr "Remover JS no Checkout"
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:138
+msgid "Select scripts to remove from the checkout."
+msgstr "Selecione scripts para remover do checkout."
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:144
+msgid "Disable theme styles"
+msgstr "Desativar estilos do tema"
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:145
+msgid ""
+"By checking this option all CSS styles of the active theme will be disabled."
+msgstr ""
+"Ao marcar esta opção, todos os estilos CSS do tema ativo serão desativados."
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:151
+msgid "Disable theme scripts"
+msgstr "Desativar scripts do tema"
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:152
+msgid ""
+"By checking this option all JS scripts of the active theme will be disabled."
+msgstr ""
+"Ao marcar esta opção, todos os scripts JS do tema ativo serão desabilitados."
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:158
+msgid "Remove theme hooks"
+msgstr "Remover hooks do tema"
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:159
+msgid "By checking this option all hooks of the active theme will be removed."
+msgstr "Ao marcar esta opção, todos os hooks do tema ativo serão removidos."
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:165
+msgid "Custom CSS"
+msgstr "CSS Personalizado"
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:166
+msgid ""
+"Insert custom CSS on the Checkout page. Use to correct elements or conflicts "
+"in the layout."
+msgstr ""
+"Insira CSS personalizado na página de checkout. Use para corrigir elementos "
+"ou conflitos no layout."
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:172
+msgid "Custom JS"
+msgstr "JS Personalizado"
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:173
+msgid ""
+"Insert custom JS on the Checkout page. Use to add visual effects or dynamism "
+"to the checkout fields."
+msgstr ""
+"Insira JS personalizado na página de checkout. Use para corrigir elementos "
+"ou conflitos no layout."
+
+#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:15
+msgid "Theme Selector"
+msgstr "Seletor de Tema"
+
+#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:16
+msgid "Embedded extension for view and enable installed themes"
+msgstr "Extensão incorporada para visualizar e habilitar temas instalados"
+
+#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:36
+#: app/setup/view/partials/html-admin-partial-tabs.php:15
+msgid "Themes"
+msgstr "Temas"
+
+#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:81
+msgid "View Demo"
+msgstr "Ver Demo"
+
+#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:90
+#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:221
+msgid "Live Preview"
+msgstr ""
+
+#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:90
+msgid "✓ Selected"
+msgstr "✓ Selecionado"
+
+#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:189
+msgid "✓ Active Theme"
+msgstr "✓ Tema Ativo"
+
+#: app/inc/Controls/wpc-field-group/class-wpc-control-field-group.php:72
+msgid "--Add New Item--"
+msgstr "--Adicionar Novo Item--"
+
+#: app/inc/Controls/wpc-field-group/class-wpc-control-field-group.php:141
+msgid "Value"
+msgstr "Valor"
+
+#: app/inc/Controls/wpc-field-group/class-wpc-control-field-group.php:162
+msgid ">> Delete field"
+msgstr ">> Excluir campo"
+
+#: app/inc/Controls/wpc-field-group/class-wpc-control-field-group.php:172
+msgid ">> Delete group"
+msgstr ">> Excluir grupo"
+
+#: app/inc/Controls/wpc-field-group/class-wpc-control-field-group.php:183
+msgid ">> Add Group"
+msgstr ">> Adicionar Grupo"
+
+#: app/inc/Controls/wpc-field-group/class-wpc-control-field-group.php:224
+msgid "The group and its fields will be removed. Do you want to proceed?"
+msgstr "O grupo e seus campos serão removidos. Você quer prosseguir?"
+
+#: app/inc/Controls/wpc-field-group/class-wpc-control-field-group.php:225
+msgid "The field will be removed. Do you want to proceed?"
+msgstr "O campo será removido. Você quer prosseguir?"
+
+#: app/setup/view/partials/html-admin-partial-intro.php:12
+#, php-format
+msgid ""
+"The <code>%s</code> has many personalization fields to change the layout of "
+"the checkout page. You can completely modify the appearance of the checkout "
+"page, including support for adding or removing fields from the form, input "
+"validations, fields masks, multistep, support for videos, texts, images and "
+"shortcodes. On this page you can install add-ons that extend the plug-in "
+"natives functionalitys."
+msgstr ""
+"O <code>%s</code> possui muitos campos de personalização para alterar o "
+"layout da página de checkout. Você pode modificar completamente a aparência "
+"da página de checkout, incluindo suporte para adicionar ou remover campos do "
+"formulário, validações de entrada, máscaras de campos, multistep, suporte "
+"para vídeos, textos, imagens e shortcodes. Nesta página, você pode instalar "
+"add-ons que estendem as funcionalidades nativas do plug-in."
+
+#: app/setup/view/partials/html-admin-partial-intro.php:13
+#, php-format
+msgid "Find out more at %1$splugin website%2$s."
+msgstr "Descubra mais no %1$swebsite do plugin%2$s."
+
+#: app/setup/view/partials/html-admin-partial-tabs.php:16
+msgid "Extensions"
+msgstr "Extensões"
+
+#: app/inc/Addons/wpc-fields-manager/views/html-admin-print-order-meta.php:10
+#: app/inc/Addons/wpc-fields-manager/views/html-email-print-order-meta.php:9
+#: app/inc/Addons/wpc-fields-manager/views/plain/email-print-order-meta.php:8
+msgid "Additional information"
+msgstr "Informação adicional"
+
+#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-billing.php:21
+msgid "Enter buyer information"
+msgstr "Insira as informações do comprador"
+
+#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-checkout.php:10
+msgid "Shopping Cart"
+msgstr "Carrinho de Compras"
+
+#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-checkout.php:19
+msgid "Delivery and Payment"
+msgstr "Entrega e Pagamento"
+
+#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-checkout.php:26
+msgid "Confirmation"
+msgstr "Confirmação"
+
+#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-checkout.php:72
+#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-checkout.php:88
+msgid "Select the desired option below"
+msgstr "Selecione a opção desejada abaixo"
+
+#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-checkout.php:101
+msgid "Order summary"
+msgstr "Resumo do pedido"
+
+#. Name of the plugin
+msgid "WPC - The Best Checkout Page Customizer"
+msgstr "WPC - O Melhor Personalizador de Página para Checkout"
+
+#. Description of the plugin
+msgid ""
+"WPC is a complete suite of tools for WooCommerce to optimize and scale the "
+"purchase process. Provides what you need to build a high conversion checkout "
+"page. It's free."
+msgstr ""
+"WPC é um conjunto completo de ferramentas para WooCommerce para otimizar e "
+"escalar o processo de compra. Fornece o que você precisa para construir uma "
+"página de checkout de alta conversão. É grátis."
+
+#. URI of the plugin
+msgid "https://wpcplugin.com/"
+msgstr ""
+
+#. Author of the plugin
+msgid "WILLIAN SANTANA"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://github.com/santanamic"
+msgstr ""

@@ -1,0 +1,66 @@
+.repeater-drag {
+    font-size: 13px;
+    font-weight: 600;
+    background: #f7f7f7;
+    border: solid 1px #e2e0e0;
+    margin-bottom: 15px;
+	cursor: grab !important;
+}
+
+.repeater-drag-title {
+    padding: 0.7em 0;
+}
+
+.repeater-drag-title h3 {
+    font-size: 1em !important;
+    padding-left: 1em;
+	line-height: 0;
+}
+
+.repeater-drag.active .repeater-drag-form {
+    height: auto;
+    padding: 15px;
+    transition-timing-function: ease;
+}
+
+.repeater-drag-form {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    background: white;
+    border-top: solid 1px #e2e0e0;
+    transition-property: padding-top, padding-bottom, height, min-height;
+    transition-duration: 80ms;
+    transition-timing-function: ease;
+	cursor: auto;
+}
+
+.repeater-drag-form .description {
+    font-weight: 400;
+    font-style: inherit;
+}
+
+.repeater-drag-form .repeater-field- {
+    margin-bottom: 11px;
+}
+
+.repeater-field {
+    margin-bottom: 10px;
+}
+
+.repeater-field-textarea textarea {
+    width: 100%;
+}
+
+.repeater-delete {
+    color: #F44336;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 21px;
+}
+
+.repeater-add {
+    cursor: pointer;
+}

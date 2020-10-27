@@ -1,0 +1,39 @@
+{
+    "name": "wpcplugin/wpc",
+    "version": "1.0.9",
+    "type": "wordpress-plugin",
+    "description": "WPC - The Best Checkout Page Customizer for WooCommerce",
+    "keywords": [
+        "WordPress",
+        "WooCommerce",
+        "Checkout",
+        "WPC",
+        "Premium Checkout",
+        "Checkout Editor"
+    ],
+    "homepage": "https://github.com/wpcplugin/wc-premium-checkout",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "WILLIAN SANTANA",
+            "email": "williansantanamic@gmail.com",
+            "homepage": "https://wpcplugin.com/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=7.0"
+    },
+    "autoload": {
+        "classmap": [ 
+			"app/classes",
+			"app/inc"
+		]
+    },
+     "scripts": {
+        "docs": "docsify serve docs"
+    },
+	"config": {
+		"vendor-dir": "app/vendor"
+	}
+}
