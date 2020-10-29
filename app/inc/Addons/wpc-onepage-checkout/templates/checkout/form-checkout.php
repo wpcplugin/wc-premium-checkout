@@ -4,6 +4,8 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
+<div id="wpc-wrapper">
+<main id="wpc-main" role="main">
 <?php
 
 do_action( 'woocommerce_before_checkout_form', $checkout );
@@ -51,8 +53,7 @@ wc_print_notices();
 
 							<?php do_action( 'woocommerce_review_order_before_shipping' ); ?>
 
-							<?php //do_action( 'wpc_onepage_cart_totals_shipping' ); ?>
-							<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+							<?php do_action( 'wpc_onepage_cart_totals_shipping' ); ?>
 
 							<?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
 
@@ -99,3 +100,6 @@ wc_print_notices();
 </form>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
+
+</main>
+</div>

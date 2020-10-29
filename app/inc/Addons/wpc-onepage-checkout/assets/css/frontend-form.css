@@ -4,43 +4,45 @@
 *                         *
 ***************************/
 
-.woocommerce form .form-row::after,.woocommerce form .form-row::before,.woocommerce-page form .form-row::after,.woocommerce-page form .form-row::before{
+#wpc-main form .form-row::after,
+#wpc-main form .form-row::before{
     content:' ';
     display:table
 }
-.woocommerce form .form-row::after,.woocommerce-page form .form-row::after{
+#wpc-main form .form-row::after{
     clear:both
 }
-.woocommerce form .form-row label,.woocommerce-page form .form-row label{
+#wpc-main form .form-row label{
     display: block;
 }
-.woocommerce form .form-row label.checkbox,.woocommerce-page form .form-row label.checkbox{
+#wpc-main form .form-row label.checkbox{
     /*display:inline*/
 }
-.woocommerce form .form-row select,.woocommerce-page form .form-row select{
+#wpc-main form .form-row select{
     width: 100%;
 }
-.woocommerce form .form-row .input-text,.woocommerce-page form .form-row .input-text{
+#wpc-main form .form-row .input-text{
     box-sizing:border-box;
     width:100%
 }
-.woocommerce form .form-row-first,.woocommerce form .form-row-last,.woocommerce-page form .form-row-first,.woocommerce-page form .form-row-last{
+#wpc-main form .form-row-first,
+#wpc-main form .form-row-last{
     width:48%;
     overflow:visible
 }
-.woocommerce form .form-row-first,.woocommerce-page form .form-row-first{
+#wpc-main form .form-row-first{
     float:left
 }
-.woocommerce form .form-row-last,.woocommerce-page form .form-row-last{
+#wpc-main form .form-row-last{
     float:right
 }
-.woocommerce form .form-row-wide,.woocommerce-page form .form-row-wide{
+#wpc-main form .form-row-wide{
     clear:both
 }
-.woocommerce #payment .form-row select,.woocommerce-page #payment .form-row select{
+#wpc-main #payment .form-row select{
     width:auto
 }
 
-.woocommerce .form-row + .woocommerce .form-row {
+#wpc-main .form-row + #wpc-main .form-row {
     margin: 0 0 16px;
 }

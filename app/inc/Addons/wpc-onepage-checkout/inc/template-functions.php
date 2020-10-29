@@ -179,3 +179,18 @@ if ( ! function_exists( 'wpc_onepage_checkout_body_classes' ) ) {
 	}
 	
 }
+
+if ( ! function_exists( 'wpc_onepage_checkout_cart_totals_shipping_fragment' ) ) {
+ 
+	function wpc_onepage_checkout_cart_totals_shipping_fragment( $fragments ) {
+		// Get cart shipping fragment.
+		ob_start();
+		wpc_onepage_checkout_cart_totals_shipping_html();
+		$woocommerce_cart_shipping = ob_get_clean();
+		
+		$fragments['.woocommerce-shipping-methods-container'] = $woocommerce_cart_shipping;
+		
+		return $fragments;
+	}
+
+}

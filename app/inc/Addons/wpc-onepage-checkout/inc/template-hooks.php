@@ -17,7 +17,7 @@ remove_action( 'woocommerce_before_checkout_form', 'woocommerce_output_all_notic
 /**
  * Steps
  */
-add_action( 'woocommerce_before_checkout_form', 'wpc_onepage_checkout_steps', -100 );
+//add_action( 'woocommerce_before_checkout_form', 'wpc_onepage_checkout_steps', -100 );
 
 /**
  * Head
@@ -27,7 +27,7 @@ add_action( 'wpc_template_head', 'wpc_onepage_checkout_print_css', -1 );
 /**
  * Header
  */
-add_action( 'wpc_template_before_main_content', 'wpc_onepage_checkout_header', -1 );
+//add_action( 'wpc_template_before_main_content', 'wpc_onepage_checkout_header', -1 );
 
 /**
  * Payment
@@ -44,3 +44,4 @@ add_action( 'woocommerce_checkout_after_order_review', 'wpc_onepage_checkout_pla
  */
 add_action( 'wpc_onepage_cart_totals_shipping', 'wpc_onepage_checkout_cart_totals_shipping_html', 10 );
 add_action( 'wpc_onepage_checkout_payment_cart_review', 'wpc_onepage_checkout_cart_review', 10 );
+add_filter( 'woocommerce_update_order_review_fragments', 'wpc_onepage_checkout_cart_totals_shipping_fragment' );
