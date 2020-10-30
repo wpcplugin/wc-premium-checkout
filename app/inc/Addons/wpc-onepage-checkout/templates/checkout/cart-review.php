@@ -47,7 +47,7 @@ $checkout = WC()->checkout();
 	<?php do_action( 'woocommerce_before_order_notes', $checkout ); ?>
 	
 
-	<?php if ( apply_filters( 'woocommerce_enable_order_notes_field', 'yes' === get_option( 'woocommerce_enable_order_comments', 'yes' ) ) ) : ?>
+	<?php if ( apply_filters( 'woocommerce_enable_order_notes_field', 'yes' === get_option( 'woocommerce_enable_order_comments', 'yes' ) ) && !empty( $checkout->get_checkout_fields( 'order' ) ) ) : ?>
 
 		<div class="woocommerce-additional-fields__field-wrapper">
 			<?php  foreach ( $checkout->get_checkout_fields( 'order' ) as $key => $field ) : ?>
