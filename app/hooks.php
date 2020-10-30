@@ -1,9 +1,4 @@
 <?php
-add_action( 'template_redirect', function(){
-	 do_action( 'wpc_template_init' );
-
-} );
-
 
 /**
  * The code that runs during this plugin activation and deactivation
@@ -44,10 +39,10 @@ add_action( 'customize_preview_init', 'wpc_preview_enqueue' );
 /**
  * Initial hook for template load
  */
-//add_filter( 'template_include', 'wpc_template_include' );
-//add_filter( 'wpc_template_file', 'wpc_template_default_path' );
-//add_filter( 'wpc_template_head', 'wp_head' );
-//add_filter( 'wpc_template_footer', 'wp_footer' );
-//add_filter( 'wpc_template_content', 'wpc_template_default_content' );
-//add_filter( 'wpc_template_callback', 'wpc_plugin_load_addons' );
-
+add_filter( 'template_redirect', 'wpc_template_init_callback' );
+add_filter( 'template_include', 'wpc_template_include' );
+add_filter( 'wpc_template_file', 'wpc_template_default_path' );
+add_filter( 'wpc_template_head', 'wp_head' );
+add_filter( 'wpc_template_footer', 'wp_footer' );
+add_filter( 'wpc_template_content', 'wpc_template_default_content' );
+add_filter( 'wpc_template_callback', 'wpc_plugin_load_addons' );

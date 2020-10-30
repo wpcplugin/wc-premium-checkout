@@ -5,11 +5,12 @@
  */
 add_action( 'wpc_woocommerce_part_callback', 'wpc_onepage_checkout_restrict_templates_parts', 10, 4 );
 add_filter( 'wpc_template_callback', 'wpc_onepage_checkout_template_active_callback' );
-add_filter( 'wpc_body_class', 'wpc_onepage_checkout_body_classes' );
+add_filter( 'wpc_content_class', 'wpc_onepage_checkout_body_classes' );
 
 /**
  * Remove default
  */
+remove_filter( 'template_include', 'wpc_template_include' );
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
 remove_action( 'woocommerce_before_checkout_form_cart_notices', 'woocommerce_output_all_notices', 10 );
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_output_all_notices', 10 );

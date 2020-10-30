@@ -5,7 +5,6 @@
  * @since      1.0.0
  */
 
-do_action( 'wpc_template_init' );
 ?>
 
 <!DOCTYPE HTML>
@@ -16,7 +15,7 @@ do_action( 'wpc_template_init' );
 		<meta name="generator" content="WooCommerce Premium Checkout">
 		<?php do_action( 'wpc_template_head' ); ?>
 	</head>
-	<body <?php wpc_body_class(); ?>>
+	<body <?php wpc_content_class(); ?>>
 		<?php do_action( 'wpc_template_content' ); ?>
 		<?php do_action( 'wpc_template_footer' ); ?>
 	</body>

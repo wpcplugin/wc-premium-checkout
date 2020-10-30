@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<div id="wpc-wrapper">
+<div <?php wpc_content_class(); ?> id="wpc-wrapper">
 <main id="wpc-main" role="main">
 <?php
 

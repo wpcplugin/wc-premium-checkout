@@ -1,5 +1,27 @@
 <?php defined( 'ABSPATH' ) || exit;
 
+if ( ! function_exists( 'wpc_template_init_callback' ) ) {
+ 
+ 	/**
+	 * Template hook callback
+	 *
+	 * @since    1.0.0
+	 * @return   void
+	 */
+	function wpc_template_init_callback() 
+	{
+		$callback = apply_filters( 
+			'wpc_template_callback', 
+			true 
+		);
+		
+		if ( true === $callback ) {
+			do_action( 'wpc_template_init' );
+		}
+	}
+
+}
+
 if ( ! function_exists( 'wpc_template_include' ) ) {
 
 	/**
@@ -76,7 +98,7 @@ if ( ! function_exists( 'wpc_template_default_content' ) ) {
 	
 }
 
-if ( ! function_exists( 'wpc_get_body_class' ) ) {
+if ( ! function_exists( 'wpc_get_content_class' ) ) {
 
 	/**
 	 * Retrieves an array of the class names for the body element.
@@ -85,7 +107,7 @@ if ( ! function_exists( 'wpc_get_body_class' ) ) {
 	 * @param    string    $class    Space-separated string or array of class names to add to the class list.
 	 * @return   string[]            Array of class names.
 	 */
-	function wpc_get_body_class( $class = '' ) {	 
+	function wpc_get_content_class( $class = '' ) {	 
 		$classes = get_body_class();
 	 	 
 		/**
@@ -96,14 +118,14 @@ if ( ! function_exists( 'wpc_get_body_class' ) ) {
 		 * @param string[] $classes An array of body class names.
 		 * @param string[] $class   An array of additional class names added to the body.
 		 */
-		$classes = apply_filters( 'wpc_body_class', $classes, $class );
+		$classes = apply_filters( 'wpc_content_class', $classes, $class );
 	 
 		return array_unique( $classes );
 	}
 	
 }
 
-if ( ! function_exists( 'wpc_body_class' ) ) {
+if ( ! function_exists( 'wpc_content_class' ) ) {
 
 	/**
 	 * Displays the class names for the body element.
@@ -112,8 +134,8 @@ if ( ! function_exists( 'wpc_body_class' ) ) {
 	 * @param    string    $class    Space-separated string or array of class names to add to the class list.
 	 * @return   string
 	 */
-	function wpc_body_class( $class = '' ) {	 
-		echo 'class="' . esc_attr( join( ' ', wpc_get_body_class( $class ) ) ) . '"';
+	function wpc_content_class( $class = '' ) {	 
+		echo 'class="' . esc_attr( join( ' ', wpc_get_content_class( $class ) ) ) . '"';
 	}
 	
 }
