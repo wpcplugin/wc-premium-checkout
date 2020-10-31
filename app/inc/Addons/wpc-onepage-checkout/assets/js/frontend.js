@@ -15,6 +15,10 @@
 				opacity: 0.6
 			}
 		});
+	} ).on( 'updated_checkout', function(e, data) {
+		if( data.result == 'success' ) {
+			$( document.body ).find( '.woocommerce-shipping-methods' ).unblock();
+		}
 	} );
 
 })( jQuery );
