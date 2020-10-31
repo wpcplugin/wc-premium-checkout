@@ -5,6 +5,7 @@
  * @since      1.0.0
  */
 
+do_action( 'wpc_template_init' );
 ?>
 
 <!DOCTYPE HTML>

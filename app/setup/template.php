@@ -54,18 +54,23 @@ if ( ! function_exists( 'wpc_template_include' ) ) {
 	
 }
 
-if ( ! function_exists( 'wpc_template_default_path' ) ) {
+if ( ! function_exists( 'wpc_template_path' ) ) {
 
 	/**
-	 * Sets plugin default page template 
+	 * Sets plugin initial page template 
 	 *
 	 * @since    1.0.0
 	 * @return   string
 	 */
-	function wpc_template_default_path() 
+	function wpc_template_path() 
 	{
+		$prefix = apply_filters( 'wpc_template_file_prefix', 'default' );
+		
 		return (
-			WPC_PATH . '/setup/view/template/html-wpc-base-template.php'
+			sprintf( 
+				WPC_PATH . '/setup/view/template/html-wpc-%s-template.php',
+				$prefix
+			)
 		);
 	}
 	

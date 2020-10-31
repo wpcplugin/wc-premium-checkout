@@ -10,7 +10,6 @@ add_filter( 'wpc_content_class', 'wpc_onepage_checkout_body_classes' );
 /**
  * Remove default
  */
-remove_filter( 'template_include', 'wpc_template_include' );
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
 remove_action( 'woocommerce_before_checkout_form_cart_notices', 'woocommerce_output_all_notices', 10 );
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_output_all_notices', 10 );

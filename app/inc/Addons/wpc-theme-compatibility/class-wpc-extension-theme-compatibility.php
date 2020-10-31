@@ -17,7 +17,9 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 		$this->author_url   =   WPC_URL;
 		$this->thumbnail    =   plugins_url( 'assets/img/thumbnail.svg', __FILE__ );
 		$this->embedded     =   true;
-		
+
+		add_action( 'wp', array( $this, 'template_container_type' ) );
+		add_action( 'wpc_template_file_prefix', array( $this, 'template_file_prefix' ) );
 		add_action( 'customize_register', array( $this, 'customize_init' ) );
 		add_action( 'wpc_template_init', array( $this, 'template_init' ) );
 		add_action( 'wpc_template_init', array( $this, 'do_remove_hooks' ) );
@@ -26,6 +28,7 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 	
 	public function customize_init() 
 	{
+		add_action( 'wpc_addon_control_active_callback', array( $this, 'controls_active_callback' ), 10, 4 );
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_enqueue' ) );
 		add_action( 'customize_preview_init', array( $this, 'preview_enqueue' ) );		
 	}
@@ -35,8 +38,8 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 		add_action( 'wp_print_styles', array( $this, 'save_enqueue' ), PHP_INT_MAX );
 		add_action( 'wp_print_styles', array( $this, 'do_dequeue_scripts' ), PHP_INT_MAX );
 		add_action( 'wp_print_styles', array( $this, 'do_dequeue_styles' ), PHP_INT_MAX );
-		add_action( 'wpc_template_footer', array( $this, 'add_style_tag_in_template' ), PHP_INT_MAX );
-		add_action( 'wpc_template_footer', array( $this, 'add_script_tag_in_template' ), PHP_INT_MAX );
+		add_action( 'wp_footer', array( $this, 'add_style_tag_in_template' ), PHP_INT_MAX );
+		add_action( 'wp_footer', array( $this, 'add_script_tag_in_template' ), PHP_INT_MAX );
 		add_filter( 'wpc_theme_compatibility_removed_styles', array( $this, 'do_dequeue_all_theme_styles' ) );
 		add_filter( 'wpc_theme_compatibility_removed_scripts', array( $this, 'do_dequeue_all_theme_scripts' ) );
 		add_filter( 'wpc_theme_compatibility_removed_styles', array( $this, 'do_dequeue_plugin_styles' ) );
@@ -99,9 +102,15 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 					'wpc_theme_compatibility_removed_scripts' => array (
 						'default' => $this->get_initial_removed_scripts()
 					),
-					'wpc_theme_compatibility_custom_css'      => array (
+					'wpc_theme_compatibility_custom_css' => array (
 						'default'   => '',
 						'transport' => 'postMessage',
+					),
+					'wpc_theme_compatibility_page_template' => array (
+						'default' => 'wp_theme',
+					),
+					'wpc_theme_compatibility_page_template_wp_theme_container' => array (
+						'default' => 'default',
 					),
 					'wpc_theme_compatibility_custom_js'      => array (),
 					'wpc_theme_compatibility_disable_styles_wp_theme'  => array ( 
@@ -144,7 +153,7 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 						'label'        =>  __( 'Disable theme styles', 'WPC' ),
 						'description'  =>  __( 'By checking this option all CSS styles of the active theme will be disabled.', 'WPC' ),
 						'section'      =>  $this->section,
-						'settings'     =>  'wpc_theme_compatibility_disable_styles_wp_theme',
+						'settings'     =>  'wpc_theme_compatibility_disable_styles_wp_theme'
 					),
 					'wpc_theme_compatibility_disable_scripts_wp_theme' => array(
 						'type'         =>  'checkbox',
@@ -159,6 +168,20 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 						'description'  =>  __( 'By checking this option all hooks of the active theme will be removed.', 'WPC' ),
 						'section'      =>  $this->section,
 						'settings'     =>  'wpc_theme_compatibility_remove_hooks_wp_theme',
+					),
+					'wpc_theme_compatibility_page_template' => array(
+						'type'         =>  'select',
+						'choices'      =>  array( 'default' => __( 'Default', 'WPC' ), 'wp_theme' => __( 'Theme', 'WPC' ) ),
+						'label'        =>  __( 'Page Template' , 'WPC' ),
+						'section'      =>  $this->section,
+						'settings'     =>  'wpc_theme_compatibility_page_template'
+					),
+					'wpc_theme_compatibility_page_template_wp_theme_container' => array(
+						'type'         =>  'select',
+						'choices'      =>  array( 'default' => __( 'Default', 'WPC' ), 'full' => __( 'Full', 'WPC' ) ),
+						'label'        =>  __( 'Page Container' , 'WPC' ),
+						'section'      =>  $this->section,
+						'settings'     =>  'wpc_theme_compatibility_page_template_wp_theme_container'
 					),
 					'wpc_theme_compatibility_custom_css' => array(
 						'type'         =>  'textarea',
@@ -667,5 +690,40 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 			?>
 		</script>
 	<?php
+	}
+	
+	public function template_file_prefix() 
+	{
+		return (
+			get_option( 
+				'wpc_theme_compatibility_page_template', 
+				'wp_theme' 
+			)
+		);
+
+	}
+
+	public function template_container_type() 
+	{
+		$template_container_type = get_option( 'wpc_theme_compatibility_page_template_wp_theme_container', 'default' );
+		$template_file_prefix = get_option( 'wpc_theme_compatibility_page_template', 'wp_theme' );
+	
+		if( 'default' === $template_container_type && 'wp_theme' === $template_file_prefix ) {
+			remove_filter( 'template_include', 'wpc_template_include' );
+			add_filter( 'template_redirect', 'wpc_template_init_callback' );
+		}
+
+	}
+	
+	public function controls_active_callback( $status, $type, $slug, $id ) 
+	{
+		$is_wp_theme = 'wp_theme' === get_option( 'wpc_theme_compatibility_page_template' );
+		
+		if ( 'wpc_theme_compatibility_page_template_wp_theme_container' === $id ) {
+			return $is_wp_theme;
+		}
+		
+		return $status;
+
 	}
 }
