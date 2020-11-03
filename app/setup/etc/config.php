@@ -7,7 +7,7 @@ define( 'WPC_REQUIRE_PLUGINS', [ 'woocommerce/woocommerce.php' => [ 'name' => 'W
 define( 'WPC_SLUG', 'WPC' );
 define( 'WPC_TITLE', __( 'WPC', 'WPC' ) );
 define( 'WPC_URL', __( 'http://wpcplugin.com', 'WPC' ) );
-define( 'WPC_VERSION', '1.1.2' );
+define( 'WPC_VERSION', '1.2.4' );
 
 define( 'WPC_PATH', dirname( __FILE__, 3 ) );
 define( 'WPC_BASENAME', sprintf( '%s/bootstrap.php', 'wpc' ) );
