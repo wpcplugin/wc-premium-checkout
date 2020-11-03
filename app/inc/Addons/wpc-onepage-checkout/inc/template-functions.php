@@ -137,35 +137,25 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 		$css = '';
 
 		if( !is_wc_endpoint_url() && is_checkout() ) {
+			$container_max_width = get_option( 'wpc_theme_onepage_checkout_container_max_width', '1024' );
+			$container_spacing = get_option( 'wpc_theme_onepage_checkout_container_spacing', '20' );
 			$order_button  = get_option( 'wpc_theme_onepage_checkout_order_button_color', '#00899d' );
-			$primary_color = get_option( 'wpc_theme_onepage_checkout_content_primary_color', '#00646d' );
-			$background    = get_option( 'wpc_theme_onepage_checkout_background_color', '#f1f1f1' );
-			$header_color  = get_option( 'wpc_theme_onepage_checkout_header_color', '#00000000' );
-			$logo_position = get_option( 'wpc_onepage_checkout_logo_position', 'default' );
+			$primary_background_color = get_option( 'wpc_theme_onepage_checkout_content_primary_color', '#00646d' );
 			
-			
-			// Primary Color
-			$css .= "button#coupon-send{background-color: {$primary_color};border-color: {$primary_color};} .content-box-title, .woocommerce-button.button.woocommerce-form-login__submit, .steps .steps-item.steps-item-is-current div.steps-item-icon{background: {$primary_color};}";
-			
-			// Order Button
-			$css .= "button#place_order{background-color: {$order_button};border-color: {$order_button};}";
-			
-			// Background
-			$css .= "body{background-color: {$background};}";
-
-			// Header
-			$css .= ".header{background-color: {$header_color};}";
-
-			if( '#00000000' === $header_color ) {
-				$css .= ".header{border-color: #00000000;}";
-			} else {
-				$css .= ".header{border-color: #ebebeb;}";
-			}
-			
-			// Logo
-			if( 'center' === $logo_position ) {
-				$css .= ".header.initial img.logo-main-image {margin: auto;}";
-			}
+			$css .= ":root {
+			  --order-button-color: {$order_button};
+			  --primary-background-color: {$primary_background_color};
+			  --primary-link-color: #1e90ff;
+			  --primary-text-color: #4a4a4a;
+			  --base-font-family: Arial, Helvetica, sans-serif;
+			  --base-font-size: 12px;
+			  --base-line-height: 1.35;
+			  --base-max-width: {$container_max_width}px;
+			  --base-spacing: {$container_spacing}px;
+			  --content-box-title-color: #ffffff;
+			  --content-box-title-background: var(--primary-background-color);
+			  --content-box-subtitle-background: #ececec;
+			}";
 		
 		}
 		

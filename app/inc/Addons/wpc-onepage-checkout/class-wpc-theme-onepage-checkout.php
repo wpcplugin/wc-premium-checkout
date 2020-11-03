@@ -101,12 +101,15 @@ class Onepage_Checkout extends \WPC\Abstract_Addon
 						'priority' => 10,
 						) 
 					),
-					'settings' => array( 
-						'wpc_theme_onepage_checkout_logo' => array( 
-							'default'   =>  WPC_LOGO_URL,
+					'settings' => array(
+						'wpc_theme_onepage_checkout_container_max_width' => array( 
+							'default'   => 1024,
 							'transport' => 'postMessage',
-							'sanitize_callback' => 'esc_url_raw'
-						), 
+						),
+						'wpc_theme_onepage_checkout_container_spacing' => array( 
+							'default'   => 20,
+							'transport' => 'postMessage',
+						),
 						'wpc_theme_onepage_checkout_order_button_color' => array( 
 							'default'   => '#00899d',
 							'transport' => 'postMessage',
@@ -114,28 +117,32 @@ class Onepage_Checkout extends \WPC\Abstract_Addon
 						'wpc_theme_onepage_checkout_content_primary_color' => array( 
 							'default'   => '#00646d',
 							'transport' => 'postMessage',
-						), 
-						'wpc_theme_onepage_checkout_background_color' => array( 
-							'default'   => '#f1f1f1',
-							'transport' => 'postMessage',
-						), 
-						'wpc_theme_onepage_checkout_header_color' => array( 
-							'default'   => '#00000000',
-							'transport' => 'postMessage',
-						), 
-						'wpc_onepage_checkout_logo_position' => array( 
-							'default'   => 'default',
-						), 
+						),
 						'wpc_theme_onepage_checkout_form_layout' => array( 
-							//'transport' => 'postMessage',
 						),  
 					),
 					'controls' => array(
-						'wpc_theme_onepage_checkout_logo' => array(
-							'class'        =>  'WP_Customize_Image_Control',
-							'label'        =>  __( 'Logo' , 'WPC' ),
+						'wpc_theme_onepage_checkout_container_max_width' => array(
+							'class'        =>  'WPC\Control\Range_Value',
+							'label'        =>  __( 'Container Max Width' , 'WPC' ),
+							'input_attrs' => array(
+								'min'    => 930,
+								'max'    => 1600,
+								'suffix' => 'px',
+							),
 							'section'      =>  'wpc_onepage_checkout_styles',
-							'settings'     =>  'wpc_theme_onepage_checkout_logo'
+							'settings'     =>  'wpc_theme_onepage_checkout_container_max_width'
+						),
+						'wpc_theme_onepage_checkout_container_spacing' => array(
+							'class'        =>  'WPC\Control\Range_Value',
+							'label'        =>  __( 'Container Spacing' , 'WPC' ),
+							'input_attrs' => array(
+								'min'    => 0,
+								'max'    => 80,
+								'suffix' => 'px',
+							),
+							'section'      =>  'wpc_onepage_checkout_styles',
+							'settings'     =>  'wpc_theme_onepage_checkout_container_spacing'
 						),
 						'wpc_theme_onepage_checkout_content_primary_color' => array(
 							'class'        =>  'WP_Customize_Color_Control',
@@ -148,27 +155,6 @@ class Onepage_Checkout extends \WPC\Abstract_Addon
 							'label'        =>  __( 'Button Place Order Color' , 'WPC' ),
 							'section'      =>  'wpc_onepage_checkout_styles',
 							'settings'     =>  'wpc_theme_onepage_checkout_order_button_color'
-						),
-						'wpc_onepage_checkout_logo_position' => array(
-							'type'         =>  'select',
-							'choices'      =>  array( 'center' => __( 'Center', 'WPC' ), 'default' => __( 'Default', 'WPC' ) ),
-							'label'        =>  __( 'Logo Position' , 'WPC' ),
-							'section'      =>  'wpc_onepage_checkout_styles',
-							'settings'     =>  'wpc_onepage_checkout_logo_position'
-						),
-						'wpc_theme_onepage_checkout_background_color' => array(
-							'type'         =>  'select',
-							'choices'      =>  array( '#f1f1f1' => __( 'Default', 'WPC' ), '#ffffff' => __( 'White', 'WPC' ) ),
-							'label'        =>  __( 'Background' , 'WPC' ),
-							'section'      =>  'wpc_onepage_checkout_styles',
-							'settings'     =>  'wpc_theme_onepage_checkout_background_color'
-						),
-						'wpc_theme_onepage_checkout_header_color' => array(
-							'type'         =>  'select',
-							'choices'      =>  array( '#00000000' => __( 'Default', 'WPC' ), '#ffffff' => __( 'White', 'WPC' ) ),
-							'label'        =>  __( 'Header' , 'WPC' ),
-							'section'      =>  'wpc_onepage_checkout_styles',
-							'settings'     =>  'wpc_theme_onepage_checkout_header_color'
 						),
 						'wpc_theme_onepage_checkout_form_layout' => array(
 							'type'         =>  'select',

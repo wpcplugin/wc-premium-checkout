@@ -22,7 +22,7 @@ remove_action( 'woocommerce_before_checkout_form', 'woocommerce_output_all_notic
 /**
  * Head
  */
-add_action( 'wpc_template_head', 'wpc_onepage_checkout_print_css', -1 );
+add_action( 'wp_head', 'wpc_onepage_checkout_print_css', -1 );
 
 /**
  * Header
