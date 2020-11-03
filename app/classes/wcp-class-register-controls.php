@@ -13,6 +13,7 @@ final class Register_Controls
 			'WPC\Control\Multiple_Select',
 			'WPC\Control\Field_Group',
 			'WPC\Control\Repeater',
+			'WPC\Control\Range_Value',
 		);
 		$load_controls = apply_filters( 'wpc_register_controls', $embedded );
 		
