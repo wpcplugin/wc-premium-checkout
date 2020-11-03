@@ -130,6 +130,20 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 					),
 				),
 				'controls' => array( 
+					'wpc_theme_compatibility_page_template' => array(
+						'type'         =>  'select',
+						'choices'      =>  array( 'default' => __( 'Default', 'WPC' ), 'wp_theme' => __( 'Theme', 'WPC' ) ),
+						'label'        =>  __( 'Page Template' , 'WPC' ),
+						'section'      =>  $this->section,
+						'settings'     =>  'wpc_theme_compatibility_page_template'
+					),
+					'wpc_theme_compatibility_page_template_wp_theme_container' => array(
+						'type'         =>  'select',
+						'choices'      =>  array( 'default' => __( 'Default', 'WPC' ), 'full' => __( 'Full', 'WPC' ) ),
+						'label'        =>  __( 'Page Container' , 'WPC' ),
+						'section'      =>  $this->section,
+						'settings'     =>  'wpc_theme_compatibility_page_template_wp_theme_container'
+					),
 					'wpc_theme_compatibility_removed_styles' => array(
 						'class'        =>  'WPC\Control\Multiple_Select',
 						'label'        =>  __( 'Remove CSS in Checkout', 'WPC' ),
@@ -168,20 +182,6 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 						'description'  =>  __( 'By checking this option all hooks of the active theme will be removed.', 'WPC' ),
 						'section'      =>  $this->section,
 						'settings'     =>  'wpc_theme_compatibility_remove_hooks_wp_theme',
-					),
-					'wpc_theme_compatibility_page_template' => array(
-						'type'         =>  'select',
-						'choices'      =>  array( 'default' => __( 'Default', 'WPC' ), 'wp_theme' => __( 'Theme', 'WPC' ) ),
-						'label'        =>  __( 'Page Template' , 'WPC' ),
-						'section'      =>  $this->section,
-						'settings'     =>  'wpc_theme_compatibility_page_template'
-					),
-					'wpc_theme_compatibility_page_template_wp_theme_container' => array(
-						'type'         =>  'select',
-						'choices'      =>  array( 'default' => __( 'Default', 'WPC' ), 'full' => __( 'Full', 'WPC' ) ),
-						'label'        =>  __( 'Page Container' , 'WPC' ),
-						'section'      =>  $this->section,
-						'settings'     =>  'wpc_theme_compatibility_page_template_wp_theme_container'
 					),
 					'wpc_theme_compatibility_custom_css' => array(
 						'type'         =>  'textarea',
