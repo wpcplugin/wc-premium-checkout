@@ -10,7 +10,7 @@
 #wpc-wrapper.inline-form #wpc-main form .form-row-last  {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
     float: none;
     margin: 16px 0;
 }
@@ -31,6 +31,5 @@
 }
 
 #wpc-wrapper.inline-form #wpc-main .form-row.create-account {
-    margin-top: 0;
 	display: block;
 }

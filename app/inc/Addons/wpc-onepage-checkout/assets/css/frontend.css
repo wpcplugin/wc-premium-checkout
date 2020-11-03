@@ -1,18 +1,5 @@
-:root {
-  --checkout-background: #fdfdfd;
-  --haeder-background: #000000;
-  --primary-link-color: #1e90ff;
-  --primary-text-color: #4a4a4a;
-  --base-font-family: Arial, Helvetica, sans-serif;
-  --base-font-size: 12px;
-  --base-line-height: 1.35;
-  --base-max-width: 1024px;
-  --content-box-title-color: #ffffff;
-  --content-box-title-background: #00c5ed;
-  --content-box-subtitle-background: #ececec;
-}
 
-#wpc-wrapper, #wpc-main, .container, #wpc-wrapper .wpc-main a, #wpc-wrapper .header, #wpc-wrapper .header .logo a, #wpc-wrapper .header .logo img, #wpc-wrapper .header .logo, #wpc-wrapper .steps, #wpc-wrapper .steps .steps-items, #wpc-wrapper .steps .steps-item, #wpc-wrapper .steps .steps-item:last-child, #wpc-wrapper .steps .steps-item .steps-item-label, #wpc-wrapper .steps .steps-item-icon, #wpc-wrapper .steps .steps-item-icon .icon-check, #wpc-wrapper .steps .steps-item:first-child .steps-item-icon .icon-check, #wpc-wrapper .steps .steps-item.steps-item-is-current .steps-item-icon, #wpc-wrapper .steps .steps-item .steps-item-label.last-label, #wpc-wrapper .steps .steps-item.steps-item-is-current .steps-item-label, #wpc-wrapper form.checkout, #wpc-main .form-row, #wpc-main .woocommerce-form__label, #wpc-main .form-row .input-text, #wpc-main .form-row select, #wpc-main .form-row .select2-container--default .select2-selection--single, #wpc-main [type=checkbox], #wpc-main [type=radio], #wpc-main form label, #wpc-main form .form-row label:first-child, #wpc-main form .form-row label:first-child, #wpc-main .form-row label .optional, #wpc-main .form-row .required, #wpc-main form .form-row .error, #wpc-main form .form-row label.error, #wpc-main form.checkout_coupon.woocommerce-form-coupon, #wpc-main #payment ul, #wpc-main #order_review, #wpc-main #shipping_method, #wpc-main #payment ul > li, #wpc-main #shipping_method > li, #wpc-main #payment ul > li > input, #wpc-main #payment ul > li > input + label, #wpc-main #shipping_method > li > input + label, #wpc-main #shipping_method li label:before, #wpc-main #payment ul.payment_methods > li > label:before, #wpc-main #payment ul > li > input + label, #wpc-main #shipping_method > li > label span.amount, #wpc-main #shipping_method > li > label > img, #wpc-main #payment ul > li ul > li, #wpc-main #payment #payment .payment_box ul > li label, #wpc-main #payment .form-row label:first-child, #wpc-main #payment .form-row, #wpc-main #payment, #wpc-main .payment_box, #wpc-main .payment_box p, #wpc-main #payment .woocommerce-SavedPaymentMethods, #wpc-main #payment .woocommerce-SavedPaymentMethods.wc-saved-payment-methods > li:first-child, #wpc-main #payment .woocommerce-SavedPaymentMethods.wc-saved-payment-methods > li:last-child, #wpc-main .step-colum.right .content-box .cart_table, #wpc-main .cart_table tr, #wpc-main .cart_table th, #wpc-main .cart_table td, #wpc-main .content-box .cart_table td.product-image, #wpc-main .content-box .cart_table td.product-image img, #wpc-main .content-box .cart_table ul.variation li > div, #wpc-main .cart_table .variation, #wpc-main .cart_table .variation li, #wpc-main .cart_table .variation li > div, #wpc-main .cart_table .variation li > div:first-child, #wpc-main .step-colum.right .content-box .shop_table.woocommerce-checkout-review-order-table, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table td, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table td .amount, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table td .amount *, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table th, #wpc-main .shop_table.woocommerce-checkout-review-order-table tr, #wpc-main .woocommerce-terms-and-conditions-wrapper, #wpc-main .woocommerce-privacy-policy-text, #wpc-main .woocommerce_terms_and_conditions_checkbox, #wpc-main .woocommerce_terms_and_conditions_checkbox label, #wpc-main input#terms, #wpc-wrapper form.checkout .woocommerce-form__label, #wpc-wrapper form.checkout .woocommerce-form__label > *:before, #wpc-wrapper form.checkout .woocommerce-form__label > *, #wpc-main .button, #wpc-main form.checkout .woocommerce-shipping-fields, #wpc-main form.checkout .woocommerce-account-fields, #wpc-main .woocommerce-error, #wpc-main .woocommerce-info, #wpc-main .woocommerce-message, #wpc-main .message-list li, #wpc-main .woocommerce-message:before, #wpc-main .woocommerce-error:before, #wpc-main .woocommerce-info:before, #wpc-main  .payment_methods label img, #wpc-main .cart-discount .woocommerce-remove-coupon {
+#wpc-wrapper, #wpc-main, .container, #wpc-wrapper .wpc-main a, #wpc-wrapper .header, #wpc-wrapper .header .logo a, #wpc-wrapper .header .logo img, #wpc-wrapper .header .logo, #wpc-wrapper .steps, #wpc-wrapper .steps .steps-items, #wpc-wrapper .steps .steps-item, #wpc-wrapper .steps .steps-item:last-child, #wpc-wrapper .steps .steps-item .steps-item-label, #wpc-wrapper .steps .steps-item-icon, #wpc-wrapper .steps .steps-item-icon .icon-check, #wpc-wrapper .steps .steps-item:first-child .steps-item-icon .icon-check, #wpc-wrapper .steps .steps-item.steps-item-is-current .steps-item-icon, #wpc-wrapper .steps .steps-item .steps-item-label.last-label, #wpc-wrapper .steps .steps-item.steps-item-is-current .steps-item-label, #wpc-wrapper form.checkout, #wpc-main .form-row, #wpc-main .woocommerce-form__label, #wpc-main .form-row .input-text, #wpc-main .form-row select, #wpc-main .form-row .select2-container--default .select2-selection--single, #wpc-main [type=checkbox], #wpc-main [type=radio], #wpc-main form label, #wpc-main form .form-row label:first-child, #wpc-main form .form-row label:first-child, #wpc-main .form-row label .optional, #wpc-main .form-row .required, #wpc-main form .form-row .error, #wpc-main form .form-row label.error, #wpc-main form.checkout_coupon.woocommerce-form-coupon, #wpc-main #payment ul, #wpc-main #order_review, #wpc-main #shipping_method, #wpc-main #payment ul > li, #wpc-main #shipping_method > li, #wpc-main #payment ul > li > input, #wpc-main #payment ul > li > input + label, #wpc-main #shipping_method > li > input + label, #wpc-main #shipping_method li label:before, #wpc-main #payment ul.payment_methods > li > label:before, #wpc-main #payment ul > li > input + label, #wpc-main #shipping_method > li > label span.amount, #wpc-main #shipping_method > li > label > img, #wpc-main #payment ul > li ul > li, #wpc-main #payment #payment .payment_box ul > li label, #wpc-main #payment .form-row label:first-child, #wpc-main #payment .form-row, #wpc-main #payment, #wpc-main .payment_box, #wpc-main .payment_box p, #wpc-main #payment .woocommerce-SavedPaymentMethods, #wpc-main #payment .woocommerce-SavedPaymentMethods.wc-saved-payment-methods > li:first-child, #wpc-main #payment .woocommerce-SavedPaymentMethods.wc-saved-payment-methods > li:last-child, #wpc-main .step-colum.right .content-box .cart_table, #wpc-main .cart_table tr, #wpc-main .cart_table th, #wpc-main .cart_table td, #wpc-main .content-box .cart_table td.product-image, #wpc-main .content-box .cart_table td.product-image img, #wpc-main .content-box .cart_table ul.variation li > div, #wpc-main .cart_table .variation, #wpc-main .cart_table .variation li, #wpc-main .cart_table .variation li > div, #wpc-main .cart_table .variation li > div:first-child, #wpc-main .step-colum.right .content-box .shop_table.woocommerce-checkout-review-order-table, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table td, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table td .amount, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table td .amount *, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table th, #wpc-main .shop_table.woocommerce-checkout-review-order-table tr, #wpc-main .woocommerce-terms-and-conditions-wrapper, #wpc-main .woocommerce-privacy-policy-text, #wpc-main .woocommerce_terms_and_conditions_checkbox, #wpc-main .woocommerce_terms_and_conditions_checkbox label, #wpc-main input#terms, #wpc-wrapper form.checkout .woocommerce-form__label, #wpc-wrapper form.checkout .woocommerce-form__label > *:before, #wpc-wrapper form.checkout .woocommerce-form__label > *, #wpc-main .button, #wpc-main form.checkout .woocommerce-shipping-fields, #wpc-main form.checkout .woocommerce-account-fields, #wpc-main .woocommerce-error, #wpc-main .woocommerce-info, #wpc-main .woocommerce-message, #wpc-main .message-list li, #wpc-main .woocommerce-message:before, #wpc-main .woocommerce-error:before, #wpc-main .woocommerce-info:before, #wpc-main .payment_methods label img, #wpc-main .cart-discount .woocommerce-remove-coupon, #wpc-main .login-container, #wpc-main .login-container-sub, #wpc-main .login-container-center, #wpc-main .login-container-center-sub, #wpc-main .login-container-form, #wpc-main .login-container-form::before, #wpc-main .woocommerce-form.woocommerce-form-login.login .form-row, #wpc-main .woocommerce-form.woocommerce-form-login.login .form-row label, #wpc-main .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, #wpc-main .woocommerce-form.woocommerce-form-login.login .form-row label, #wpc-main .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, #wpc-main .woocommerce-form .login_rememberme, .lost_password, #wpc-main .woocommerce-form .lost_password, #wpc-main .woocommerce-button.button.woocommerce-form-login__submit, #wpc-main .woocommerce-form-login-toggle .woocommerce-info, #wpc-main .woocommerce-form .login-message p, #wpc-main .login-container-form .login-title, #wpc-main .login-close, html.overflowhidden, #wpc-main .woocommerce-billing-fields, #wpc-main .woocommerce-shipping-methods-container, #wpc-main .woocommerce-shipping-fields {
     all: revert;
 }
 
@@ -35,14 +22,15 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 
 #wpc-main * {
 	color: var(--primary-text-color);
-	/* font-family: var(--base-font-family) !important; */
+	font-family: var(--base-font-family) !important;
 	font-size: var(--base-font-size);
 	line-height: var( --base-line-height);
 }
 
 #wpc-main {
     margin: 0 auto;
-    padding: 40px 0;
+    padding-top: var(--base-spacing);
+    padding-bottom: var(--base-spacing);
     /* max-width: var(--base-max-width); */
     /* padding-left: 10px; */
     /* padding-right: 10px; */
@@ -235,7 +223,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 }
 
 #wpc-main .step-colum .content-box .content-box-title {
-	background: #675f5f;
+    background: var(--primary-background-color);
 	height: 32px;
 	display: block;
 	margin: 0;
@@ -407,18 +395,36 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
     line-height: 1.4;
 }
 
-#wpc-main .woocommerce-billing-fields__field-wrapper, .woocommerce-shipping-fields__field-wrapper, 
-.cart-coupon-code, .create-account {
-    margin: 16px 0 0;
+#wpc-main .woocommerce-billing-fields__field-wrapper, 
+#wpc-main .woocommerce-shipping-fields__field-wrapper, 
+#wpc-main .cart-coupon-code, 
+#wpc-main .create-account {
+    /* margin: 16px 0 0; */
+    margin-top: 16px;
+}
+
+#wpc-main .woocommerce-billing-fields__field-wrapper .form-row:first-child, 
+#wpc-main .woocommerce-shipping-fields__field-wrapper .form-row:first-child, 
+#wpc-main .cart-coupon-code:first-child .form-row:first-child, 
+#wpc-main .create-account .form-row:first-child {
+    margin-top: 0 !important;
+}
+
+#wpc-main .woocommerce-billing-fields__field-wrapper .form-row:last-child, 
+#wpc-main .woocommerce-shipping-fields__field-wrapper .form-row:last-child, 
+#wpc-main .cart-coupon-code:first-child .form-row:last-child, 
+#wpc-main .create-account .form-row:last-child {
+    /*margin-bottom: 0 !important;*/
 }
 
 #wpc-main .content-box .create-account {
-    margin: -8px 0 0;
-	overflow: hidden;
+    /* margin: -8px 0 0; */
+    /* overflow: hidden; */
 }
 
 #wpc-main .form-row.place-order {
     padding: 0;
+    flex-wrap: wrap;
 }
 
 #wpc-main form.checkout_coupon.woocommerce-form-coupon {
@@ -655,13 +661,15 @@ font-weight: bold;
     font-size: 18px;
     padding: 11px 15px;
     width: 100%;
+    background: var(--order-button-color);
 }
 
 #wpc-main button#coupon-send {
     color: #FFF;
     float: right;
     height: 34px;
-    font-size: 12px;
+    font-size: 1em;
+    background: var(--primary-background-color);
 }
 
 #wpc-main button#coupon-send:active {
@@ -689,6 +697,7 @@ margin: 10px 0;
 }
 #wpc-main .woocommerce_terms_and_conditions_checkbox {
     margin: 8px auto 0;
+    display: table;
 }
 
 #wpc-main .woocommerce_terms_and_conditions_checkbox label {
@@ -881,7 +890,151 @@ html  .select2-container--default .select2-results__option--highlighted[aria-sel
 
 
 
+/**************************
+*                         *
+*     CHECKOUT LOGIN      *
+*                         *
+***************************/
 
+#wpc-main .login-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1042;
+    overflow: hidden;
+    position: fixed;
+	display: none;
+    background: #111111d1;
+}
+
+#wpc-main .login-container-sub {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden auto;
+}
+
+#wpc-main .login-container-center {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 0 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#wpc-main .login-container-center-sub {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    text-align: left;
+    z-index: 1045;
+}
+
+#wpc-main .login-container-form {
+    position: relative;
+    width: auto;
+    max-width: 574px;
+    margin: 7% auto 0;
+    padding: 47px 37px 50px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #fff;
+    opacity: 1;
+}
+
+#wpc-main .login-container-form::before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -10;
+}
+
+#wpc-main .woocommerce-form.woocommerce-form-login.login .form-row {
+    float: none;
+    width: 100%;
+}
+
+#wpc-main .woocommerce-form.woocommerce-form-login.login .form-row label {
+    font-size: 1em;
+}
+
+#wpc-main .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme {
+    padding: 0;
+}
+
+#wpc-main .woocommerce-form.woocommerce-form-login.login .form-row label {
+    font-size: 1em;
+}
+
+#wpc-main .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme {
+    padding: 0;
+}
+
+#wpc-main .woocommerce-form .login_rememberme, .lost_password {
+    display: inline-block;
+}
+
+#wpc-main .woocommerce-form .lost_password {
+    float: right;
+}
+
+#wpc-main .woocommerce-button.button.woocommerce-form-login__submit {
+    display: block;
+    width: 100%;
+    margin: 15px 0 0;
+    padding: 12px;
+    color: #ffffff;
+    font-size: 1.33em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+}
+
+#wpc-main .woocommerce-form-login-toggle .woocommerce-info {
+    margin-bottom: 20px;
+    font-size: 1.33em;
+}
+
+#wpc-main .woocommerce-form-login-toggle .woocommerce-info a, #wpc-main .woocommerce-form .login-message p {
+    font-size: 1em;
+}
+
+#wpc-main .woocommerce-form .login-message p {
+    margin-bottom: 30px;
+    display: block;
+    color: #4a4a4a;
+}
+
+#wpc-main .login-container-form .login-title {
+    margin: 0 0 25px;
+}
+
+#wpc-main .login-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-image: url(data:image/png;base64,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);
+    width: 32px;
+    height: 32px;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+html.overflowhidden {
+	overflow: hidden !important
+}
 
 
 
