@@ -141,6 +141,8 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 			$container_spacing = get_option( 'wpc_theme_onepage_checkout_container_spacing', '20' );
 			$order_button  = get_option( 'wpc_theme_onepage_checkout_order_button_color', '#00899d' );
 			$primary_background_color = get_option( 'wpc_theme_onepage_checkout_content_primary_color', '#00646d' );
+			$page_template = get_option( 'wpc_theme_compatibility_page_template', 'wp_theme' );
+			$page_template_container = get_option( 'wpc_theme_compatibility_page_template_wp_theme_container', 'default' );
 			
 			$css .= ":root {
 			  --order-button-color: {$order_button};
@@ -157,6 +159,14 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 			  --content-box-subtitle-background: #ececec;
 			}";
 		
+		}
+		
+		if ( true !== WC()->cart->needs_shipping_address() ) {
+			$css .= ".content-box.content-box-address {display: none;}";
+		}
+		
+		if ( ( 'wp_theme' === $page_template && 'full' === $page_template_container ) || ( 'default' === $page_template ) ) {
+			$css .= "#wpc-wrapper #wpc-main {max-width: var(--base-max-width);}";
 		}
 		
 		if ( ! empty( $css ) ){			

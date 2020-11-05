@@ -26,6 +26,7 @@ class Onepage_Checkout extends \WPC\Abstract_Addon
 		add_filter( 'wpc_template_init', array( $this, 'frontend_enqueue' ) );
 		add_filter( 'wpc_field_manager_setting_key', array( $this, 'wpc_field_manager_setting_key' ) );
 		add_action( 'customize_preview_init',  array( $this, 'preview_enqueue' ) );
+		add_action( 'wpc_addon_control_active_callback', array( $this, 'controls_active_callback' ), 10, 4 );
 	}
 	
 	public function preview_enqueue() 
@@ -168,6 +169,19 @@ class Onepage_Checkout extends \WPC\Abstract_Addon
 			)
 		);
 		
+	}
+	
+	public function controls_active_callback( $status, $type, $slug, $id ) 
+	{
+		$is_wp_theme = 'wp_theme' === get_option( 'wpc_theme_compatibility_page_template', 'wp_theme' );
+		$is_full_container = 'full' === get_option( 'wpc_theme_compatibility_page_template_wp_theme_container', 'default' );
+		
+		if ( 'wpc_theme_onepage_checkout_container_max_width' === $id ) {
+			return ( $is_wp_theme && $is_full_container ) || ( !$is_wp_theme );
+		}
+		
+		return $status;
+
 	}
 
 }
