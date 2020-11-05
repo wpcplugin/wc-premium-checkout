@@ -323,8 +323,16 @@ class Fields_Manager extends \WPC\Abstract_Addon
 		if ( 'yes' === get_option( 'woocommerce_registration_generate_password' ) ) {
 			unset( $control_fields['account']['children']['account_password'] );
 		}
-		
-		if ( isset( $control_fields['account']['children'] ) && empty( $control_fields['account']['children'] ) ) {
+		if ( 'hidden' === get_option( 'woocommerce_checkout_company_field', 'optional' ) ) {
+			unset( $control_fields['billing']['children']['billing_company'] );
+		}
+		if ( 'hidden' === get_option( 'woocommerce_checkout_address_2_field', 'optional' ) ) {
+			unset( $control_fields['billing']['children']['billing_address_2'] );
+		}
+		if ( 'hidden' === get_option( 'woocommerce_checkout_phone_field', 'required' ) ) {
+			unset( $control_fields['billing']['children']['billing_phone'] );
+		}
+		if ( isset( $control_fields['billing']['children'] ) && empty( $control_fields['account']['children'] ) ) {
 			unset( $control_fields['account'] );
 		}
 		
