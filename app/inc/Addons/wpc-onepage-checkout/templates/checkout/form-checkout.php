@@ -33,7 +33,7 @@ wc_print_notices();
 
 					<?php do_action( 'woocommerce_checkout_billing' ); ?>
 				</section>
-				<section class="content-box">
+				<section class="content-box content-box-address">
 					<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 					
 					<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
