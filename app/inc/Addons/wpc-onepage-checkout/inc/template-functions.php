@@ -159,19 +159,19 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 			  --content-box-subtitle-background: #ececec;
 			}";
 		
+			if ( true !== WC()->cart->needs_shipping_address() ) {
+				$css .= ".content-box.content-box-address {display: none;}";
+			}
+			
+			if ( ( 'wp_theme' === $page_template && 'full' === $page_template_container ) || ( 'default' === $page_template ) ) {
+				$css .= "#wpc-wrapper #wpc-main {max-width: var(--base-max-width);}";
+			}
+			
+			if ( ! empty( $css ) ){			
+				printf( '<style type="text/css" id="wpc_onepage_checkout-css">%s</style>', $css );
+			}
 		}
 		
-		if ( true !== WC()->cart->needs_shipping_address() ) {
-			$css .= ".content-box.content-box-address {display: none;}";
-		}
-		
-		if ( ( 'wp_theme' === $page_template && 'full' === $page_template_container ) || ( 'default' === $page_template ) ) {
-			$css .= "#wpc-wrapper #wpc-main {max-width: var(--base-max-width);}";
-		}
-		
-		if ( ! empty( $css ) ){			
-			printf( '<style type="text/css" id="wpc_onepage_checkout-css">%s</style>', $css );
-		}
 	}
 	
 }
