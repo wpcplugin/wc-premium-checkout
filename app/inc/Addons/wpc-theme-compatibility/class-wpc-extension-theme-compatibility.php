@@ -45,6 +45,7 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 		add_filter( 'wpc_theme_compatibility_removed_styles', array( $this, 'do_dequeue_plugin_styles' ) );
 		add_filter( 'wpc_theme_compatibility_removed_scripts', array( $this, 'do_dequeue_plugin_scripts' ) );
 		add_filter( 'wpc_theme_compatibility_removed_hooks', array( $this, 'do_remove_all_theme_hooks' ) );	
+		add_filter( 'wpc_theme_compatibility_removed_hooks', array( $this, 'do_remove_all_woocommerce_hooks' ) );	
 		add_filter( 'wpc_theme_compatibility_ignore_plugins_to_sanitize_enquete', array( $this, 'to_sanitize_enquete_ignore_plugins' ), 10, 2 );
 		add_filter( 'wpc_theme_compatibility_selected_theme_handle_to_sanitize_enquete', array( $this, 'to_sanitize_enquete_check_selected_handle' ), 10, 4 );
 		add_filter( 'wpc_theme_compatibility_selected_plugin_handle_to_sanitize_enquete', array( $this, 'to_sanitize_enquete_check_selected_handle' ), 10, 4 );
@@ -124,6 +125,11 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 						'sanitize_js_callback' => 'wpc_string_to_bool',
 					),
 					'wpc_theme_compatibility_remove_hooks_wp_theme' => array ( 
+						'default'              => 'no', 
+						'sanitize_callback'    => 'wpc_bool_to_string', 
+						'sanitize_js_callback' => 'wpc_string_to_bool',
+					),
+					'wpc_theme_compatibility_remove_hooks_woocommerce_templates' => array ( 
 						'default'              => 'yes', 
 						'sanitize_callback'    => 'wpc_bool_to_string', 
 						'sanitize_js_callback' => 'wpc_string_to_bool',
@@ -182,6 +188,13 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 						'description'  =>  __( 'By checking this option all hooks of the active theme will be removed.', 'WPC' ),
 						'section'      =>  $this->section,
 						'settings'     =>  'wpc_theme_compatibility_remove_hooks_wp_theme',
+					),
+					'wpc_theme_compatibility_remove_hooks_woocommerce_templates' => array(
+						'type'         =>  'checkbox',
+						'label'        =>  __( 'Remove woocommerce template hooks', 'WPC' ),
+						'description'  =>  __( 'By checking this option all woocommerce template hooks of the active theme will be removed.', 'WPC' ),
+						'section'      =>  $this->section,
+						'settings'     =>  'wpc_theme_compatibility_remove_hooks_woocommerce_templates',
 					),
 					'wpc_theme_compatibility_custom_css' => array(
 						'type'         =>  'textarea',
@@ -409,7 +422,10 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 					$hooks[] = array_merge( [ 'id' => $id, 'priority' => $priority ], $callback );
 			});         
 		} else {
-			return [];
+			return [
+				'themes' => [],
+				'plugins' => [],
+			];
 		}
 
 		foreach( $hooks as &$item ) {
@@ -608,7 +624,7 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 	
 	public function do_remove_all_theme_hooks( $hooks ) 
 	{
-		if ( 'yes' === get_option( 'wpc_theme_compatibility_remove_hooks_wp_theme', 'yes' ) ) {
+		if ( 'yes' === get_option( 'wpc_theme_compatibility_remove_hooks_wp_theme', 'no' ) ) {
 			$list = array(
 				$this->list_hooks( 'wp_head' )[ 'themes' ],
 				$this->list_hooks( 'wp_footer' )[ 'themes' ],
@@ -619,6 +635,59 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 				foreach ( $themes as $theme ) {
 					if ( isset( $theme['hooks'] ) ) {
 						foreach ( $theme['hooks'] as $hook => $items ) {
+							foreach( $items as $item ) {
+								$hooks[ $hook ][] = $item;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		return $hooks;
+
+	}
+
+	public function do_remove_all_woocommerce_hooks( $hooks ) 
+	{
+		if ( 'yes' === get_option( 'wpc_theme_compatibility_remove_hooks_woocommerce_templates', 'yes' ) ) {
+			$list = array(
+				$this->list_hooks( 'woocommerce_login_form_start' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_login_form' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_login_form_end' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_before_checkout_form' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_checkout_before_customer_details' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_before_checkout_billing_form' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_after_checkout_billing_form' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_before_checkout_shipping_form' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_after_checkout_shipping_form' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_before_order_notes' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_after_order_notes' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_review_order_before_cart_contents' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_review_order_after_cart_contents' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_review_order_before_shipping' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_review_order_after_shipping' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_review_order_before_order_total' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_review_order_after_order_total' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_review_order_before_payment' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_review_order_before_submit' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_review_order_after_submit' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_review_order_after_payment' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_checkout_before_order_review_heading' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_checkout_before_order_review' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_checkout_after_order_review' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_checkout_billing' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_checkout_shipping' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_checkout_after_customer_details' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_before_checkout_shipping_form' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_after_checkout_shipping_form' )[ 'themes' ],
+				$this->list_hooks( 'woocommerce_after_checkout_form' )[ 'themes' ],
+			);
+			
+			foreach ( $list as $templates ) {
+				foreach ( $templates as $template ) {
+					if ( !empty( $template ) && isset( $template['hooks'] ) ) {
+						foreach ( $template['hooks'] as $hook => $items ) {
 							foreach( $items as $item ) {
 								$hooks[ $hook ][] = $item;
 							}
@@ -717,10 +786,15 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 	
 	public function controls_active_callback( $status, $type, $slug, $id ) 
 	{
-		$is_wp_theme = 'wp_theme' === get_option( 'wpc_theme_compatibility_page_template' );
+		$is_wp_theme = ( 'wp_theme' === get_option( 'wpc_theme_compatibility_page_template', 'wp_theme' ) );
+		$is_remove_hooks_wp_theme = ( 'no' === get_option( 'wpc_theme_compatibility_remove_hooks_wp_theme', 'no' ) );
 		
 		if ( 'wpc_theme_compatibility_page_template_wp_theme_container' === $id ) {
 			return $is_wp_theme;
+		}
+
+		if ( 'wpc_theme_compatibility_remove_hooks_woocommerce_templates' === $id ) {
+			return !$is_remove_hooks_wp_theme;
 		}
 		
 		return $status;
