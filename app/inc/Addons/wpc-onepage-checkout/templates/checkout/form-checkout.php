@@ -90,6 +90,7 @@ wc_print_notices();
 						</section>
 				</section>
 				
+				<?php do_action( 'wpc_onepage_checkout_after_order_review' ); ?>
 				<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 			
 			</section>
