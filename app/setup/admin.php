@@ -386,7 +386,7 @@ if ( ! function_exists( 'wpc_admin_install_plugin_complete_actions' ) ) {
 	 */ 
 	function wpc_admin_install_plugin_complete_actions( $install_actions, $data, $plugin ) 
 	{
-		if ( $data['wpc'] ) {		
+		if ( is_array( $data ) && isset( $data['wpc'] ) ) {		
 			$plugin = wp_unslash( $plugin ) ?: '';
 			$wpc_install_actions['activate_plugin'] = '<a class="button button-primary" href="' . wp_nonce_url( 'plugins.php?action=wpc_plugin_active&amp;plugin=' . urlencode( $plugin ) . '&data=' . urlencode( http_build_query( $data ) ), 'wpc-activate-plugin_' . $plugin ) . '" target="_parent">' . __( 'Activate Plugin', 'WPC' ) . '</a>';
 			$wpc_install_actions['plugins_page'] = '<a href="' . self_admin_url( 'admin.php' ) . '?page=wc-premium-checkout" target="_parent">' . __( 'Return to WPC Page', 'WPC' ) . '</a>';

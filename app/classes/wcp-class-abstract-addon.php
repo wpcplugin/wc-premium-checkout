@@ -151,7 +151,7 @@ abstract class Abstract_Addon
 			function( $template, $template_name, $plugin_path ) {
 				if ( !is_null( $this->path ) 
 					&& file_exists( $this->path . $template_name ) 
-					&& apply_filters( 'wpc_woocommerce_part_callback', true, $template, $template_name, $plugin_path ) ) {
+					&& apply_filters( 'wpc_woocommerce_part_callback', true, $template, $template_name, $plugin_path, PHP_INT_MAX ) ) {
 						return $this->path . $template_name;
 				}
 				return $template;

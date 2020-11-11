@@ -37,7 +37,7 @@ add_action( 'wpc_onepage_checkout_payment', 'woocommerce_checkout_payment', 20 )
 /**
  * Order review
  */
-add_action( 'woocommerce_checkout_after_order_review', 'wpc_onepage_checkout_place_order', 20 );
+add_action( 'wpc_onepage_checkout_after_order_review', 'wpc_onepage_checkout_place_order', 20 );
 
 /**
  * Cart review

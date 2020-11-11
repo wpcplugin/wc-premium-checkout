@@ -16,7 +16,7 @@
 }
 
 #wpc-wrapper.inline-form #wpc-main form .form-row label:first-child {
-    width: 35%;
+    width: calc( 42% - 0.5em );
     padding-right: 10px;
 }
 
