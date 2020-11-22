@@ -17,13 +17,17 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 		$this->author_url   =   WPC_URL;
 		$this->thumbnail    =   plugins_url( 'assets/img/thumbnail.svg', __FILE__ );
 		$this->embedded     =   true;
-
+		
 		add_action( 'wp', array( $this, 'template_container_type' ) );
 		add_action( 'wpc_template_file_prefix', array( $this, 'template_file_prefix' ) );
 		add_action( 'customize_register', array( $this, 'customize_init' ) );
 		add_action( 'wpc_template_init', array( $this, 'template_init' ) );
+		
+		add_action( 'wpc_template_init', array( $this, 'hooks' ), 999999 );
+		
 		add_action( 'wpc_template_init', array( $this, 'do_remove_hooks' ) );
 		add_action( 'wp_ajax_wpc_theme_compatibility_print_enquetes', array( $this, 'print_enquetes' ) );	
+		//add_action( 'wp_ajax_wpc_theme_compatibility_print_hooks', array( $this, 'print_hooks' ) );	
 	}
 	
 	public function customize_init() 
@@ -35,7 +39,7 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 
 	public function template_init() 
 	{	
-		add_action( 'wp_print_styles', array( $this, 'save_enqueue' ), PHP_INT_MAX );
+		add_action( 'wp_print_styles', array( $this, 'save_multiple_control_updated' ), PHP_INT_MAX );
 		add_action( 'wp_print_styles', array( $this, 'do_dequeue_scripts' ), PHP_INT_MAX );
 		add_action( 'wp_print_styles', array( $this, 'do_dequeue_styles' ), PHP_INT_MAX );
 		add_action( 'wp_footer', array( $this, 'add_style_tag_in_template' ), PHP_INT_MAX );
@@ -44,8 +48,8 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 		add_filter( 'wpc_theme_compatibility_removed_scripts', array( $this, 'do_dequeue_all_theme_scripts' ) );
 		add_filter( 'wpc_theme_compatibility_removed_styles', array( $this, 'do_dequeue_plugin_styles' ) );
 		add_filter( 'wpc_theme_compatibility_removed_scripts', array( $this, 'do_dequeue_plugin_scripts' ) );
-		add_filter( 'wpc_theme_compatibility_removed_hooks', array( $this, 'do_remove_all_theme_hooks' ) );	
-		add_filter( 'wpc_theme_compatibility_removed_hooks', array( $this, 'do_remove_all_woocommerce_hooks' ) );	
+		add_filter( 'wpc_theme_compatibility_removed_hooks', array( $this, 'do_remove_theme_hooks' ) );	
+		add_filter( 'wpc_theme_compatibility_remove_hooks_wp_theme', array( $this, 'do_remove_all_woocommerce_hooks' ) );	
 		add_filter( 'wpc_theme_compatibility_ignore_plugins_to_sanitize_enquete', array( $this, 'to_sanitize_enquete_ignore_plugins' ), 10, 2 );
 		add_filter( 'wpc_theme_compatibility_selected_theme_handle_to_sanitize_enquete', array( $this, 'to_sanitize_enquete_check_selected_handle' ), 10, 4 );
 		add_filter( 'wpc_theme_compatibility_selected_plugin_handle_to_sanitize_enquete', array( $this, 'to_sanitize_enquete_check_selected_handle' ), 10, 4 );
@@ -129,11 +133,14 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 						'sanitize_callback'    => 'wpc_bool_to_string', 
 						'sanitize_js_callback' => 'wpc_string_to_bool',
 					),
-					'wpc_theme_compatibility_remove_hooks_woocommerce_templates' => array ( 
+					'wpc_theme_compatibility_remove_woocommerce_hooks_wp_theme' => array ( 
 						'default'              => 'yes', 
 						'sanitize_callback'    => 'wpc_bool_to_string', 
 						'sanitize_js_callback' => 'wpc_string_to_bool',
 					),
+					/*'wpc_theme_compatibility_remove_woocommerce_hooks' => array ( 
+						
+					),*/
 				),
 				'controls' => array( 
 					'wpc_theme_compatibility_page_template' => array(
@@ -189,13 +196,23 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 						'section'      =>  $this->section,
 						'settings'     =>  'wpc_theme_compatibility_remove_hooks_wp_theme',
 					),
-					'wpc_theme_compatibility_remove_hooks_woocommerce_templates' => array(
+					'wpc_theme_compatibility_remove_woocommerce_hooks_wp_theme' => array(
 						'type'         =>  'checkbox',
-						'label'        =>  __( 'Remove woocommerce template hooks', 'WPC' ),
-						'description'  =>  __( 'By checking this option all woocommerce template hooks of the active theme will be removed.', 'WPC' ),
+						'label'        =>  __( 'Remove WooCommerce template hooks', 'WPC' ),
+						'description'  =>  __( 'By checking this option all WooCommerce template hooks of the active theme will be removed.', 'WPC' ),
 						'section'      =>  $this->section,
-						'settings'     =>  'wpc_theme_compatibility_remove_hooks_woocommerce_templates',
+						'settings'     =>  'wpc_theme_compatibility_remove_woocommerce_hooks_wp_theme',
 					),
+					/*'wpc_theme_compatibility_remove_woocommerce_hooks' => array(
+						'class'        =>  'WPC\Control\Multiple_Select',
+						'label'        =>  __( 'Remove WooCommerce hooks', 'WPC' ),
+						'choices'      =>  array(),
+						'value'        =>  array(),
+						'description'  =>  __( 'Select hooks to remove from the checkout.', 'WPC' ),
+						'section'      =>  $this->section,
+						'settings'     =>  'wpc_theme_compatibility_remove_woocommerce_hooks',
+					), 
+					*/
 					'wpc_theme_compatibility_custom_css' => array(
 						'type'         =>  'textarea',
 						'label'        =>  __( 'Custom CSS', 'WPC' ),
@@ -261,14 +278,18 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 		);
 	}
 	
-	public function save_enqueue() 
+	public function save_multiple_control_updated() 
 	{
 		if ( true === wpc_customize_on_embed() ) {
-			$content['styles']   = $this->sanitize_enquete( 'styles' );
-			$content['scripts']  = $this->sanitize_enquete( 'scripts' );
-			$json_encode_content = json_encode( $content );
+			$enqueue_content['styles']   = $this->sanitize_enquete( 'styles' );
+			$enqueue_content['scripts']  = $this->sanitize_enquete( 'scripts' );
+			//$hooks_content['woocommerce_hooks']  = $this->sanitize_hooks();
+
+			$json_encode_enqueue_content = json_encode( $enqueue_content );
+			//$json_encode_hooks_content = json_encode( $hooks_content );
 			
-			update_option( 'wpc_theme_compatibility_enquete', $json_encode_content );
+			update_option( 'wpc_theme_compatibility_enquete', $json_encode_enqueue_content );
+			//update_option( 'wpc_theme_compatibility_woocommerce_hooks', $json_encode_hooks_content );
 		}
 	}
 
@@ -316,6 +337,19 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 		
 		die;
 	}
+
+	/*
+	public function print_hooks() 
+	{
+		check_ajax_referer( 'wpc-theme-compatibility-nonce', 'security' );
+	
+		$json_content = get_option( 'wpc_theme_compatibility_woocommerce_hooks' );
+		
+		print( $json_content ); // print content in ajax response
+		
+		die;
+	}
+	*/
 	
 	public function sanitize_enquete( $type, $return_themes = true, $return_plugin = true ) 
 	{			
@@ -410,25 +444,34 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 		);
 	}
 
-	public static function list_hooks( $hook = '' ) {
+	public static function list_hooks( $hook = '', $list_hook = [] ) {
 		global $wp_filter;
 	
 		$themes  = [];
 		$plugins = [];
+		$all     = [];
 
-		if ( isset( $wp_filter[$hook]->callbacks ) ) {      
+		if ( !empty( $hook ) && isset( $wp_filter[$hook]->callbacks ) ) {      
 			array_walk( $wp_filter[$hook]->callbacks, function( $callbacks, $priority ) use ( &$hooks ) {           
 				foreach ( $callbacks as $id => $callback )
 					$hooks[] = array_merge( [ 'id' => $id, 'priority' => $priority ], $callback );
 			});         
 		} else {
-			return [
-				'themes' => [],
-				'plugins' => [],
-			];
+			foreach( $wp_filter as $fhook => $fdata ){
+				
+				if ( !empty( $list_hook ) ) {
+					if( in_array( $fhook, $list_hook ) ) {
+						$all = array_replace_recursive( $all, static::list_hooks( $fhook ) );
+					} 
+				} else {
+					$all = array_replace_recursive( $all, static::list_hooks( $fhook ) );
+				}
+			}
+
+			return $all;
 		}
 
-		foreach( $hooks as &$item ) {
+		foreach( $hooks as &$item ) {			
 			// skip if callback does not exist
 			if ( !is_callable( $item['function'] ) ) continue;
 
@@ -462,11 +505,18 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 				$item['file'] = $ref->getFileName();
 				$item['line'] = $ref->getStartLine();
 
+			} else {
+				$item['function'] = '';
+				$item['file'] = '';
+				$item['line'] = '';
 			}
-
+			
 		}
 		
-		foreach( $hooks as $item ) {
+		foreach( $hooks as &$item ) {			
+			// skip if callback does not exist
+			if ( !is_callable( $item['function'] ) ) continue;
+			
 			$base_path  = wpc_fix_dir_separator( ABSPATH );
 			$path_parse = wpc_path_to_array( str_replace( ABSPATH, null, $item['file'] ) );
 			$path_parse = wpc_get_util_path( $path_parse );
@@ -486,6 +536,8 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 					$plugins[ $path ][ 'hooks' ][ $hook ][] = $item;
 				}
 			}
+			
+
 		}
 
 		return (
@@ -622,85 +674,203 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 
 	}
 	
-	public function do_remove_all_theme_hooks( $hooks ) 
+	public function do_remove_theme_hooks( $hooks ) 
 	{
-		if ( 'yes' === get_option( 'wpc_theme_compatibility_remove_hooks_wp_theme', 'no' ) ) {
-			$list = array(
-				$this->list_hooks( 'wp_head' )[ 'themes' ],
-				$this->list_hooks( 'wp_footer' )[ 'themes' ],
-				$this->list_hooks( 'wp_print_styles' )[ 'themes' ]
-			);
+		$remove = apply_filters( 'wpc_theme_compatibility_remove_hooks_wp_theme', array() );
 
-			foreach ( $list as $themes ) {
-				foreach ( $themes as $theme ) {
-					if ( isset( $theme['hooks'] ) ) {
-						foreach ( $theme['hooks'] as $hook => $items ) {
-							foreach( $items as $item ) {
-								$hooks[ $hook ][] = $item;
-							}
+		if ( 'yes' === get_option( 'wpc_theme_compatibility_remove_hooks_wp_theme', 'no' ) ) {
+			$remove[] = 'wp_head';
+			$remove[] = 'wp_footer';
+			$remove[] = 'wp_print_styles';
+		}
+		
+		$list = static::list_hooks( '', $remove )[ 'themes' ];
+		
+		if ( !empty( $list ) ) {
+			foreach ( $list as $theme ) {
+				if ( isset( $theme['hooks'] ) && !empty( $theme['hooks'] ) ) {
+					foreach ( $theme['hooks'] as $hook => $items ) {
+						foreach( $items as $item ) {
+							$hooks[ $hook ][] = $item;
 						}
 					}
 				}
 			}
-		}
+		}			
 		
 		return $hooks;
 
 	}
 
+	public static function list_woocommerce_hooks() 
+	{
+		return(
+			array(
+				'woocommerce_login_form_start',
+				'woocommerce_login_form',
+				'woocommerce_checkout_login_form',
+				'woocommerce_login_form_end',
+				'woocommerce_checkout_coupon_form',
+				'woocommerce_before_checkout_form',
+				'woocommerce_checkout_before_customer_details',
+				'woocommerce_before_checkout_billing_form',
+				'woocommerce_after_checkout_billing_form',
+				'woocommerce_before_checkout_shipping_form',
+				'woocommerce_after_checkout_shipping_form',
+				'woocommerce_before_order_notes',
+				'woocommerce_after_order_notes',
+				'woocommerce_order_review',
+				'woocommerce_review_order_before_cart_contents',
+				'woocommerce_review_order_after_cart_contents',
+				'woocommerce_review_order_before_shipping',
+				'woocommerce_review_order_after_shipping',
+				'woocommerce_review_order_before_order_total',
+				'woocommerce_review_order_after_order_total',
+				'woocommerce_review_order_before_payment',
+				'woocommerce_review_order_before_submit',
+				'woocommerce_review_order_after_submit',
+				'woocommerce_review_order_after_payment',
+				'woocommerce_checkout_before_order_review_heading',
+				'woocommerce_checkout_before_order_review',
+				'woocommerce_checkout_after_order_review',
+				'woocommerce_checkout_billing',
+				'woocommerce_checkout_shipping',
+				'woocommerce_checkout_after_customer_details',
+				'woocommerce_before_checkout_shipping_form',
+				'woocommerce_after_checkout_shipping_form',
+				'wc_terms_and_conditions_page_content',
+				'wc_checkout_privacy_policy_text',
+				'woocommerce_checkout_after_terms_and_conditions',
+				'woocommerce_after_checkout_form',
+				'woocommerce_checkout_payment',
+			)
+		);
+
+	}
+	
+	/*
+	public function sanitize_hooks( $return_themes = true, $return_plugin = true ) 
+	{			
+		$sanitize  = [];
+		$woocommerce_hooks  = static::list_woocommerce_hooks();
+		$all_hooks  = static::list_hooks( '', $woocommerce_hooks );
+		
+		if( true === $return_themes && isset ( $all_hooks['themes'] ) ) {
+			foreach ( $all_hooks['themes'] as $theme_id => $theme ) {
+				$ignore_themes = apply_filters( 'wpc_theme_compatibility_ignore_themes_to_sanitize_hook', array() );				
+				if ( $ignore_themes !== 'ignoreall' && is_array( $ignore_themes ) ) {
+					if ( !in_array( $theme_id, $ignore_themes ) ) {
+						$hooks = null;				
+						$hooks['text'] = $theme['Name'];				
+						$hooks['class'] = 'theme';			
+						foreach ( $theme[ 'hooks' ] as $hook => $data ) {
+							$ignore_theme_hooks = apply_filters( 'wpc_theme_compatibility_ignore_theme_handles_to_sanitize_hook', array(), $hook, $data );
+							
+							if ( !in_array( $hook, $ignore_theme_hooks ) ) {
+								foreach ( $data as $hdata ) {
+									$disabled_theme_hook = apply_filters( 'wpc_theme_compatibility_disabled_theme_handle_to_sanitize_hook', false, $hook, $hdata );
+									$selected_theme_hook = apply_filters( 'wpc_theme_compatibility_selected_theme_handle_to_sanitize_hook', false, $hook, $hdata );
+									$hooks['children'][] = array( 'id' => serialize( array( $hook, $hdata['priority'] ) ), 'text' => '[' . $hdata['priority'] . '] ' . $hook, 'selected' => $selected_theme_hook, 'disabled' => $disabled_theme_hook, 'priority' => $hdata['priority'], 'data' => $hdata );
+								}
+						
+								
+							}
+						}
+						$sanitize[] = $hooks;		
+					}
+				}
+			}
+		}
+		
+		if( true === $return_plugin && isset ( $all_hooks['plugins'] ) ) {
+			foreach ( $all_hooks['plugins'] as $plugin_id => $plugin ) {
+				$ignore_plugins = apply_filters( 'wpc_theme_compatibility_ignore_plugins_to_sanitize_hook', array() );
+				if ( !in_array( $plugin_id, $ignore_plugins ) ) {
+					$hooks = null;				
+					$hooks['text'] = $plugin['Name'];		
+					$hooks['class'] = 'plugin';				
+					foreach ( $plugin[ 'hooks' ] as $hook => $data ) {
+						$ignore_plugin_hooks = apply_filters( 'wpc_theme_compatibility_ignore_plugin_handles_to_sanitize_hook', array(), $hook, $data );
+						if ( !in_array( $hook, $ignore_plugin_hooks ) ) {
+							foreach ( $data as $hdata ) {
+								$disabled_plugin_hook = apply_filters( 'wpc_theme_compatibility_disabled_plugin_handle_to_sanitize_hook', false, $hook, $hdata );
+								$selected_plugin_hook = apply_filters( 'wpc_theme_compatibility_selected_plugin_handle_to_sanitize_hook', false, $hook, $hdata );
+								$hooks['children'][] = array( 'id' => serialize( array( $hook, $hdata['priority'] ) ), 'text' => '[' . $hdata['priority'] . '] ' . $hook, 'selected' => $selected_plugin_hook, 'disabled' => $disabled_plugin_hook, 'priority' => $hdata['priority'], 'data' => $hdata );
+							}
+						}
+					}
+					$sanitize[] = $hooks;					
+				}		
+			}
+		}
+
+		return $sanitize;		
+	}
+	
+	*/
+	
+	public function hooks()  //list_hooks
+	{	//fi woo content position
+		$base_hooks = array(
+			'woocommerce_checkout_payment',
+			'woocommerce_checkout_billing',
+			'woocommerce_checkout_shipping',
+			'woocommerce_order_review',
+			'wc_checkout_privacy_policy_text',
+			'wc_terms_and_conditions_page_content',
+		);
+		
+		$checkout_hooks    = static::list_woocommerce_hooks();
+		$woocommerce_hooks = static::list_hooks( '', $checkout_hooks )['plugins']['woocommerce/woocommerce.php']['hooks'];
+		
+		foreach( $woocommerce_hooks  as $action => $hooks  ) {
+			foreach( $hooks as $hook ) {
+				if( in_array( $hook['id'], $base_hooks ) ) {
+					remove_action( $action, $hook['id'], $hook['priority'] );	
+				}
+			}
+			
+		}
+	}
+	
+	/*
 	public function do_remove_all_woocommerce_hooks( $hooks ) 
 	{
-		if ( 'yes' === get_option( 'wpc_theme_compatibility_remove_hooks_woocommerce_templates', 'yes' ) ) {
-			$list = array(
-				$this->list_hooks( 'woocommerce_login_form_start' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_login_form' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_login_form_end' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_before_checkout_form' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_checkout_before_customer_details' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_before_checkout_billing_form' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_after_checkout_billing_form' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_before_checkout_shipping_form' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_after_checkout_shipping_form' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_before_order_notes' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_after_order_notes' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_review_order_before_cart_contents' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_review_order_after_cart_contents' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_review_order_before_shipping' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_review_order_after_shipping' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_review_order_before_order_total' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_review_order_after_order_total' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_review_order_before_payment' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_review_order_before_submit' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_review_order_after_submit' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_review_order_after_payment' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_checkout_before_order_review_heading' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_checkout_before_order_review' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_checkout_after_order_review' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_checkout_billing' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_checkout_shipping' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_checkout_after_customer_details' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_before_checkout_shipping_form' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_after_checkout_shipping_form' )[ 'themes' ],
-				$this->list_hooks( 'woocommerce_after_checkout_form' )[ 'themes' ],
-			);
-			
-			foreach ( $list as $templates ) {
-				foreach ( $templates as $template ) {
-					if ( !empty( $template ) && isset( $template['hooks'] ) ) {
-						foreach ( $template['hooks'] as $hook => $items ) {
-							foreach( $items as $item ) {
-								$hooks[ $hook ][] = $item;
-							}
-						}
+		
+		if ( 'yes' === get_option( 'wpc_theme_compatibility_remove_woocommerce_hooks_wp_theme', 'yes' ) ) {
+			$theme_hooks = $this->sanitize_hooks( true, false );
+
+			foreach ( $theme_hooks as $key => $theme ) {
+				foreach ( $theme['children'] as $children ) {
+					
+					if ( ! in_array( $children['id'], $hooks ) ) {						
+						$hooks[ $children['id'] ][] = $children;
 					}
 				}
 			}
 		}
-		
+
 		return $hooks;
 
 	}
+	*/
 
+	public function do_remove_all_woocommerce_hooks( $remove ) 
+	{
+		$is_remove_all_hooks = 'yes' === get_option( 'wpc_theme_compatibility_remove_hooks_wp_theme', 'no' );
+		$is_remove_woocommerce_hooks = 'yes' === get_option( 'wpc_theme_compatibility_remove_woocommerce_hooks_wp_theme', 'yes' );
+		
+		if ( $is_remove_all_hooks || $is_remove_woocommerce_hooks ) {
+		
+			return array_merge(
+				$remove,
+				static::list_woocommerce_hooks()
+			);
+		}
+		
+		return $remove;
+	}
+	
 	public function do_remove_hooks() 
 	{
 		$this->remove_hooks( 
@@ -712,13 +882,12 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 	}
 
 	public function remove_hooks( $hooks ) 
-	{
+	{		
 		foreach ( $hooks as $hook => $items ) {
 			foreach( $items as $item ) {
 				remove_action( $hook, $item['id'], $item['priority'] );
 			}
 		}
-
 	}
 	
 	public function add_style_tag_in_template() 
@@ -793,8 +962,8 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 			return $is_wp_theme;
 		}
 
-		if ( 'wpc_theme_compatibility_remove_hooks_woocommerce_templates' === $id ) {
-			return !$is_remove_hooks_wp_theme;
+		if ( 'wpc_theme_compatibility_remove_woocommerce_hooks_wp_theme' === $id ) {
+			return $is_remove_hooks_wp_theme;
 		}
 		
 		return $status;
