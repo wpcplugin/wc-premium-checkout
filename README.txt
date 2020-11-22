@@ -3,7 +3,7 @@ Contributors: williansantana
 Tags: WPC, WooCommerce, Premium Checkout, Checkout Editor, Checkout, Checkout Fields, Checkout Steps, Field Validation, Field Mask, Custom Fields, Field Manager
 Requires at Least: 4.9
 Tested up to: 5.5.1
-Stable tag: 1.3.4
+Stable tag: 1.3.6
 Requires PHP: 5.6
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -113,5 +113,9 @@ You should have received a copy of the GNU General Public License along with Nom
 * Fix bugs.
 
 = 1.3.4 =
-* New compatibility feature for remove woocommerce template hooks
+* New compatibility feature for remove woocommerce template hooks.
+* Fix bugs.
+
+= 1.3.6 =
+* Improved compatibility on different themes
 * Fix bugs.
