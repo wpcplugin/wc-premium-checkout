@@ -119,12 +119,12 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 					),
 					'wpc_theme_compatibility_custom_js'      => array (),
 					'wpc_theme_compatibility_disable_styles_wp_theme'  => array ( 
-						'default'              => 'yes', 
+						'default'              => 'no', 
 						'sanitize_callback'    => 'wpc_bool_to_string', 
 						'sanitize_js_callback' => 'wpc_string_to_bool',
 					),
 					'wpc_theme_compatibility_disable_scripts_wp_theme' => array ( 
-						'default'              => 'yes', 
+						'default'              => 'no', 
 						'sanitize_callback'    => 'wpc_bool_to_string', 
 						'sanitize_js_callback' => 'wpc_string_to_bool',
 					),
@@ -319,7 +319,7 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 
 	public function to_sanitize_enquete_check_disabled_theme_handle( $status, $type, $handle, $data ) 
 	{	
-		if( 'yes' === get_option( 'wpc_theme_compatibility_disable_styles_wp_theme', 'yes' ) ) {
+		if( 'yes' === get_option( 'wpc_theme_compatibility_disable_styles_wp_theme', 'no' ) ) {
 			return true; 
 		}
 		
@@ -576,7 +576,7 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 
 	public function do_dequeue_all_theme_styles( $styles ) 
 	{
-		if ( 'yes' === get_option( 'wpc_theme_compatibility_disable_styles_wp_theme', 'yes' ) ) {
+		if ( 'yes' === get_option( 'wpc_theme_compatibility_disable_styles_wp_theme', 'no' ) ) {
 			$theme_handles = $this->sanitize_enquete( 'styles', true, false );
 			foreach ( $theme_handles as $key => $theme ) {
 				foreach ( $theme['children'] as $children ) {
@@ -592,7 +592,7 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 
 	public function do_dequeue_all_theme_scripts( $scripts ) 
 	{
-		if ( 'yes' === get_option( 'wpc_theme_compatibility_disable_scripts_wp_theme', 'yes' ) ) {
+		if ( 'yes' === get_option( 'wpc_theme_compatibility_disable_scripts_wp_theme', 'no' ) ) {
 			$theme_handles = $this->sanitize_enquete( 'scripts', true, false );
 			foreach ( $theme_handles as $key => $theme ) {
 				foreach ( $theme['children'] as $children ) {
