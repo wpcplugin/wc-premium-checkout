@@ -87,7 +87,7 @@ if ( ! function_exists( 'wpc_template_default_content' ) ) {
 	function wpc_template_default_content() 
 	{
 	?>
-		<div id="wpc-wrapper">
+		<div <?php wpc_content_class(); ?> id="wpc-wrapper">
 			<?php do_action( 'wpc_template_before_main_content' ); ?>
 			<main id="wpc-main" role="main">
 				<?php
