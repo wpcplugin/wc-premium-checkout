@@ -2,10 +2,17 @@
 
 defined( 'ABSPATH' ) || exit; 
 
+$template_container_type = get_option( 'wpc_theme_compatibility_page_template_wp_theme_container', 'default' );
+
 ?>
+
+<?php if ( 'default' === $template_container_type ): ?>
 
 <div <?php wpc_content_class(); ?> id="wpc-wrapper">
 <main id="wpc-main" role="main">
+
+<?php endif; ?>
+
 <?php
 
 do_action( 'woocommerce_before_checkout_form', $checkout );
@@ -102,5 +109,9 @@ wc_print_notices();
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 
+<?php if ( 'default' === $template_container_type ): ?>
+
 </main>
 </div>
+
+<?php endif; ?>

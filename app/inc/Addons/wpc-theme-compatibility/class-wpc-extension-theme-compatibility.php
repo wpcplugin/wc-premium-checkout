@@ -115,7 +115,7 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 						'default' => 'wp_theme',
 					),
 					'wpc_theme_compatibility_page_template_wp_theme_container' => array (
-						'default' => 'default',
+						'default' => 'full',
 					),
 					'wpc_theme_compatibility_custom_js'      => array (),
 					'wpc_theme_compatibility_disable_styles_wp_theme'  => array ( 
@@ -943,7 +943,7 @@ class Theme_Compatibility extends \WPC\Abstract_Addon
 
 	public function template_container_type() 
 	{
-		$template_container_type = get_option( 'wpc_theme_compatibility_page_template_wp_theme_container', 'default' );
+		$template_container_type = get_option( 'wpc_theme_compatibility_page_template_wp_theme_container', 'full' );
 		$template_file_prefix = get_option( 'wpc_theme_compatibility_page_template', 'wp_theme' );
 	
 		if( 'default' === $template_container_type && 'wp_theme' === $template_file_prefix ) {

@@ -145,18 +145,18 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 			$page_template_container = get_option( 'wpc_theme_compatibility_page_template_wp_theme_container', 'default' );
 			
 			$css .= ":root {
-			  --order-button-color: {$order_button};
-			  --primary-background-color: {$primary_background_color};
-			  --primary-link-color: #1e90ff;
-			  --primary-text-color: #4a4a4a;
-			  --base-font-family: Arial, Helvetica, sans-serif;
-			  --base-font-size: 12px;
-			  --base-line-height: 1.35;
-			  --base-max-width: {$container_max_width}px;
-			  --base-spacing: {$container_spacing}px;
-			  --content-box-title-color: #ffffff;
-			  --content-box-title-background: var(--primary-background-color);
-			  --content-box-subtitle-background: #ececec;
+			  --wpc-order-button-color: {$order_button};
+			  --wpc-primary-background-color: {$primary_background_color};
+			  --wpc-primary-link-color: #1e90ff;
+			  --wpc-primary-text-color: #4a4a4a;
+			  --wpc-base-font-family: Arial, Helvetica, sans-serif;
+			  --wpc-base-font-size: 12px;
+			  --wpc-base-line-height: 1.35;
+			  --wpc-base-max-width: {$container_max_width}px;
+			  --wpc-base-spacing: {$container_spacing}px;
+			  --wpc-content-box-title-color: #ffffff;
+			  --wpc-content-box-title-background: var(--wpc-primary-background-color);
+			  --wpc-content-box-subtitle-background: #ececec;
 			}";
 		
 			if ( true !== WC()->cart->needs_shipping_address() ) {
@@ -164,7 +164,7 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 			}
 			
 			if ( ( 'wp_theme' === $page_template && 'full' === $page_template_container ) || ( 'default' === $page_template ) ) {
-				$css .= "#wpc-wrapper #wpc-main {max-width: var(--base-max-width);}";
+				$css .= "#wpc-wrapper #wpc-main {max-width: var(--wpc-base-max-width);}";
 			}
 			
 			if ( ! empty( $css ) ){			

@@ -1,6 +1,5 @@
 
-#wpc-wrapper, #wpc-main, .container, #wpc-wrapper .wpc-main a, #wpc-wrapper .header, #wpc-wrapper .header .logo a, #wpc-wrapper .header .logo img, #wpc-wrapper .header .logo, #wpc-wrapper .steps, #wpc-wrapper .steps .steps-items, #wpc-main .step-colum, #wpc-main .step-colum .content-box, #wpc-wrapper .steps .steps-item, #wpc-wrapper .steps .steps-item:last-child, #wpc-wrapper .steps .steps-item .steps-item-label, #wpc-wrapper .steps .steps-item-icon, #wpc-wrapper .steps .steps-item-icon .icon-check, #wpc-wrapper .steps .steps-item:first-child .steps-item-icon .icon-check, #wpc-wrapper .steps .steps-item.steps-item-is-current .steps-item-icon, #wpc-wrapper .steps .steps-item .steps-item-label.last-label, #wpc-wrapper .steps .steps-item.steps-item-is-current .steps-item-label, #wpc-wrapper form.checkout, #wpc-main .form-row, #wpc-main .woocommerce-form__label, #wpc-main .woocommerce-checkout .woocommerce-shipping-fields #ship-to-different-address label, #wpc-main .form-row .input-text, #wpc-main .form-row select, #wpc-main .form-row .select2-container--default .select2-selection--single, #wpc-main [type=checkbox], #wpc-main [type=radio], 
-#wpc-main form label, #wpc-main form.checkout input[type="radio"]+label::before, #wpc-main form.checkout input[type="radio"]+label::after, #wpc-main form label, #wpc-main form.checkout input[type="checkbox"]+label::before, #wpc-main form.checkout input[type="checkbox"]+label::after, #wpc-main form .form-row label:first-child, #wpc-main form .form-row label:first-child, #wpc-main .form-row label .optional, #wpc-main .form-row .required, #wpc-main form .form-row .error, #wpc-main form .form-row label.error, #wpc-main form.checkout_coupon.woocommerce-form-coupon, #wpc-main #payment ul, #wpc-main #order_review, #wpc-main #shipping_method, #wpc-main #payment ul > li, #wpc-main #shipping_method > li, #wpc-main #payment ul > li > input, #wpc-main #payment ul > li > input + label, #wpc-main #shipping_method > li > input + label, #wpc-main #shipping_method li label:before, #wpc-main #payment ul.payment_methods > li > label:before, #wpc-main #payment ul > li > input + label, #wpc-main #shipping_method > li > label span.amount, #wpc-main #shipping_method > li > label > img, #wpc-main #payment ul > li ul > li, #wpc-main #payment #payment .payment_box ul > li label, #wpc-main #payment .form-row label:first-child, #wpc-main #payment .form-row, #wpc-main #payment, #wpc-main .woocommerce-checkout #payment div.payment_box, #wpc-main .woocommerce-checkout #payment div.payment_box p, #wpc-main #payment .woocommerce-SavedPaymentMethods, #wpc-main #payment .woocommerce-SavedPaymentMethods.wc-saved-payment-methods > li:first-child, #wpc-main #payment .woocommerce-SavedPaymentMethods.wc-saved-payment-methods > li:last-child, #wpc-main .step-colum.right .content-box .cart_table, #wpc-main .cart_table tr, #wpc-main .cart_table th, #wpc-main .cart_table td, #wpc-main .content-box .cart_table td.product-image, #wpc-main .content-box .cart_table td.product-image img, #wpc-main .content-box .cart_table ul.variation li > div, #wpc-main .cart_table .variation, #wpc-main .cart_table .variation li, #wpc-main .cart_table .variation li > div, #wpc-main .cart_table .variation li > div:first-child, #wpc-main .step-colum.right .content-box .shop_table.woocommerce-checkout-review-order-table, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table td, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table td .amount, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table td .amount *, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table th, #wpc-main .shop_table.woocommerce-checkout-review-order-table tr, #wpc-main .woocommerce-terms-and-conditions-wrapper, #wpc-main .woocommerce-privacy-policy-text, #wpc-main .woocommerce_terms_and_conditions_checkbox, #wpc-main .woocommerce_terms_and_conditions_checkbox label, #wpc-main input#terms, #wpc-wrapper form.checkout .woocommerce-form__label, #wpc-wrapper form.checkout .woocommerce-form__label > *:before, #wpc-wrapper form.checkout .woocommerce-form__label > *, #wpc-main .woocommerce-checkout #place_order, #wpc-main .button, #wpc-main form.checkout .woocommerce-shipping-fields, #wpc-main form.checkout .woocommerce-account-fields, #wpc-main .woocommerce-error, #wpc-main .woocommerce-info, #wpc-main .woocommerce-message, #wpc-main .message-list li, #wpc-main .woocommerce-message:before, #wpc-wrapper #wpc-main .message-list::before, #wpc-wrapper #wpc-main .message-list::after, #wpc-main .woocommerce-error:before, #wpc-main .woocommerce-info:before, #wpc-main .payment_methods label img, #wpc-main .cart-discount .woocommerce-remove-coupon, #wpc-main .login-container, #wpc-main .login-container-sub, #wpc-main .login-container-center, #wpc-main .login-container-center-sub, #wpc-main .login-container-form, #wpc-main .login-container-form::before, #wpc-main .woocommerce-form.woocommerce-form-login.login .form-row, #wpc-main .woocommerce-form.woocommerce-form-login.login .form-row label, #wpc-main .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, #wpc-main .woocommerce-form.woocommerce-form-login.login .form-row label, #wpc-main .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, #wpc-main .woocommerce-form .login_rememberme, .lost_password, #wpc-main .woocommerce-form .lost_password, #wpc-main .woocommerce-button.button.woocommerce-form-login__submit, #wpc-main .woocommerce-form-login-toggle .woocommerce-info, #wpc-main .woocommerce-form .login-message p, #wpc-main .login-container-form .login-title, #wpc-main .login-close, html.overflowhidden, #wpc-main .woocommerce-billing-fields, #wpc-main .woocommerce-shipping-methods-container, #wpc-main .woocommerce-shipping-fields, #wpc-main .woocommerce ul li, #wpc-main #payment .payment_methods li, #wpc-main form.woocommerce-checkout .order-review-wrapper, #wpc-main .woocommerce-checkout-review-order-table tfoot, #wpc-main .woocommerce-billing-fields__field-wrapper, #wpc-main .woocommerce-shipping-fields__field-wrapper, #wpc-main .cart-coupon-code, #wpc-main .create-account, #wpc-main .step-colum .content-box .content-box-subtitle, #wpc-main .step-colum .content-box .content-box-subtitle::after, #wpc-main .step-colum .content-box .content-box-subtitle::before, #wpc-main form.woocommerce-checkout .woocommerce-NoticeGroup-checkout, #wpc-main .payment_box p *, #wpc-main #ship-to-different-address label input {
+#wpc-wrapper, #wpc-main, .container, #wpc-wrapper .wpc-main a, #wpc-wrapper .header, #wpc-wrapper .header .logo a, #wpc-wrapper .header .logo img, #wpc-wrapper .header .logo, #wpc-wrapper .steps, #wpc-wrapper .steps .steps-items, #wpc-main .step-colum, #wpc-main .step-colum .content-box, #wpc-wrapper .steps .steps-item, #wpc-wrapper .steps .steps-item:last-child, #wpc-wrapper .steps .steps-item .steps-item-label, #wpc-wrapper .steps .steps-item-icon, #wpc-wrapper .steps .steps-item-icon .icon-check, #wpc-wrapper .steps .steps-item:first-child .steps-item-icon .icon-check, #wpc-wrapper .steps .steps-item.steps-item-is-current .steps-item-icon, #wpc-wrapper .steps .steps-item .steps-item-label.last-label, #wpc-wrapper .steps .steps-item.steps-item-is-current .steps-item-label, #wpc-wrapper form.checkout, #wpc-main .form-row, #wpc-main .woocommerce-form__label, #wpc-main .woocommerce-checkout .woocommerce-shipping-fields #ship-to-different-address label, #wpc-main .form-row .input-text, #wpc-main .form-row select, #wpc-main .form-row .select2-container--default .select2-selection--single, #wpc-main [type=checkbox], #wpc-main [type=radio], #wpc-main form label, #wpc-main form.checkout input[type="radio"]+label::before, #wpc-main form.checkout input[type="radio"]+label::after, #wpc-main form label, #wpc-main form.checkout input[type="checkbox"]+label::before, #wpc-main form.checkout input[type="checkbox"]+label::after, #wpc-main form .form-row label:first-child, #wpc-main form .form-row label:first-child, #wpc-main .form-row label .optional, #wpc-main .form-row .required, #wpc-main form .form-row .error, #wpc-main form .form-row label.error, #wpc-main form.checkout_coupon.woocommerce-form-coupon, #wpc-main #payment ul, #wpc-main #order_review, #wpc-main #shipping_method, #wpc-main #payment ul > li, #wpc-main #shipping_method > li, #wpc-main #payment ul > li > input, #wpc-main #payment ul > li > input + label, #wpc-main #shipping_method > li > input + label, #wpc-main #shipping_method li label:before, #wpc-main #payment ul.payment_methods > li > label:before, #wpc-main #payment ul > li > input + label, #wpc-main #shipping_method > li > label span.amount, #wpc-main #shipping_method > li > label > img, #wpc-main #payment ul > li ul > li, #wpc-main #payment #payment .payment_box ul > li label, #wpc-main #payment .form-row label:first-child, #wpc-main #payment .form-row, #wpc-main #payment, #wpc-main .woocommerce-checkout #payment div.payment_box, #wpc-main .woocommerce-checkout #payment div.payment_box p, #wpc-main #payment .woocommerce-SavedPaymentMethods, #wpc-main #payment .woocommerce-SavedPaymentMethods.wc-saved-payment-methods > li:first-child, #wpc-main #payment .woocommerce-SavedPaymentMethods.wc-saved-payment-methods > li:last-child, #wpc-main .step-colum.right .content-box .cart_table, #wpc-main .cart_table tr, #wpc-main .cart_table th, #wpc-main .cart_table td, #wpc-main .content-box .cart_table td.product-image, #wpc-main .content-box .cart_table td.product-image img, #wpc-main .content-box .cart_table ul.variation li > div, #wpc-main .cart_table .variation, #wpc-main .cart_table .variation li, #wpc-main .cart_table .variation li > div, #wpc-main .cart_table .variation li > div:first-child, #wpc-main .step-colum.right .content-box .shop_table.woocommerce-checkout-review-order-table, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table td, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table td .amount, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table td .amount *, #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table th, #wpc-main .shop_table.woocommerce-checkout-review-order-table tr, #wpc-main .woocommerce-terms-and-conditions-wrapper, #wpc-main .woocommerce-privacy-policy-text, #wpc-main .woocommerce_terms_and_conditions_checkbox, #wpc-main .woocommerce_terms_and_conditions_checkbox label, #wpc-main input#terms, #wpc-wrapper form.checkout .woocommerce-form__label, #wpc-wrapper form.checkout .woocommerce-form__label > *:before, #wpc-wrapper form.checkout .woocommerce-form__label > *, #wpc-main .woocommerce-checkout #place_order, #wpc-main .button, #wpc-main form.checkout .woocommerce-shipping-fields, #wpc-main form.checkout .woocommerce-account-fields, #wpc-main .woocommerce-error, #wpc-main .woocommerce-info, #wpc-main .woocommerce-message, #wpc-main .message-list li, #wpc-main .woocommerce-message:before, #wpc-wrapper #wpc-main .message-list::before, #wpc-wrapper #wpc-main .message-list::after, #wpc-main .woocommerce-error:before, #wpc-main .woocommerce-info:before, #wpc-main .payment_methods label img, #wpc-main .cart-discount .woocommerce-remove-coupon, #wpc-main .login-container, #wpc-main .login-container-sub, #wpc-main .login-container-center, #wpc-main .login-container-center-sub, #wpc-main .login-container-form, #wpc-main .login-container-form::before, #wpc-main .woocommerce-form.woocommerce-form-login.login .form-row, #wpc-main .woocommerce-form.woocommerce-form-login.login .form-row label, #wpc-main .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, #wpc-main .woocommerce-form.woocommerce-form-login.login .form-row label, #wpc-main .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, #wpc-main .woocommerce-form .login_rememberme, .lost_password, #wpc-main .woocommerce-form .lost_password, #wpc-main .woocommerce-button.button.woocommerce-form-login__submit, #wpc-main .woocommerce-form-login-toggle .woocommerce-info, #wpc-main .woocommerce-form .login-message p, #wpc-main .login-container-form .login-title, #wpc-main .login-close, html.overflowhidden, #wpc-main .woocommerce-billing-fields, #wpc-main .woocommerce-shipping-methods-container, #wpc-main .woocommerce-shipping-fields, #wpc-main .woocommerce ul li, #wpc-main #payment .payment_methods li, #wpc-main form.woocommerce-checkout .order-review-wrapper, #wpc-main .woocommerce-checkout-review-order-table tfoot, #wpc-main .woocommerce-billing-fields__field-wrapper, #wpc-main .woocommerce-shipping-fields__field-wrapper, #wpc-main .cart-coupon-code, #wpc-main .create-account, #wpc-main .step-colum .content-box .content-box-subtitle, #wpc-main .step-colum .content-box .content-box-subtitle::after, #wpc-main .step-colum .content-box .content-box-subtitle::before, #wpc-main form.woocommerce-checkout .woocommerce-NoticeGroup-checkout, #wpc-main .payment_box p *, #wpc-main #ship-to-different-address label input, #wpc-main .step-colum .content-box .content-box-subtitle span, #wpc-main .step-colum .content-box .content-box-title {
     all: revert;
 }
 
@@ -22,19 +21,19 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 }
 
 #wpc-wrapper #wpc-main * {
-	color: var(--primary-text-color);
-	font-family: var(--base-font-family) !important;
-	font-size: var(--base-font-size);
-	line-height: var( --base-line-height);
+	color: var(--wpc-primary-text-color);
+	font-family: var(--wpc-base-font-family) !important;
+	font-size: var(--wpc-base-font-size);
+	line-height: var( --wpc-base-line-height);
 }
 
 #wpc-wrapper #wpc-main {
     margin: 0 auto;
-    padding-top: var(--base-spacing);
-    padding-bottom: var(--base-spacing);
+    padding-top: var(--wpc-base-spacing);
+    padding-bottom: var(--wpc-base-spacing);
     padding-left: 5px;
     padding-right: 5px;
-    /* max-width: var(--base-max-width); */
+    /* max-width: var(--wpc-base-max-width); */
     /* padding-left: 10px; */
     /* padding-right: 10px; */
     display: block;
@@ -42,7 +41,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 }
 
 #wpc-wrapper .wpc-main a {
-    color: var(--primary-link-color);
+    color: var(--wpc-primary-link-color);
 }
 
 /**************************
@@ -55,7 +54,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 	all: _revert;
 	position: relative;
 	display: block;
-	background: var(--haeder-background);
+	background: var(--wpc-haeder-background);
 	padding: 22px 0 22px;
 	border-bottom: 1px solid #ebebeb;
 	width: 100%;
@@ -220,14 +219,14 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title, 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title span {
 	all: _revert;
-	color: var(--content-box-title-color);
+	color: var(--wpc-content-box-title-color);
 	text-transform: uppercase;
 	font-weight: normal;
 	line-height: 34px;
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title {
-    background: var(--primary-background-color);
+    background: var(--wpc-primary-background-color);
 	height: 32px;
 	display: block;
 	margin: 0;
@@ -243,7 +242,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-subtitle {
-	background: var(--content-box-subtitle-background);
+	background: var(--wpc-content-box-subtitle-background);
 	border: 1px solid #ececec;
 	border-top: 0;
 	margin: 0;
@@ -253,7 +252,6 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-subtitle span {
-	all: _revert;
 	font-size: 1em;
 }
 
@@ -400,6 +398,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 }
 
 #wpc-wrapper #wpc-main form .form-row.notes textarea.input-text {
+    min-height: 75px !important;
     max-height: 75px !important;
     line-height: 1.4 !important;
 }
@@ -474,7 +473,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 
 #wpc-wrapper #wpc-main .woocommerce-checkout #payment div.payment_box {
 	display: inline;
-	color: var(--primary-text-color);
+	color: var(--wpc-primary-text-color);
 	margin: 0;
 	padding: 0;
 }
@@ -484,7 +483,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 	/* display: block; */
 	/* width: 100%; */
 	/* float: none; */
-	/* color: var(--primary-text-color); */
+	/* color: var(--wpc-primary-text-color); */
 }
 
 #wpc-wrapper #wpc-main .payment_box p * {
@@ -575,7 +574,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
     font-weight: 300;
     text-indent: -999px;
     overflow: hidden;
-    color: var(--primary-text-color);
+    color: var(--wpc-primary-text-color);
 }
 
 #wpc-wrapper #wpc-main .cart-coupon-code .form-row {
@@ -670,7 +669,7 @@ font-weight: bold;
     font-size: 18px;
     padding: 11px 15px;
     width: 100%;
-    background: var(--order-button-color);
+    background: var(--wpc-order-button-color);
     border-radius: 0 !important;
 }
 
@@ -679,7 +678,7 @@ font-weight: bold;
     float: right;
     height: 34px;
     font-size: 1em;
-    background: var(--primary-background-color);
+    background: var(--wpc-primary-background-color);
 }
 
 #wpc-wrapper #wpc-main button#coupon-send:active {
@@ -1012,7 +1011,7 @@ html  .select2-container--default .select2-results__option--highlighted[aria-sel
     margin: 15px 0 0;
     padding: 12px;
     color: #ffffff;
-    background: var(--primary-background-color);
+    background: var(--wpc-primary-background-color);
     font-size: 1.33em;
     font-weight: 600;
     text-transform: uppercase;
