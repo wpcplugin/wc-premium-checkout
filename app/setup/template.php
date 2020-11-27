@@ -113,7 +113,7 @@ if ( ! function_exists( 'wpc_get_content_class' ) ) {
 	 * @return   string[]            Array of class names.
 	 */
 	function wpc_get_content_class( $class = '' ) {	 
-		$classes = get_body_class();
+		//$classes = get_body_class();
 	 	 
 		/**
 		 * Filters the list of CSS body class names for the current post or page.
@@ -123,7 +123,7 @@ if ( ! function_exists( 'wpc_get_content_class' ) ) {
 		 * @param string[] $classes An array of body class names.
 		 * @param string[] $class   An array of additional class names added to the body.
 		 */
-		$classes = apply_filters( 'wpc_content_class', $classes, $class );
+		$classes = apply_filters( 'wpc_content_class', array(), $class );
 	 
 		return array_unique( $classes );
 	}

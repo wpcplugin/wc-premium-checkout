@@ -35,7 +35,7 @@ wc_print_notices();
 			<section class="step-colum left">
 				<?php do_action( 'wpc_onepage_checkout_step_colum_left_init' ); ?>
 
-				<section class="content-box">
+				<section class="content-box content-box-billing">
 					<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
 					<?php do_action( 'woocommerce_checkout_billing' ); ?>
@@ -52,7 +52,7 @@ wc_print_notices();
 			<section class="step-colum center">
 				<?php do_action( 'wpc_onepage_checkout_step_colum_center_init' ); ?>
 
-				<section class="content-box">
+				<section class="content-box content-box-shipping">
 					<h2 class="content-box-title"><span><?php esc_html_e( 'Shipping options', 'woocommerce' ); ?></span></h2>
 					<section class="content-box-frame"> 
 						<h3 class="content-box-subtitle"><span><?php esc_html_e( 'Select the desired option below', 'WPC' ); ?></span></h3>
@@ -68,7 +68,7 @@ wc_print_notices();
 					</section>
 				</section>
 
-				<section class="content-box"> 
+				<section class="content-box content-box-payment"> 
 					<h2 class="content-box-title"><span><?php esc_html_e( 'Payment', 'woocommerce' ); ?></span></h2>
 					<section class="content-box-frame"> 
 						<h3 class="content-box-subtitle"><span><?php esc_html_e( 'Select the desired option below', 'WPC' ); ?></span></h3>
@@ -80,7 +80,7 @@ wc_print_notices();
 			<section class="step-colum right">
 				<?php do_action( 'wpc_onepage_checkout_step_colum_right_init' ); ?>
 				
-				<section class="content-box">
+				<section class="content-box content-box-review">
 					<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
 
 						<h2 class="content-box-title"><span><?php esc_html_e( 'Your order', 'woocommerce' ); ?></span></h2>

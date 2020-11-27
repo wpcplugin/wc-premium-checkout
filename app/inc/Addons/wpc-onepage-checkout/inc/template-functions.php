@@ -160,7 +160,7 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 			}";
 		
 			if ( true !== WC()->cart->needs_shipping_address() ) {
-				$css .= ".content-box.content-box-address {display: none;}";
+				$css .= "#wpc-main .content-box.content-box-address {display: none;}";
 			}
 			
 			if ( ( 'wp_theme' === $page_template && 'full' === $page_template_container ) || ( 'default' === $page_template ) ) {
