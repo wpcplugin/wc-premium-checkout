@@ -15,7 +15,7 @@ final class Register_Controls
 			'WPC\Control\Repeater',
 			'WPC\Control\Range_Value',
 			'WPC\Control\Heading',
-			//'WPC\Control\Typography',
+			'WPC\Control\Typography',
 		);
 		$load_controls = apply_filters( 'wpc_register_controls', $embedded );
 		
