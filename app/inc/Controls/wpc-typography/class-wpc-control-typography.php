@@ -14,11 +14,11 @@ class Typography extends \WP_Customize_Control {
 		
 		$this->json['value']   = $this->value();
 		$this->json['label']   = $this->label;
-		$this->json['standard_fonts'] = $this->standard_fonts();
+		$this->json['standard_fonts'] = static::standard_fonts();
 		$this->json['google_fonts'] = $this->google_fonts_array();
 	}
 
-	public function standard_fonts() 
+	public static function standard_fonts() 
 	{
 		return apply_filters( 'wpc_typography_control_standard_fonts', 
 			array(
