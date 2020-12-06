@@ -219,26 +219,50 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title, 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title span {
 	all: _revert;
-	color: var(--wpc-content-box-title-color);
-	text-transform: uppercase;
-	font-weight: normal;
-	line-height: 34px;
+	color: var(--wpc-label-text-color);
+	line-height: var(--wpc-label-height);
+	font-family: var(--wpc-label-font-family);
+	font-size: var(--wpc-label-font-size);
+	font-weight: var(--wpc-label-font-weight);
+	font-size: var(--wpc-label-font-size);
+	font-style: var(--wpc-label-font-style);
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title {
-    background: var(--wpc-primary-background-color);
-	height: 32px;
+    background: var(--wpc-label-background-color);
+	height: var(--wpc-label-height);
+	border-radius: var(--wpc-label-radius) var(--wpc-label-radius) 0 0;
 	display: block;
 	margin: 0;
 	padding: 0 8px;
 	margin-right: 0;
-	font-size: 1em;
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title::before {
 	all: _revert;
 	content: counter( content-box-counter ) '.';
 	margin-right: 10px;
+	font-family: var(--wpc-label-icon-font-family);
+	font-size: var(--wpc-label-icon-font-size);
+	font-weight: var(--wpc-label-icon-font-weight);
+	font-size: var(--wpc-label-icon-font-size);
+	font-style: var(--wpc-label-icon-font-style);
+	color: var(--wpc-label-icon-color);
+}
+
+#wpc-wrapper.icon-style-square #wpc-main .step-colum .content-box .content-box-title::before {
+	background: var(--wpc-label-icon-border-color);
+    width: var(--wpc-label-icon-size);
+    height: var(--wpc-label-icon-size);
+    line-height: var(--wpc-label-icon-size);
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#wpc-wrapper.icon-style-round #wpc-main .step-colum .content-box .content-box-title::before {
+	border-radius: 100% 
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-subtitle {

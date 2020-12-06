@@ -13,6 +13,7 @@ final class Load_Addons
 			'WPC\Extension\Theme_Selector',
 			'WPC\Extension\Theme_Compatibility',
 			'WPC\Extension\Fields_Manager',
+			'WPC\Extension\Typography_Settings',
 			'WPC\Theme\Onepage_Checkout',
 		);
 
@@ -29,6 +30,9 @@ final class Load_Addons
 				$addon = new $addon();
 				$type  = $addon->get( 'type' );
 				$slug  = $addon->get( 'slug' );
+				
+				//Filter controls
+				
 			}
 
 			if ( ! is_a( $addon, 'WPC\Abstract_Addon' ) ) {
@@ -46,6 +50,7 @@ final class Load_Addons
 						$this->extensions[ $addon->slug ] = $addon;
 						break;
 				}
+				
 			}
 		}		
 	}

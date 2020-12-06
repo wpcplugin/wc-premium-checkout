@@ -132,8 +132,134 @@ if ( ! function_exists( 'wpc_customize_run_addons' ) ) {
 		$addons = WPC()->addons->get();
 		
 		foreach ( $addons as $slug => $addon ) {
-			$addon->builder_fields();
+			wpc_customize_builder_fields(
+				$addon->get_customizer(),
+				$addon->type,
+				$addon->slug,
+				$addon->version
+			);		
 		}		
+	}
+	
+}
+
+if ( ! function_exists( 'wpc_customize_builder_fields' ) ) {
+
+	/**
+	 * builder fields in customize control
+	 *
+	 * @since    1.3.9
+	 * @return   void
+	 */
+	function wpc_customize_builder_fields( $customizer, $type, $slug, $version  ) 
+	{
+		global $wp_customize;	
+
+		if( empty( $customizer ) ) {
+			return $customizer;
+		}
+		
+		if( isset( $customizer['sections'] ) ) {
+			foreach(  $customizer['sections'] as $id => $args ) {			
+				
+				$args['active_callback'] = function() use( $type, $slug, $id ) {
+					return apply_filters( 
+						'wpc_addon_section_active_callback', 
+						$args['active_callback'] ?? true, 
+						$type, 
+						$slug,
+						$id
+					);
+				};				
+				$args['panel'] = 'wpc';	
+				$wp_customize->add_section( 
+					$id, 
+					$args 
+				);
+			}
+		}
+		if( isset( $customizer['settings'] ) ) {
+			foreach(  $customizer['settings'] as $id => $args ) {
+				$args['type'] = 'option';
+				
+				if ( ! isset( $args['class'] ) ) {
+					$wp_customize->add_setting( 
+						$id, 
+						$args 
+					);
+				} else {
+					$id  = $args['id'] ?? $id;
+					$obj = $args['class'];
+					
+					unset( $args['class'] ); //remove unused values
+					
+					$wp_customize->add_control(
+						new $obj( 
+							$wp_customize, 
+							$id, 
+							$args 
+						) 
+					);
+				}
+			}
+		}	
+		if( isset( $customizer['controls'] ) ) {
+			foreach( $customizer['controls'] as $id => $args ) {
+				
+				if( !isset( $args['active_callback'] ) ) {
+					$args['active_callback'] = function() use( $type, $slug, $id ) {
+
+						return (
+							apply_filters( 
+								'wpc_addon_control_active_callback', 
+								true, 
+								$type, 
+								$slug,
+								$id
+							)
+						);
+					};
+				} else{
+					$active_callback = $args['active_callback'];
+					$args['active_callback'] = function() use( $active_callback ) {
+
+						return (
+							$active_callback
+						);
+					};
+				}
+
+				if ( ! isset( $args['class'] ) ) {
+			
+					$wp_customize->add_control(
+						$id,
+						$args
+					);
+				} else {
+					$obj = $args['class'];
+					
+					unset( $args['class'] ); //remove unused values
+					
+					$wp_customize->add_control(
+						new $obj( 
+							$wp_customize, 
+							$id, 
+							$args 
+						) 
+					);
+				}
+			}
+		}
+		if( isset( $customizer['refresh'] ) ) {
+			foreach(  $customizer['refresh'] as $id => $args ) {
+				$wp_customize->selective_refresh->add_partial( 
+					$id, 
+					$args 
+				);
+			}
+		}
+		
+		return $customizer;
 	}
 	
 }

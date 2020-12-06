@@ -33,6 +33,8 @@ add_filter( 'install_plugin_complete_actions', 'wpc_admin_install_plugin_complet
 add_action( 'customize_register', 'wpc_customize_builder_commmon' );
 add_action( 'customize_controls_print_styles', 'wpc_customize_enqueue' );
 add_action( 'customize_register', 'wpc_customize_run_addons' );
+//add_action( 'wpc_addon_customizer', 'wpc_customize_builder_fields', 90, 4 );
+
 
 add_action( 'customize_preview_init', 'wpc_preview_enqueue' );
 

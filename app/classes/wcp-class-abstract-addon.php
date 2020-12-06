@@ -10,7 +10,7 @@ abstract class Abstract_Addon
 	public $type;
 	public $embedded    = false;
 	public $require     = [];
-	public $fields      = [];
+	public $_fields      = [];
 	public $slug        = '';
 	public $title       = '';
 	public $thumbnail   = '';
@@ -22,126 +22,17 @@ abstract class Abstract_Addon
 
 	abstract public function customizer();
 
-	public function builder_fields() 
+	public function get_customizer() 
 	{		
-		global $wp_customize;	
-
-		if( empty( $fields = $this->customizer() ) ) {
-			return;
-		}
-		
-		$customizer = apply_filters( 
-			'wpc_addon_customizer', 
-			$fields,
-			$this->type,
-			$this->slug,
-			$this->version
-		);
-		
-		if( isset( $customizer['sections'] ) ) {
-			foreach(  $customizer['sections'] as $id => $args ) {			
-				$type = $this->type;
-				$slug = $this->slug;
-				
-				$args['active_callback'] = function() use( $type, $slug, $id ) {
-					return apply_filters( 
-						'wpc_addon_section_active_callback', 
-						$args['active_callback'] ?? true, 
-						$type, 
-						$slug,
-						$id
-					);
-				};				
-				$args['panel'] = 'wpc';	
-				$wp_customize->add_section( 
-					$id, 
-					$args 
-				);
-			}
-		}
-		if( isset( $customizer['settings'] ) ) {
-			foreach(  $customizer['settings'] as $id => $args ) {
-				$args['type'] = 'option';
-				
-				if ( ! isset( $args['class'] ) ) {
-					$wp_customize->add_setting( 
-						$id, 
-						$args 
-					);
-				} else {
-					$id  = $args['id'] ?? $id;
-					$obj = $args['class'];
-					
-					unset( $args['class'] ); //remove unused values
-					
-					$wp_customize->add_control(
-						new $obj( 
-							$wp_customize, 
-							$id, 
-							$args 
-						) 
-					);
-				}
-			}
-		}	
-		if( isset( $customizer['controls'] ) ) {
-			foreach( $customizer['controls'] as $id => $args ) {
-				
-				if( !isset( $args['active_callback'] ) ) {
-					$args['active_callback'] = function() use( $type, $slug, $id ) {
-
-						return (
-							apply_filters( 
-								'wpc_addon_control_active_callback', 
-								true, 
-								$type, 
-								$slug,
-								$id
-							)
-						);
-					};
-				} else{
-					$active_callback = $args['active_callback'];
-					$args['active_callback'] = function() use( $active_callback ) {
-
-						return (
-							$active_callback
-						);
-					};
-				}
-
-				if ( ! isset( $args['class'] ) ) {
-					$type = $this->type;
-					$slug = $this->slug;
-			
-					$wp_customize->add_control(
-						$id,
-						$args
-					);
-				} else {
-					$obj = $args['class'];
-					
-					unset( $args['class'] ); //remove unused values
-					
-					$wp_customize->add_control(
-						new $obj( 
-							$wp_customize, 
-							$id, 
-							$args 
-						) 
-					);
-				}
-			}
-		}
-		if( isset( $customizer['refresh'] ) ) {
-			foreach(  $customizer['refresh'] as $id => $args ) {
-				$wp_customize->selective_refresh->add_partial( 
-					$id, 
-					$args 
-				);
-			}
-		}
-		
+		return( 
+			apply_filters( 
+				'wpc_addon_customizer', 
+				$this->customizer(),
+				$this->type,
+				$this->slug,
+				$this->version
+			)		
+		);		
 	}
 	
 	public function load_template()
