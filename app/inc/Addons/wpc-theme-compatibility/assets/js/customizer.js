@@ -17,7 +17,7 @@
 					if( 'enquetes' == type ) {
 						populate_enquetes( response );		
 					} else if( 'hooks' == type ) {
-						populate_hooks( response );		
+						//populate_hooks( response );		
 					}
 				}
 			}
@@ -32,12 +32,12 @@
 	
 			control_styles.find( 'optgroup' ).remove();
 			control_scripts.find( 'optgroup' ).remove();
-			control_hooks.find( 'optgroup' ).remove();
 			
 			control_styles.WPC_select2({ data: content['styles'], tags: true, tokenSeparators: [','] })
 			control_scripts.WPC_select2({ data: content['scripts'], tags: true, tokenSeparators: [','] });	
 	}
 
+	/*
 	var populate_hooks = function( data ){
 		
 		var content = JSON.parse( data ),
@@ -47,6 +47,7 @@
 			
 			control_hooks.WPC_select2({ data: content['woocommerce_hooks'], tags: true, tokenSeparators: [','] });	
 	}
+	*/
 
 	api.bind( 'ready', function() {	
 	

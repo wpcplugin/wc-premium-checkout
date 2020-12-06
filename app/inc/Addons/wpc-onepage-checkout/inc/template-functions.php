@@ -161,20 +161,20 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 			  --wpc-content-box-subtitle-background: #ececec;
 			  
 			  --wpc-label-background-color: {$primary_background_color};
-			  --wpc-label-text-color: '#ffffff';
-			  --wpc-label-font-family: 'inherit';
-			  --wpc-label-font-weight: '400';
-			  --wpc-label-font-size: '1em';
-			  --wpc-label-font-style: 'normal';
-			  --wpc-label-height: '32px';
-			  --wpc-label-radius: '0';
-			  --wpc-label-icon-size: '15px';
-			  --wpc-label-icon-color: '#ffffff';
-			  --wpc-label-icon-border-color: '#00000000';
-			  --wpc-label-icon-font-family: 'inherit';
-			  --wpc-label-icon-font-weight: '400';
-			  --wpc-label-icon-font-size: '1em';
-			  --wpc-label-icon-font-style: 'normal';
+			  --wpc-label-text-color: #ffffff;
+			  --wpc-label-font-family: var(--wpc-base-font-family);
+			  --wpc-label-font-weight: 400;
+			  --wpc-label-font-size: 1em;
+			  --wpc-label-font-style: normal;
+			  --wpc-label-height: 32px;
+			  --wpc-label-radius: 0;
+			  --wpc-label-icon-size: 15px;
+			  --wpc-label-icon-color: #ffffff;
+			  --wpc-label-icon-border-color: #00000000;
+			  --wpc-label-icon-font-family: var(--wpc-base-font-family);
+			  --wpc-label-icon-font-weight: 400;
+			  --wpc-label-icon-font-size: 1em;
+			  --wpc-label-icon-font-style: normal;
 			}";
 		
 			if ( true !== WC()->cart->needs_shipping_address() ) {
