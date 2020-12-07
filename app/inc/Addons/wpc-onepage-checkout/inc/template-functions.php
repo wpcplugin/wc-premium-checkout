@@ -156,12 +156,8 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 			  --wpc-base-max-width: {$container_max_width}px;
 			  --wpc-base-spacing: {$container_spacing}px;
 			  
-			  --wpc-content-box-title-color: #ffffff;
-			  --wpc-content-box-title-background: var(--wpc-primary-background-color);
-			  --wpc-content-box-subtitle-background: #ececec;
-			  
-			  --wpc-label-background-color: {$primary_background_color};
-			  --wpc-label-text-color: #ffffff;
+			  --wpc-label-background-color: var(--wpc-primary-background-color);
+			  --wpc-label-text-color: var(--wpc-primary-text-decoration-color);
 			  --wpc-label-font-family: var(--wpc-base-font-family);
 			  --wpc-label-font-weight: 400;
 			  --wpc-label-font-size: 1em;
@@ -169,12 +165,20 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 			  --wpc-label-height: 32px;
 			  --wpc-label-radius: 0;
 			  --wpc-label-icon-size: 15px;
-			  --wpc-label-icon-color: #ffffff;
+			  --wpc-label-icon-color: var(--wpc-primary-text-decoration-color);
 			  --wpc-label-icon-border-color: #00000000;
 			  --wpc-label-icon-font-family: var(--wpc-base-font-family);
 			  --wpc-label-icon-font-weight: 400;
 			  --wpc-label-icon-font-size: 1em;
 			  --wpc-label-icon-font-style: normal;
+			  
+			  --wpc-description-visible: block;
+			  --wpc-description-spacing_top: 15px;
+			  --wpc-description-spacing_bottom: 15px;
+			  --wpc-description-background-color: #ececec;
+			  --wpc-description-text-color: var(--wpc-primary-text-color);
+			  --wpc-description-line-bottom: #00000000;
+
 			}";
 		
 			if ( true !== WC()->cart->needs_shipping_address() ) {
@@ -193,7 +197,18 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 	}
 	
 }
+/*
+if ( ! function_exists( 'wpc_onepage_checkout_print_content_box_title' ) ) {
 
+	function wpc_onepage_checkout_print_content_box_title( $type ) 
+	{	
+		$classes[] = get_option( 'wpc_theme_onepage_checkout_form_layout', '' );
+  
+		return $classes;
+	}
+	
+}
+*/
 if ( ! function_exists( 'wpc_onepage_checkout_body_classes' ) ) {
 
 	function wpc_onepage_checkout_body_classes( $classes ) 

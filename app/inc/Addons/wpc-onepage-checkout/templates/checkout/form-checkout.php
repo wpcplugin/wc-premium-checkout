@@ -53,7 +53,7 @@ wc_print_notices();
 				<?php do_action( 'wpc_onepage_checkout_step_colum_center_init' ); ?>
 
 				<section class="content-box content-box-shipping">
-					<h2 class="content-box-title"><span><?php esc_html_e( 'Shipping options', 'woocommerce' ); ?></span></h2>
+					<h2 class="content-box-title"><span><?php echo apply_filters( 'wpc_onepage_checkout_print_content_box_title', __( 'Shipping options', 'woocommerce' ), 'shipping' ); ?></span></h2>
 					<section class="content-box-frame"> 
 						<h3 class="content-box-subtitle"><span><?php esc_html_e( 'Select the desired option below', 'WPC' ); ?></span></h3>
 						<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
@@ -69,7 +69,7 @@ wc_print_notices();
 				</section>
 
 				<section class="content-box content-box-payment"> 
-					<h2 class="content-box-title"><span><?php esc_html_e( 'Payment', 'woocommerce' ); ?></span></h2>
+					<h2 class="content-box-title"><span><?php echo apply_filters( 'wpc_onepage_checkout_print_content_box_title', __( 'Payment', 'woocommerce' ), 'payment' ); ?></span></h2>
 					<section class="content-box-frame"> 
 						<h3 class="content-box-subtitle"><span><?php esc_html_e( 'Select the desired option below', 'WPC' ); ?></span></h3>
 						<?php do_action( 'wpc_onepage_checkout_payment' ); ?>
@@ -83,7 +83,7 @@ wc_print_notices();
 				<section class="content-box content-box-review">
 					<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
 
-						<h2 class="content-box-title"><span><?php esc_html_e( 'Your order', 'woocommerce' ); ?></span></h2>
+						<h2 class="content-box-title"><span><?php echo apply_filters( 'wpc_onepage_checkout_print_content_box_title', __( 'Your order', 'woocommerce' ), 'review' ); ?></span></h2>
 						<section class="content-box-frame"> 
 
 							<h3 class="content-box-subtitle"><span><?php esc_html_e( 'Order summary', 'WPC' ); ?></span></h3>

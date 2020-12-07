@@ -6,11 +6,11 @@ defined( 'ABSPATH' ) || exit;
 
 <?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
-	<h2 class="content-box-title"><span><?php esc_html_e( 'Billing &amp; Shipping', 'woocommerce' ); ?></span></h2>
+	<h2 class="content-box-title"><span><?php echo apply_filters( 'wpc_onepage_checkout_print_content_box_title', __( 'Billing &amp; Shipping', 'woocommerce' ), 'billing' ); ?></span></h2>
 
 	<?php else : ?>
 
-	<h2 class="content-box-title"><span><?php esc_html_e( 'Billing details', 'woocommerce' ); ?></span></h2>
+	<h2 class="content-box-title"><span><?php echo apply_filters( 'wpc_onepage_checkout_print_content_box_title', __( 'Billing details', 'woocommerce' ), 'billing' ); ?></span></h2>
 
 <?php endif; ?>
 	

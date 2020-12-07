@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<h2 class="content-box-title"><span><?php esc_html_e( 'Addresses', 'woocommerce' ); ?></span></h2>
+<h2 class="content-box-title"><span><?php echo apply_filters( 'wpc_onepage_checkout_print_content_box_title', __( 'Addresses', 'woocommerce' ), 'addresses' ); ?></span></h2>
 <?php do_action( 'wpc_onepage_checkout_before_content_box_shipping_fields', $checkout ); ?>
 <section class="content-box-frame"> 
 	<div class="woocommerce-shipping-fields">
