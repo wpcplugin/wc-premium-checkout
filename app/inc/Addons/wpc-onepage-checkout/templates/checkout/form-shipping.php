@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 	<div class="woocommerce-shipping-fields">
 		<?php if ( true === WC()->cart->needs_shipping_address() ) : ?>
 
-			<h3 class="content-box-subtitle"><span><?php esc_html_e( 'Shipping address', 'woocommerce' ); ?></span></h3>
+			<h3 class="content-box-subtitle address-shipping"><span><?php esc_html_e( 'Shipping address', 'woocommerce' ); ?></span></h3>
 
 			<div id="ship-to-different-address">
 				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">

@@ -173,12 +173,15 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 			  --wpc-label-icon-font-style: normal;
 			  
 			  --wpc-description-visible: block;
-			  --wpc-description-spacing_top: 15px;
-			  --wpc-description-spacing_bottom: 15px;
+			  --wpc-description-spacing-top: 15px;
+			  --wpc-description-spacing-bottom: 15px;
 			  --wpc-description-background-color: #ececec;
 			  --wpc-description-text-color: var(--wpc-primary-text-color);
-			  --wpc-description-line-bottom: #00000000;
-
+			  --wpc-description-line-bottom-color: #00000000;
+			  --wpc-description-font-family: var(--wpc-base-font-family);
+			  --wpc-description-font-weight: 400;
+			  --wpc-description-font-size: 1em;
+			  --wpc-description-font-style: normal;
 			}";
 		
 			if ( true !== WC()->cart->needs_shipping_address() ) {

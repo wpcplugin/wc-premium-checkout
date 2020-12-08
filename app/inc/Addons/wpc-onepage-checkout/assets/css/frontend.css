@@ -233,6 +233,8 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
     background: var(--wpc-label-background-color);
 	height: var(--wpc-label-height);
 	border-radius: var(--wpc-label-radius) var(--wpc-label-radius) 0 0;
+    border-left: 1px solid #ececec;
+    border-right: 1px solid #ececec;
 	display: block;
 	margin: 0;
 	padding: 0 8px;
@@ -256,13 +258,15 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 	border: none;
 	border-top: 0;
 	margin: 0;
-	border-bottom: 2px solid var(--wpc-description-line-bottom);
+	border-bottom: 2px solid var(--wpc-description-line-bottom-color);
 	padding-left: 10px;
 	padding-right: 10px;
-	padding-top: var(--wpc-description-spacing_top);
-	padding-bottom: var(--wpc-description-spacing_bottom);
-	font-size: 1em;
-	font-weight: 300;
+	padding-top: var(--wpc-description-spacing-top);
+	padding-bottom: var(--wpc-description-spacing-bottom);
+	font-family: var(--wpc-description-font-family);
+	font-size: var(--wpc-description-font-size);
+	font-weight: var(--wpc-description-font-weight);
+	font-style: var(--wpc-description-font-style);
 	display: var(--wpc-description-visible);
 	color: var(--wpc-description-text-color);
 }
