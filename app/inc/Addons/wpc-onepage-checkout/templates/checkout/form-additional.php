@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php if ( ! WC()->cart->needs_shipping() || wc_ship_to_billing_address_only() ) : ?>
 			
-			<h2 class="content-box-title"><span><?php esc_html_e( 'Additional information', 'woocommerce' ); ?></span></h2>
+			<h2 class="content-box-title"><span><?php esc_html_e( apply_filters( 'wpc_onepage_checkout_print_content_box_title', __( 'Additional information', 'woocommerce' ), 'additional' ) ); ?></span></h2>
 
 		<?php endif; ?>
 

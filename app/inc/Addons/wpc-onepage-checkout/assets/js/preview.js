@@ -3,14 +3,14 @@
 	/* Container Max Width*/
 	api( 'wpc_theme_onepage_checkout_container_max_width', function( value ) {
 		value.bind( function( maxwidth ) {
-			document.documentElement.style.setProperty( '--wpc-base-max-width', maxwidth + 'px' );
+			document.documentElement.style.setProperty( '--wpc-base-max-width', maxwidth );
 		});
 	});
 
 	/* Container Spacing */
 	api( 'wpc_theme_onepage_checkout_container_spacing', function( value ) {
 		value.bind( function( spacing ) {
-			document.documentElement.style.setProperty( '--wpc-base-spacing', spacing + 'px' );;
+			document.documentElement.style.setProperty( '--wpc-base-spacing', spacing );
 		});
 	});
 

@@ -207,10 +207,10 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-frame {
     all: revert;
-    border-left: 1px solid #ececec;
-    border-right: 1px solid #ececec;
-    border-bottom: 1px solid #ececec;
-    background: #FFF;
+    border-left: var(--wpc-content-box-border-width) solid var(--wpc-content-box-border-color);
+    border-right: var(--wpc-content-box-border-width) solid var(--wpc-content-box-border-color);
+    border-bottom: var(--wpc-content-box-border-width) solid var(--wpc-content-box-border-color);
+    background: var(--wpc-content-box-background-color);
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title span {
@@ -219,7 +219,6 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title, 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title span {
-	all: _revert;
 	color: var(--wpc-label-text-color);
 	line-height: var(--wpc-label-height);
 	font-family: var(--wpc-label-font-family);
@@ -233,8 +232,8 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
     background: var(--wpc-label-background-color);
 	height: var(--wpc-label-height);
 	border-radius: var(--wpc-label-radius) var(--wpc-label-radius) 0 0;
-    border-left: 1px solid #ececec;
-    border-right: 1px solid #ececec;
+    border-left: var(--wpc-content-box-border-width) solid var(--wpc-label-background-color);
+    border-right: var(--wpc-content-box-border-width) solid var(--wpc-label-background-color);
 	display: block;
 	margin: 0;
 	padding: 0 8px;
@@ -242,7 +241,6 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title::before {
-	all: _revert;
 	content: counter( content-box-counter ) '.';
 	margin-right: 10px;
 	font-family: var(--wpc-label-icon-font-family);
@@ -357,8 +355,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 
 #wpc-wrapper #wpc-main #payment ul, 
 #wpc-wrapper #wpc-main #shipping_method {
-    all: _revert;
-    padding: 0;
+    padding: 0 var(--wpc-content-box-list-spacing);
     margin: 0;
     list-style: none;
     display: block;
@@ -369,7 +366,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 #wpc-wrapper #wpc-main #payment ul > li, 
 #wpc-wrapper #wpc-main #shipping_method > li {
     margin-top: 3px;
-    padding: 11px 10px 11px !important;
+    padding: var(--wpc-content-box-list-line-spacing) 10px var(--wpc-content-box-list-line-spacing) !important;
     position: relative;
     display: block;
     overflow: hidden;
@@ -633,8 +630,8 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 
 #wpc-wrapper #wpc-main .step-colum.right .content-box .shop_table.woocommerce-checkout-review-order-table {
     width: 100%;
-    background: #ececec;
-    border: 1px solid #ececec;
+    background: var(--wpc-content-box-order-table-background-color);
+    /*border: 1px solid #ececec;*/
     padding: 10px;
     margin: 0;
 }
@@ -656,10 +653,8 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 
 
 #wpc-wrapper #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table .order-total {
-	
-height: 30px;
-	
-vertical-align: bottom;
+	height: 30px;
+	vertical-align: bottom;
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table .order-total * {
@@ -690,11 +685,13 @@ font-weight: bold;
 
 #wpc-wrapper #wpc-main button#place_order {
     color: var(--wpc-primary-text-decoration-color);
-    font-size: 18px;
-    padding: 11px 15px;
+    padding: var(--wpc-content-box-order-button-spacing) 15px;
     width: 100%;
     background: var(--wpc-order-button-color);
-    border-radius: 0 !important;
+    border-radius: var(--wpc-content-box-order-button-radius) !important;
+	font-family: var(--wpc-content-box-order-button-font-family);
+	font-weight: var(--wpc-content-box-order-button-font-weight);
+	font-size: var(--wpc-content-box-order-button-font-size);
 }
 
 #wpc-wrapper #wpc-main button#coupon-send {

@@ -23,7 +23,7 @@ wp.customize.controlConstructor['wpc_range_value'] = wp.customize.Control.extend
 				range.on('input', function() {
 					var suffix = ( jQuery(this).attr('suffix') ) ? jQuery(this).attr('suffix') : '';
 					jQuery(this).next( value ).html( this.value + suffix );
-					control.setting.set( this.value );
+					control.setting.set( this.value + suffix );
 				});
 			});
 		};

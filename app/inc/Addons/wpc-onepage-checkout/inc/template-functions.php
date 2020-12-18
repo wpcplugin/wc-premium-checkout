@@ -135,55 +135,70 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 	function wpc_onepage_checkout_print_css() 
 	{
 		$css = '';
+		$page_template = get_option( 'wpc_theme_compatibility_page_template', 'wp_theme' );
+		$page_template_container = get_option( 'wpc_theme_compatibility_page_template_wp_theme_container', 'default' );
 
 		if( !is_wc_endpoint_url() && is_checkout() ) {
-			$container_max_width = get_option( 'wpc_theme_onepage_checkout_container_max_width', '1024' );
-			$container_spacing = get_option( 'wpc_theme_onepage_checkout_container_spacing', '20' );
-			$order_button  = get_option( 'wpc_theme_onepage_checkout_order_button_color', '#00899d' );
-			$primary_background_color = get_option( 'wpc_theme_onepage_checkout_content_primary_color', '#00646d' );
-			$page_template = get_option( 'wpc_theme_compatibility_page_template', 'wp_theme' );
-			$page_template_container = get_option( 'wpc_theme_compatibility_page_template_wp_theme_container', 'default' );
-			
-			$css .= ":root {
-			  --wpc-order-button-color: {$order_button};
-			  --wpc-primary-background-color: {$primary_background_color};
-			  --wpc-primary-link-color: #1e90ff;
-			  --wpc-primary-text-color: #4a4a4a;
-			  --wpc-primary-text-decoration-color: #ffffff;
-			  --wpc-base-font-family: Arial, Helvetica, sans-serif;
-			  --wpc-base-font-size: 12px;
-			  --wpc-base-line-height: 1.35;
-			  --wpc-base-max-width: {$container_max_width}px;
-			  --wpc-base-spacing: {$container_spacing}px;
-			  
-			  --wpc-label-background-color: var(--wpc-primary-background-color);
-			  --wpc-label-text-color: var(--wpc-primary-text-decoration-color);
-			  --wpc-label-font-family: var(--wpc-base-font-family);
-			  --wpc-label-font-weight: 400;
-			  --wpc-label-font-size: 1em;
-			  --wpc-label-font-style: normal;
-			  --wpc-label-height: 32px;
-			  --wpc-label-radius: 0;
-			  --wpc-label-icon-size: 15px;
-			  --wpc-label-icon-color: var(--wpc-primary-text-decoration-color);
-			  --wpc-label-icon-border-color: #00000000;
-			  --wpc-label-icon-font-family: var(--wpc-base-font-family);
-			  --wpc-label-icon-font-weight: 400;
-			  --wpc-label-icon-font-size: 1em;
-			  --wpc-label-icon-font-style: normal;
-			  
-			  --wpc-description-visible: block;
-			  --wpc-description-spacing-top: 15px;
-			  --wpc-description-spacing-bottom: 15px;
-			  --wpc-description-background-color: #ececec;
-			  --wpc-description-text-color: var(--wpc-primary-text-color);
-			  --wpc-description-line-bottom-color: #00000000;
-			  --wpc-description-font-family: var(--wpc-base-font-family);
-			  --wpc-description-font-weight: 400;
-			  --wpc-description-font-size: 1em;
-			  --wpc-description-font-style: normal;
-			}";
-		
+			$css_vars = apply_filters( 'wpc_onepage_checkout_css_vars', array(
+				'--wpc-base-max-width' => get_option( 'wpc_theme_onepage_checkout_container_max_width', '1024px' ),
+				'--wpc-base-spacing' => get_option( 'wpc_theme_onepage_checkout_container_spacing', '20px' ),
+				'--wpc-order-button-color' => get_option( 'wpc_theme_onepage_checkout_order_button_color', '#00899d' ),
+				'--wpc-primary-background-color' => get_option( 'wpc_theme_onepage_checkout_content_primary_color', '#00646d' ),
+				'--wpc-primary-link-color' => '#1e90ff',
+				'--wpc-primary-text-color' => '#4a4a4a',
+				'--wpc-primary-text-decoration-color' => '#ffffff',
+				'--wpc-base-font-family' => 'Arial, Helvetica, sans-serif',
+				'--wpc-base-font-size' => '12px',
+				'--wpc-base-line-height' => '1.35',
+				
+				'--wpc-label-background-color' => 'var(--wpc-primary-background-color)',
+				'--wpc-label-text-color' => 'var(--wpc-primary-text-decoration-color)',
+				'--wpc-label-font-family' => 'var(--wpc-base-font-family)',
+				'--wpc-label-font-weight' => '400',
+				'--wpc-label-font-size' => '1em',
+				'--wpc-label-font-style' => 'normal',
+				'--wpc-label-height' => '32px',
+				'--wpc-label-radius' => '0',
+				'--wpc-label-icon-size' => '15px',
+				'--wpc-label-icon-color' => 'var(--wpc-primary-text-decoration-color)',
+				'--wpc-label-icon-border-color' => '#00000000',
+				'--wpc-label-icon-font-family' => 'var(--wpc-base-font-family)',
+				'--wpc-label-icon-font-weight' => '400',
+				'--wpc-label-icon-font-size' => '1em',
+				'--wpc-label-icon-font-style' => 'normal',
+				
+				'--wpc-description-visible' => 'block',
+				'--wpc-description-spacing-top' => '15px',
+				'--wpc-description-spacing-bottom' => '15px',
+				'--wpc-description-background-color' => '#ececec',
+				'--wpc-description-text-color' => 'var(--wpc-primary-text-color)',
+				'--wpc-description-line-bottom-color' => '#00000000',
+				'--wpc-description-font-family' => 'var(--wpc-base-font-family)',
+				'--wpc-description-font-weight' => '400',
+				'--wpc-description-font-size' => '1em',
+				'--wpc-description-font-style' => 'normal',
+				
+				'--wpc-content-box-background-color' => '#ffffff',
+				'--wpc-content-box-border-color' => '#ececec',
+				'--wpc-content-box-border-width' => '1px',
+				'--wpc-content-box-list-spacing' => '0',
+				'--wpc-content-box-list-line-spacing' => '11px',
+				'--wpc-content-box-order-button-spacing' => '11px',
+				'--wpc-content-box-order-button-radius' => '0',
+				'--wpc-content-box-order-button-font-family' => 'var(--base-font-family)',
+				'--wpc-content-box-order-button-font-weight' => 'bold',
+				'--wpc-content-box-order-button-font-size' => '18px',
+				'--wpc-content-box-order-table-background-color' => '#ffffff',
+			) );
+
+			if ( !empty( $css_vars ) ) {
+				$css .= ":root {";
+				foreach( $css_vars as $key => $value ) {
+					$css .= "{$key}: {$value};";
+				}
+				$css .= "}";
+			}
+
 			if ( true !== WC()->cart->needs_shipping_address() ) {
 				$css .= "#wpc-main .content-box.content-box-address {display: none;}";
 			}
@@ -193,7 +208,7 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 			}
 			
 			if ( ! empty( $css ) ){			
-				printf( '<style type="text/css" id="wpc_onepage_checkout-css">%s</style>', $css );
+				printf( '<style type="text/css" id="wpc_onepage_checkout-css">%s</style>', apply_filters( 'wpc_onepage_checkout_print_css', $css ) );
 			}
 		}
 		

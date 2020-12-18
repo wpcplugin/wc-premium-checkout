@@ -16,7 +16,7 @@ class Range_Value extends \WP_Customize_Control {
 
 		$this->json['label']       =  $this->label;
 		$this->json['description'] =  $this->description;
-		$this->json['value']       =  maybe_serialize( $this->value() );
+		$this->json['value']       =  str_replace( $this->input_attrs['suffix'], '', maybe_serialize ( $this->value() ) );
 		$this->json['input_attrs'] =  $this->input_attrs;
 		$this->json['inputAttrs']  =  '';
 		
