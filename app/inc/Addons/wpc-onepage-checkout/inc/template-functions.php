@@ -215,18 +215,7 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 	}
 	
 }
-/*
-if ( ! function_exists( 'wpc_onepage_checkout_print_content_box_title' ) ) {
 
-	function wpc_onepage_checkout_print_content_box_title( $type ) 
-	{	
-		$classes[] = get_option( 'wpc_theme_onepage_checkout_form_layout', '' );
-  
-		return $classes;
-	}
-	
-}
-*/
 if ( ! function_exists( 'wpc_onepage_checkout_body_classes' ) ) {
 
 	function wpc_onepage_checkout_body_classes( $classes ) 

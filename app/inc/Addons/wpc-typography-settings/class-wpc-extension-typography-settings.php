@@ -80,14 +80,14 @@ class Typography_Settings extends \WPC\Abstract_Addon
 	public function load_fonts() 
 	{
 		$addons = WPC()->addons->get();
-		
+
 		foreach ( $addons as $slug => $addon ) {
 			if( !empty( $addon->get_customizer() ) ) {
 				$customizer = $addon->get_customizer();
-				if ( isset( $customizer['controls'] ) ) {			
+				if ( isset( $customizer['controls'] ) ) {	
 					foreach( $customizer['controls'] as $id => $args ) {
-						if( isset( $args['meta']['typography'] ) ) {
-							if( $font = get_option( $id, false ) ) {
+						if( isset( $args['meta'] ) && is_array( $args['meta'] ) && in_array( 'typography', $args['meta'] ) ) {
+							if( $font = get_option( $id, 'lato' ) ) {
 								$this->enqueue_google_font( $font );
 							}						
 						}
@@ -156,7 +156,7 @@ class Typography_Settings extends \WPC\Abstract_Addon
 		$url .= $subset;		
 		
 		// Enqueue style
-		wp_enqueue_style( 'wpc-typography-settings-google-font-'. $handle, $url, false, false, 'all' );
+		wp_enqueue_style( 'wpc-typography-settings-google-font-'. $handle, $url, false, false, 'all' );		
 	}
 
 	

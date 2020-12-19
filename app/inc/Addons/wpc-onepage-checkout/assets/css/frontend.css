@@ -221,7 +221,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title span {
 	color: var(--wpc-label-text-color);
 	line-height: var(--wpc-label-height);
-	font-family: var(--wpc-label-font-family);
+	font-family: var(--wpc-label-font-family) !important;
 	font-size: var(--wpc-label-font-size);
 	font-weight: var(--wpc-label-font-weight);
 	font-size: var(--wpc-label-font-size);
@@ -243,7 +243,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title::before {
 	content: counter( content-box-counter ) '.';
 	margin-right: 10px;
-	font-family: var(--wpc-label-icon-font-family);
+	font-family: var(--wpc-label-icon-font-family) !important;
 	font-size: var(--wpc-label-icon-font-size);
 	font-weight: var(--wpc-label-icon-font-weight);
 	font-size: var(--wpc-label-icon-font-size);
@@ -261,7 +261,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 	padding-right: 10px;
 	padding-top: var(--wpc-description-spacing-top);
 	padding-bottom: var(--wpc-description-spacing-bottom);
-	font-family: var(--wpc-description-font-family);
+	font-family: var(--wpc-description-font-family) !important;
 	font-size: var(--wpc-description-font-size);
 	font-weight: var(--wpc-description-font-weight);
 	font-style: var(--wpc-description-font-style);
@@ -398,8 +398,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 }
 
 #wpc-wrapper #wpc-main #shipping_method > li > label span.amount * {
-    all: _revert;
-    font-size: 12px;
+    font-size: var(--base-font-size);
 }
 
 #wpc-wrapper #wpc-main #payment ul > li > input + label > img, 
@@ -541,7 +540,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 }
 
 #wpc-wrapper #wpc-main .cart_table td {
-    font-size: 14px;
+    font-size: 1.16em;
 }
 
 #wpc-wrapper #wpc-main .content-box .cart_table td.product-image {
@@ -559,7 +558,11 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 #wpc-wrapper #wpc-main .content-box .cart_table td.product-total .amount * {
     text-align: right;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 1.16em;
+}
+
+#wpc-wrapper #wpc-main .content-box .cart_table td.product-total .amount .woocommerce-Price-currencySymbol {
+    font-size: 1em;
 }
 
 #wpc-wrapper #wpc-main .content-box .cart_table ul.variation li > div {
@@ -639,7 +642,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 #wpc-wrapper #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table tr, 
 #wpc-wrapper #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table th {
     text-align: left;
-    font-size: 14px;
+    font-size: 1.077033em;
     font-weight: 300;
 }
 
@@ -648,7 +651,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 #wpc-wrapper #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table td .amount * {
     text-transform: uppercase;
     text-align: right;
-    font-size: 14px;
+    font-size: 1em;
 }
 
 
@@ -673,7 +676,7 @@ font-weight: bold;
     text-transform: uppercase;
     padding: 8px;
     display: inline-block;
-    font-size: 12px;
+    font-size: var(--base-font-size);
     border-style: solid;
     border-width: 1px;
     text-align: center;
@@ -689,7 +692,7 @@ font-weight: bold;
     width: 100%;
     background: var(--wpc-order-button-color);
     border-radius: var(--wpc-content-box-order-button-radius) !important;
-	font-family: var(--wpc-content-box-order-button-font-family);
+	font-family: var(--wpc-content-box-order-button-font-family) !important;
 	font-weight: var(--wpc-content-box-order-button-font-weight);
 	font-size: var(--wpc-content-box-order-button-font-size);
 }
