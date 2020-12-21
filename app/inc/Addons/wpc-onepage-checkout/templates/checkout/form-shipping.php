@@ -4,13 +4,13 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<h2 class="content-box-title"><span><?php esc_html_e( apply_filters( 'wpc_onepage_checkout_print_content_box_title', __( 'Addresses', 'woocommerce' ), 'addresses' ) ); ?></span></h2>
+<h2 class="content-box-title"><span><?php esc_html_e( apply_filters( 'wpc_onepage_checkout_print_content_box_title', __( 'Addresses', 'woocommerce' ), 'address' ) ); ?></span></h2>
 <?php do_action( 'wpc_onepage_checkout_before_content_box_shipping_fields', $checkout ); ?>
 <section class="content-box-frame"> 
 	<div class="woocommerce-shipping-fields">
 		<?php if ( true === WC()->cart->needs_shipping_address() ) : ?>
 
-			<h3 class="content-box-subtitle address-shipping"><span><?php esc_html_e( apply_filters( 'wpc_onepage_checkout_print_content_box_description', __( 'Shipping address', 'woocommerce' ), 'addresses' ) ); ?></span></h3>
+			<h3 class="content-box-subtitle address-shipping"><span><?php esc_html_e( apply_filters( 'wpc_onepage_checkout_print_content_box_description', __( 'Shipping address', 'woocommerce' ), 'address' ) ); ?></span></h3>
 
 			<div id="ship-to-different-address">
 				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">

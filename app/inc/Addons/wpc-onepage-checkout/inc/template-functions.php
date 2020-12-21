@@ -15,7 +15,7 @@ if ( ! function_exists( 'wpc_onepage_checkout_place_order' ) ) {
 			array(
 				'checkout'           => WC()->checkout(),
 				'available_gateways' => $available_gateways,
-				'order_button_text'  => apply_filters( 'woocommerce_order_button_text', __( 'Place order', 'woocommerce' ) ),
+				'order_button_text'  => apply_filters( 'wpc_onepage_checkout_order_button_text', __( 'Place order', 'woocommerce' ) ),
 			)
 		);
 	}
