@@ -159,6 +159,7 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 				'--wpc-label-font-style' => 'normal',
 				'--wpc-label-height' => '32px',
 				'--wpc-label-radius' => '0',
+				'--wpc-label-text-transform' => 'none',
 				'--wpc-label-icon-size' => '15px',
 				'--wpc-label-icon-color' => 'var(--wpc-primary-text-decoration-color)',
 				'--wpc-label-icon-border-color' => '#00000000',
@@ -188,7 +189,9 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 				'--wpc-content-box-order-button-font-family' => 'var(--base-font-family)',
 				'--wpc-content-box-order-button-font-weight' => 'bold',
 				'--wpc-content-box-order-button-font-size' => '18px',
+				'--wpc-content-box-order-button-text-transform' => 'uppercase',
 				'--wpc-content-box-order-table-background-color' => '#ffffff',
+				'--wpc-content-box-cupom_button-background-color' => 'var(--wpc-primary-background-color)',
 			) );
 
 			if ( !empty( $css_vars ) ) {

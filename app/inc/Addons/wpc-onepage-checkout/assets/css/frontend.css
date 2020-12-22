@@ -211,6 +211,8 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
     border-right: var(--wpc-content-box-border-width) solid var(--wpc-content-box-border-color);
     border-bottom: var(--wpc-content-box-border-width) solid var(--wpc-content-box-border-color);
     background: var(--wpc-content-box-background-color);
+	overflow: hidden;
+    width: 100%;
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title span {
@@ -226,6 +228,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 	font-weight: var(--wpc-label-font-weight);
 	font-size: var(--wpc-label-font-size);
 	font-style: var(--wpc-label-font-style);
+	text-transform: var(--wpc-label-text-transform);
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title {
@@ -239,6 +242,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 	margin: 0;
 	padding: 0 8px;
 	margin-right: 0;
+    overflow: hidden;
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title::before {
@@ -677,7 +681,6 @@ font-weight: bold;
 ***************************/
 
 #wpc-wrapper #wpc-main .woocommerce-checkout .button {
-    text-transform: uppercase;
     padding: 8px;
     display: inline-block;
     font-size: var(--base-font-size);
@@ -699,6 +702,7 @@ font-weight: bold;
 	font-family: var(--wpc-content-box-order-button-font-family) !important;
 	font-weight: var(--wpc-content-box-order-button-font-weight);
 	font-size: var(--wpc-content-box-order-button-font-size);
+	text-transform: var(--wpc-content-box-order-button-text-transform);
 }
 
 #wpc-wrapper #wpc-main button#coupon-send {
@@ -706,7 +710,7 @@ font-weight: bold;
     float: right;
     height: 34px;
     font-size: 1em;
-    background: var(--wpc-primary-background-color);
+    background: var(--wpc-content-box-cupom_button-background-color);
 }
 
 #wpc-wrapper #wpc-main button#coupon-send:active {
