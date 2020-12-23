@@ -14,6 +14,7 @@ final class Load_Addons
 			'WPC\Extension\Theme_Compatibility',
 			'WPC\Extension\Fields_Manager',
 			'WPC\Extension\Typography_Settings',
+			'WPC\Extension\Template_Selector',
 			'WPC\Theme\Onepage_Checkout',
 		);
 

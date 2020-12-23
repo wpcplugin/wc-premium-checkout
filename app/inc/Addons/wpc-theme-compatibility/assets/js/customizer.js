@@ -10,7 +10,7 @@
 			}, 
 			function( response ) {
 				
-				console.log(response);
+				//console.log(response);
 				
 				if( typeof response !== 'undefined' ) {
 					
@@ -53,7 +53,7 @@
 	
 	  api.previewer.bind( 'ready', function( message ) {
 		  request( 'enquetes' );
-		  request( 'hooks' );
+		  //request( 'hooks' );
 	  } );
 	} );
 	

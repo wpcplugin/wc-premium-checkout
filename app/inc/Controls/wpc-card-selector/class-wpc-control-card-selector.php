@@ -34,7 +34,7 @@ class Card_Selector extends \WP_Customize_Control {
 		<div class="wpc-container-card" style="<# if (  data.columns ) { #> grid-template-columns: repeat({{data.columns}}, 1fr); <# if (  data.gap ) { #> gap: {{data.gap}}; <# } } #>">
 		<# _.each( data.cards, function( card, id ) { #>
 
-			<div class="wpc-control-card <# if ( card.isActivecard ) { #>active <# } #>" <# if ( card.action['active_text'] ) { #> data-active-text="{{ card.action['active_text'] }}" <# } #> <# if ( card.action['text'] ) { #> data-text="{{ card.action['text'] }}" <# } #> <# if ( card.action['link'] ) { #> data-url="{{ card.action['link'] }}" <# } #> data-id="{{ card.action['id'] }}">
+			<div class="wpc-control-card <# if ( card.isActivecard ) { #>active <# } #>" <# if ( card.value ) { #> data-value="{{ card.value }}" <# } #> <# if ( card.action.active_text ) { #> data-active-text="{{ card.action['active_text'] }}" <# } #> <# if ( card.action.text ) { #> data-text="{{ card.action['text'] }}" <# } #> <# if ( card.action.link ) { #> data-url="{{ card.action['link'] }}" <# } #> data-id="{{ card.action['id'] }}">
 
 				<# if ( card.screenshot ) { #>
 					<div class="wpc-control-card-screenshot">
@@ -49,15 +49,15 @@ class Card_Selector extends \WP_Customize_Control {
 				<# } #>
 					
 				<div class="wpc-control-card-bottom">
-					<# if ( card.title && card.action ) { #>
+					<# if ( card.title && card.action && data.columns < 2 ) { #>
 						<h3 class="wpc-control-card-name">{{ card.title }}</h3>
 					<# } #>
 	
-				<# if ( card.action ) { #>
+				<# if ( card.action && data.columns < 2 ) { #>
 					<div class="wpc-control-card-actions">
-						<# if ( card.isActivecard ) { #>
+						<# if ( card.isActivecard && _.contains( card.action, 'active_text' ) ) { #>
 							<a class="button card-active">{{ card.action['active_text'] }}</a>
-						<# } else { #>
+						<# } else if ( _.contains( card.action, 'text' ) ) { #>
 							<a class="button">{{ card.action['text'] }}</a>
 						<# } #>
 					</div> 
@@ -75,7 +75,7 @@ class Card_Selector extends \WP_Customize_Control {
 			'wpc_card_selector', 
 			plugins_url( 'assets/js/script.js', __FILE__ ), 
 			array( 'jquery', 'customize-base' ), 
-			'1.0.0', 
+			WPC_VERSION, 
 			true  
 		);
 		
@@ -83,7 +83,7 @@ class Card_Selector extends \WP_Customize_Control {
 			'wpc_card_selector-css', 
 			plugins_url( 'assets/css/style.css', __FILE__ ), 
 			array(), 
-			'1.0.0', 
+			WPC_VERSION, 
 			'all' 
 		);
 	}
