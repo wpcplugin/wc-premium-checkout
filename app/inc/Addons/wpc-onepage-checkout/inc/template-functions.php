@@ -182,6 +182,7 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 				'--wpc-content-box-background-color' => '#ffffff',
 				'--wpc-content-box-border-color' => '#ececec',
 				'--wpc-content-box-border-width' => '1px',
+				'--wpc-content-box-spacing' => '8px',
 				'--wpc-content-box-list-spacing' => '0',
 				'--wpc-content-box-list-line-spacing' => '11px',
 				'--wpc-content-box-order-button-spacing' => '11px',

@@ -220,6 +220,11 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title, 
+#wpc-wrapper #wpc-main .step-colum .content-box .content-box-frame {
+    padding: 0 var(--wpc-content-box-spacing) !important;
+}
+
+#wpc-wrapper #wpc-main .step-colum .content-box .content-box-title, 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-title span {
 	color: var(--wpc-label-text-color);
 	line-height: var(--wpc-label-height);
@@ -710,7 +715,8 @@ font-weight: bold;
     float: right;
     height: 34px;
     font-size: 1em;
-    background: var(--wpc-content-box-cupom_button-background-color);
+    line-height: 0;
+    background: var(--wpc-content-box-cupom_button-background-color );
 }
 
 #wpc-wrapper #wpc-main button#coupon-send:active {
