@@ -5,7 +5,8 @@ wp.customize.controlConstructor['wpc_card_selector'] = wp.customize.Control.exte
 		var control = this,
 			element = this.container.find( '.wpc-container-card' );		
 			
-		element.on( 'click', '.button', function( event ) {
+		element.on( 'click', '.button, .smal-cards .wpc-control-card-bottom', function( event ) {
+			var CARD = jQuery( this ).closest( '.wpc-control-card' );
 			var ID = jQuery( this ).closest( '.wpc-control-card' ).data( 'id' );
 			var URL = jQuery( this ).closest( '.wpc-control-card' ).data( 'url' );
 
@@ -16,6 +17,7 @@ wp.customize.controlConstructor['wpc_card_selector'] = wp.customize.Control.exte
 				
 				jQuery( element ).find( '.wpc-control-card' ).removeClass( 'active' );
 				jQuery( this ).closest( '.wpc-control-card' ).addClass( 'active' );
+				jQuery( element ).trigger( 'changeCard', CARD );
 
 				//wp.customize.previewer.refresh();
 				//wp.customize.previewer.previewUrl();
