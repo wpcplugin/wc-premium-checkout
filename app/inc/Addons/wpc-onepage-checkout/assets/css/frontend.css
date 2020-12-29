@@ -645,11 +645,25 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 }
 
 #wpc-wrapper #wpc-main .step-colum.right .content-box .shop_table.woocommerce-checkout-review-order-table {
+    position: relative;
     width: 100%;
     background: var(--wpc-content-box-order-table-background-color);
     /*border: 1px solid #ececec;*/
     padding: 10px;
     margin: 0;
+    z-index: 5;
+}
+
+#wpc-wrapper #wpc-main .step-colum.right .content-box .shop_table.woocommerce-checkout-review-order-table::before, 
+#wpc-wrapper #wpc-main .step-colum.right .content-box .shop_table.woocommerce-checkout-review-order-table::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50%;
+    height: 100%;
+    width: 200%;
+    background: var(--wpc-content-box-order-table-background-color);
+    z-index: -5;
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .shop_table.woocommerce-checkout-review-order-table tr, 
