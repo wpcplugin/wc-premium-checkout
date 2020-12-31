@@ -262,6 +262,7 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-subtitle {
+	position: relative;
 	background: var(--wpc-description-background-color);
 	border: none;
 	border-top: 0;
@@ -277,6 +278,18 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 	/* font-style: var(--wpc-description-font-style); */
 	display: var(--wpc-description-visible);
 	color: var(--wpc-description-text-color);
+	z-index: 5;
+}
+
+#wpc-wrapper #wpc-main .step-colum .content-box .content-box-subtitle::before, #wpc-wrapper #wpc-main .step-colum .content-box .content-box-subtitle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50%;
+    height: 100%;
+    width: 200%;
+    background: var(--wpc-description-background-color);
+    z-index: -5;
 }
 
 #wpc-wrapper #wpc-main .step-colum .content-box .content-box-subtitle span {
@@ -620,7 +633,8 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 }
 
 #wpc-wrapper #wpc-main .cart-coupon-code .form-row span{
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    width: calc( 70% - 7px );
 }
 
 #wpc-wrapper #wpc-main .cart-coupon-code .form-row span + * {
