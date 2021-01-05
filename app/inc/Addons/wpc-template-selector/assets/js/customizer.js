@@ -13,6 +13,9 @@
 				break;
 			case 'color':
 				control.container.find( 'input.color-picker-hex.wp-color-picker' ).val( value ).trigger( 'change' );
+				break;			
+			case 'checkbox':
+				control.setting.set( 'yes' === value );
 				break;
 			default:
 				control.setting.set( value );
