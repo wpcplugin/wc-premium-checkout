@@ -15,7 +15,8 @@ wp.customize.controlConstructor['wpc_card_selector'] = wp.customize.Control.exte
 			}
 			else if ( ID != '' && ID != undefined  ) {
 				
-				jQuery( element ).find( '.wpc-control-card' ).removeClass( 'active' );
+				jQuery( '.wpc-control-card' ).removeClass( 'active' ); //remove all control
+				//jQuery( element ).find( '.wpc-control-card' ).removeClass( 'active' ); remove self control
 				jQuery( this ).closest( '.wpc-control-card' ).addClass( 'active' );
 				jQuery( element ).trigger( 'changeCard', CARD );
 

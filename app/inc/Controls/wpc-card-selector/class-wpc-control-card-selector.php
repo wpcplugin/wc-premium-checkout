@@ -34,7 +34,7 @@ class Card_Selector extends \WP_Customize_Control {
 		<div class="wpc-container-card" style="<# if (  data.columns ) { #> grid-template-columns: repeat({{data.columns}}, 1fr); <# if (  data.gap ) { #> gap: {{data.gap}}; <# } } #>">
 		<# _.each( data.cards, function( card, id ) { #>
 
-			<div class="wpc-control-card  <# if ( data.columns >= 2 ) { #>smal-cards <# } #> <# if ( card.isActivecard ) { #>active <# } #>" <# if ( card.action.value ) { #> data-value="{{ card.action.value }}" <# } #> <# if ( card.action.active_text ) { #> data-active-text="{{ card.action['active_text'] }}" <# } #> <# if ( card.action.text ) { #> data-text="{{ card.action['text'] }}" <# } #> <# if ( card.action.link ) { #> data-url="{{ card.action['link'] }}" <# } #> data-id="{{ card.action['id'] }}">
+			<div class="wpc-control-card  <# if ( !card.action['text'] ) { #>smal-cards <# } #> <# if ( card.isActivecard ) { #>active <# } #>" <# if ( card.action.value ) { #> data-value="{{ card.action.value }}" <# } #> <# if ( card.action.active_text ) { #> data-active-text="{{ card.action['active_text'] }}" <# } #> <# if ( card.action.text ) { #> data-text="{{ card.action['text'] }}" <# } #> <# if ( card.action.link ) { #> data-url="{{ card.action['link'] }}" <# } #> data-id="{{ card.action['id'] }}">
 
 				<# if ( card.screenshot ) { #>
 					<div class="wpc-control-card-screenshot">
@@ -49,11 +49,11 @@ class Card_Selector extends \WP_Customize_Control {
 				<# } #>
 					
 				<div class="wpc-control-card-bottom">
-					<# if ( card.title && card.action && data.columns < 2 ) { #>
+					<# if ( card.title && card.action ) { #>
 						<h3 class="wpc-control-card-name">{{ card.title }}</h3>
 					<# } #>
 	
-				<# if ( card.action && data.columns < 2 ) { #>
+				<# if ( card.action ) { #>
 					<div class="wpc-control-card-actions">
 						<# if ( card.isActivecard && _.contains( card.action, 'active_text' ) ) { #>
 							<a class="button card-active">{{ card.action['active_text'] }}</a>

@@ -240,9 +240,6 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
     background: var(--wpc-label-background-color);
 	height: var(--wpc-label-height);
 	border-radius: var(--wpc-label-radius) var(--wpc-label-radius) 0 0;
-    border-left: var(--wpc-content-box-border-width) solid var(--wpc-content-box-border-color);
-    border-right: var(--wpc-content-box-border-width) solid var(--wpc-content-box-border-color);
-    border-top: var(--wpc-content-box-border-width) solid var(--wpc-content-box-border-color);
 	display: block;
 	margin: 0;
 	padding: 0 8px;
@@ -724,6 +721,8 @@ font-weight: bold;
     cursor: pointer;
     box-sizing: border-box;
     outline: 0;
+	background: var(--wpc-primary-background-color);
+    color: var(--wpc-primary-text-decoration-color);
 }
 
 #wpc-wrapper #wpc-main button#place_order {
@@ -1120,7 +1119,9 @@ html.overflowhidden {
 	overflow: hidden !important
 }
 
-
+#wpc-wrapper #wpc-main form.checkout.woocommerce-checkout .blockUI.blockOverlay {
+    background: var(--wpc-content-box-background-color) !important;
+}
 
 
 

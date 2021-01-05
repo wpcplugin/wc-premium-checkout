@@ -10,7 +10,7 @@ class Template_Selector extends \WPC\Abstract_Addon
 		$this->setting      =   'wpc_template_selector_active';
 		
 		$this->type         =   'extension';
-		$this->slug         =   'wpc-template-selector';
+		$this->slug         =   'wpc_template_selector';
 		$this->version      =   WPC_VERSION;
 		$this->title        =   __( 'Template Selector', 'WPC' );
 		$this->description  =   __( 'Embedded extension for active templates', 'WPC' );
@@ -52,16 +52,7 @@ class Template_Selector extends \WPC\Abstract_Addon
 				'settings' => array( 
 					$this->setting => array() 
 				),
-				'controls' => array( 
-					'wpc_template_selector' => array(
-						'class'           => 'WPC\Control\Card_Selector',
-						'section'         => $this->section,
-						'settings'        => $this->setting,
-						'cards'           => apply_filters( 'wpc_template_selector_register', array() ),
-						'columns'         => 2,
-						'gap'             => '15px',
-					)
-				),
+				'controls' => array(),
 			)
 		);
 

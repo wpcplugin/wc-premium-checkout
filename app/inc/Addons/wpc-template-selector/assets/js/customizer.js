@@ -20,13 +20,14 @@
 	}
 	
 	api.bind( 'ready', function() {
-			api.control( 'wpc_template_selector' ).container.find( '.wpc-container-card' ).on( 'changeCard', function( event, card ) {
+			api.section( 'wpc_template_selector' ).container.find( '.wpc-container-card' ).on( 'changeCard', function( event, card ) {
 				var obj = $( card ).data( 'value' );
 				$.each( obj, function( option, value ) { 
 					wp.customize.control( option, function ( control ) {
 						updateControlType( control, value );					
 					});
 				} );
+				wp.customize.previewer.refresh(); //fix upadate
 			} );
 		
 	} );
