@@ -636,3 +636,22 @@ if ( ! function_exists( 'wpc_list_nav_menus' ) ) {
 		return $list;
 	}
 }
+
+if ( ! function_exists( 'wpc_is_wplogin' ) ) {
+
+	/**
+	 * Check is login page.
+	 *
+	 * @since   1.3.7
+	 * @return  bool
+	 */
+	function wpc_is_wplogin() {
+		$ABSPATH_MY = str_replace( array( '\\','/' ), DIRECTORY_SEPARATOR, ABSPATH );
+		
+		return (
+			( in_array( $ABSPATH_MY.'wp-login.php', get_included_files() ) || in_array($ABSPATH_MY.'wp-register.php', get_included_files()) ) || 
+			( isset($_GLOBALS['pagenow']) && $GLOBALS['pagenow'] === 'wp-login.php' ) || 
+			$_SERVER['PHP_SELF']== '/wp-login.php'
+		);
+	}
+}

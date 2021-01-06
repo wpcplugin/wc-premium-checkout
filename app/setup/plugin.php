@@ -41,7 +41,9 @@ if ( ! function_exists( 'wpc_plugin_load_addons' ) ) {
 	{		
 		$wpc_is_active = wpc_is_active();
 		
-		if( is_admin() && isset( $_GET['page'] ) && WPC_SLUG === $_GET['page'] ) {
+		if( ( is_admin() || wpc_is_wplogin() ) && isset( $_COOKIE['wpc-noload'] ) && $wpc_is_active ) {
+			return false;
+		} else if( is_admin() && isset( $_GET['page'] ) && WPC_SLUG === $_GET['page'] ) {
 			return true;
 		} else if( !is_admin() && !wpc_customize_on_embed() ) {
 			return $wpc_is_active;
