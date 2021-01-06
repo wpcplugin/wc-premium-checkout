@@ -13,7 +13,7 @@ class Template_Selector extends \WPC\Abstract_Addon
 		$this->slug         =   'wpc_template_selector';
 		$this->version      =   WPC_VERSION;
 		$this->title        =   __( 'Template Selector', 'WPC' );
-		$this->description  =   __( 'Embedded extension for active templates', 'WPC' );
+		$this->description  =   __( 'Embedded extension to switch between pre-configured template pages.', 'WPC' );
 		$this->author       =   __( 'WPC' );
 		$this->author_url   =   WPC_URL;
 		$this->thumbnail    =   plugins_url( 'assets/img/thumbnail.svg', __FILE__ );

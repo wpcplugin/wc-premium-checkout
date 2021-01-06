@@ -12,7 +12,7 @@ class Typography_Settings extends \WPC\Abstract_Addon
 		$this->slug         =   'wpc-typography-settings';
 		$this->version      =   WPC_VERSION;
 		$this->title        =   __( 'Typography Selector', 'WPC' );
-		$this->description  =   __( 'Embedded extension for help avoid conflicts caused by CSS styles and JS scripts that affect the look and functionalities of the checkout theme.', 'WPC' );
+		$this->description  =   __( 'Embedded extension for add text typography support. This extension does not have configuration options.', 'WPC' );
 		$this->author       =   __( 'WPC' );
 		$this->author_url   =   WPC_URL;
 		$this->thumbnail    =   plugins_url( 'assets/img/thumbnail.svg', __FILE__ );
