@@ -15,7 +15,6 @@
 					api.previewer.refresh();
 				}
 			);
-	
 			
 		});
 	});

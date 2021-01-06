@@ -46,7 +46,7 @@ if ( ! function_exists( 'wpc_customize_builder_commmon' ) ) {
 			'wpc',
 			array(
 				'label'    => __( 'Check to enable' , 'WPC' ),
-				'description' => '<br/><span style="font-style: normal;font-weight: 800;">Use este formulário <a target="_blank" href="https://forms.gle/UjvJ26hX65tvK3HC7">https://forms.gle/UjvJ26hX65tvK3HC7</a> para notificar sobre possíveis erros de compatibilidade, sugestões de melhorias, dúvidas e assim por diante. A devolução será feita em 24 horas.</span>',
+				'description' => '',
 				'type'     => 'checkbox',
 				'section'  => 'wpc',
 				'settings' => 'wpc',
@@ -77,7 +77,7 @@ if ( ! function_exists( 'wpc_customize_enqueue' ) ) {
 		wp_localize_script(
 			'wpc-customize',
 			'wpc',
-			array(
+			array(			
 				'nonce' => wp_create_nonce( 
 					'wpc-customizer' 
 				),
@@ -94,6 +94,36 @@ if ( ! function_exists( 'wpc_customize_enqueue' ) ) {
 			WPC_VERSION,
 			'all' 
 		);
+	}
+	
+}
+
+if ( ! function_exists( 'wpc_customize_inline_scripts' ) ) {
+
+	/**
+	 * Register the inline JavaScrip customize load
+	 *
+	 * @since    1.3.7
+	 * @return   void
+	 */
+	function wpc_customize_inline_scripts() 
+	{		
+		?>
+		<script>
+			jQuery( document ).ready( function( $ ) {
+				/* Open checkout url */
+				wp.customize.panel( 'wpc', function( panel ) {
+					panel.expanded.bind( function( isExpanded ) {
+						
+						if ( isExpanded ) {
+							wp.customize.previewer.previewUrl.set( '<?php echo esc_js( wc_get_page_permalink( 'checkout' ) ); ?>' );
+						}
+						
+					} );
+				} );
+			} );
+		</script>
+		<?php
 	}
 	
 }
