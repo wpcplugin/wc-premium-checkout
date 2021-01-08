@@ -38,10 +38,12 @@ $checkout = WC()->checkout();
 
 <?php do_action( 'wpc_onepage_checkout_coupon_form' ); ?>
 
-<div class="cart-coupon-code">
-    <p class="form-row"><span class="woocommerce-input-wrapper"><input class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" type="text" name="set-cupom" id="set-cupom"></span>
-	<button id="coupon-send" type="button" onclick="jQuery( '#coupon_code' ).val( jQuery( '#set-cupom' ).val() ).closest( '.checkout_coupon' ).submit()" data-tracking="co_end_discount_coupon_submit" class="dft button secondary small fluid">Aplicar</button></p>
-</div>
+<?php if ( wc_coupons_enabled() ): ?>
+	<div class="cart-coupon-code">
+		<p class="form-row"><span class="woocommerce-input-wrapper"><input class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" type="text" name="set-cupom" id="set-cupom"></span>
+		<button id="coupon-send" type="button" onclick="jQuery( '#coupon_code' ).val( jQuery( '#set-cupom' ).val() ).closest( '.checkout_coupon' ).submit()" data-tracking="co_end_discount_coupon_submit" class="dft button secondary small fluid"><?php esc_html_e( 'Apply', 'WPC' ); ?></button></p>
+	</div>
+<?php endif; ?>
 
 <div class="woocommerce-additional-fields">
 	<?php do_action( 'woocommerce_before_order_notes', $checkout ); ?>

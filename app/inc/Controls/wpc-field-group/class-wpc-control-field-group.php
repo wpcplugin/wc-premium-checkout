@@ -178,7 +178,7 @@ class Field_Group extends \WP_Customize_Control
 				<br>
 				<br>
 				
-				<div class="group-add">
+				<div class="group-add" style="display:none">
 					<button type="button" class="button-link">
 						<span><?php _e( '>> Add Group', 'WPC' ) ?></span>
 					</button>

@@ -33,3 +33,9 @@
 #wpc-wrapper.inline-form #wpc-main .form-row.create-account {
 	display: block;
 }
+
+#wpc-wrapper.inline #wpc-main .woocommerce-billing-fields__field-wrapper .form-row:first-child, 
+#wpc-wrapper.inline #wpc-main .woocommerce-shipping-fields__field-wrapper .form-row:first-child, 
+#wpc-wrapper.inline #wpc-main .create-account .form-row:first-child {
+    margin-top: 0 !important;
+}

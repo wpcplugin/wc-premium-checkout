@@ -376,6 +376,10 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
 *                         *
 ***************************/
 
+.woocommerce-shipping-empty {
+    padding: 16px 5px;
+}
+
 #wpc-wrapper #wpc-main #payment ul, 
 #wpc-wrapper #wpc-main #shipping_method {
     padding: 0 var(--wpc-content-box-list-spacing);
@@ -453,12 +457,9 @@ html #wpc-wrapper, html #wpc-wrapper *, #wpc-wrapper *::before, #wpc-wrapper *::
     /* margin: 16px 0 0; */
     margin-top: 16px;
 }
-
-#wpc-wrapper #wpc-main .woocommerce-billing-fields__field-wrapper .form-row:first-child, 
-#wpc-wrapper #wpc-main .woocommerce-shipping-fields__field-wrapper .form-row:first-child, 
-#wpc-wrapper #wpc-main .cart-coupon-code:first-child .form-row:first-child, 
-#wpc-wrapper #wpc-main .create-account .form-row:first-child {
-    margin-top: 0 !important;
+ 
+#wpc-wrapper #wpc-main .cart-coupon-code:first-child .form-row:first-child {
+   /* margin-top: 0 !important; */
 }
 
 #wpc-wrapper #wpc-main .woocommerce-billing-fields__field-wrapper .form-row:last-child, 

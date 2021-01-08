@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPC - The Best Checkout Page Customizer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-12 23:58+0000\n"
+"POT-Creation-Date: 2021-01-07 22:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -32,7 +32,7 @@ msgid "View Demo ⧉"
 msgstr ""
 
 #: app/setup/admin.php:231
-#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:194
+#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:197
 msgid "Manage"
 msgstr ""
 
@@ -44,24 +44,24 @@ msgstr ""
 msgid "Sorry, you are not allowed to install plugins on this site."
 msgstr ""
 
-#: app/setup/admin.php:355
+#: app/setup/admin.php:357
 msgid "WPC Plugin Installation"
 msgstr ""
 
-#: app/setup/admin.php:361
+#: app/setup/admin.php:363
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: app/setup/admin.php:389
+#: app/setup/admin.php:391
 msgid "Activate Plugin"
 msgstr ""
 
-#: app/setup/admin.php:390
+#: app/setup/admin.php:392
 msgid "Return to WPC Page"
 msgstr ""
 
-#: app/setup/admin.php:411
+#: app/setup/admin.php:413
 msgid "Sorry, you are not allowed to activate this plugin."
 msgstr ""
 
@@ -105,6 +105,14 @@ msgstr ""
 
 #: app/setup/customize.php:48
 msgid "Check to enable"
+msgstr ""
+
+#: app/setup/etc/config.php:8
+msgid "WPC"
+msgstr ""
+
+#: app/setup/etc/config.php:9
+msgid "http://wpcplugin.com"
 msgstr ""
 
 #: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:13
@@ -158,9 +166,10 @@ msgstr ""
 #: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:227
 #: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:236
 #: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:246
-#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:151
-#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:158
-#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:165
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:162
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:148
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:155
+#: app/inc/Controls/wpc-typography/class-wpc-control-typography.php:40
 msgid "Default"
 msgstr ""
 
@@ -281,11 +290,11 @@ msgstr ""
 msgid "Account Fields"
 msgstr ""
 
-#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:574
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:597
 msgid "Settings have been reset."
 msgstr ""
 
-#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:579
+#: app/inc/Addons/wpc-fields-manager/class-wpc-extension-fields-manager.php:602
 msgid "There was a problem with the process. The settings have not been reset."
 msgstr ""
 
@@ -297,41 +306,44 @@ msgstr ""
 msgid "The Onepage Checkout theme for WPC"
 msgstr ""
 
-#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:99
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:100
 msgid "Checkout Editor"
 msgstr ""
 
-#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:133
-msgid "Logo"
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:128
+msgid "Container Max Width"
 msgstr ""
 
 #: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:139
+msgid "Container Spacing"
+msgstr ""
+
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:150
 msgid "Primary Color"
 msgstr ""
 
-#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:145
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:156
 msgid "Button Place Order Color"
 msgstr ""
 
-#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:151
-#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:158
-msgid "White"
-msgstr ""
-
-#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:152
-msgid "Background"
-msgstr ""
-
-#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:159
-msgid "Header"
-msgstr ""
-
-#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:165
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:162
 msgid "Inline"
 msgstr ""
 
-#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:166
+#: app/inc/Addons/wpc-onepage-checkout/class-wpc-theme-onepage-checkout.php:163
 msgid "Form Layout"
+msgstr ""
+
+#: app/inc/Addons/wpc-template-selector/class-wpc-extension-template-selector.php:15
+msgid "Template Selector"
+msgstr ""
+
+#: app/inc/Addons/wpc-template-selector/class-wpc-extension-template-selector.php:16
+msgid "Embedded extension to switch between pre-configured template pages."
+msgstr ""
+
+#: app/inc/Addons/wpc-template-selector/class-wpc-extension-template-selector.php:47
+msgid "Templates"
 msgstr ""
 
 #: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:14
@@ -344,73 +356,99 @@ msgid ""
 "scripts that affect the look and functionalities of the checkout theme."
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:90
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:98
 msgid "Compatibility"
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:91
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:99
 msgid ""
 "These options help to avoid conflicts caused by CSS styles and JS scripts "
 "that affect the theme appearance and functionality at checkout."
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:126
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:148
+msgid "Theme"
+msgstr ""
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:149
+msgid "Page Template"
+msgstr ""
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:155
+msgid "Full"
+msgstr ""
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:156
+msgid "Page Container"
+msgstr ""
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:162
 msgid "Remove CSS in Checkout"
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:129
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:165
 msgid "Select styles to remove from the checkout."
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:135
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:171
 msgid "Remove JS in Checkout"
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:138
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:174
 msgid "Select scripts to remove from the checkout."
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:144
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:180
 msgid "Disable theme styles"
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:145
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:181
 msgid ""
 "By checking this option all CSS styles of the active theme will be disabled."
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:151
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:187
 msgid "Disable theme scripts"
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:152
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:188
 msgid ""
 "By checking this option all JS scripts of the active theme will be disabled."
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:158
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:194
 msgid "Remove theme hooks"
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:159
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:195
 msgid "By checking this option all hooks of the active theme will be removed."
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:165
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:201
+msgid "Remove WooCommerce template hooks"
+msgstr ""
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:202
+msgid ""
+"By checking this option all WooCommerce template hooks of the active theme "
+"will be removed."
+msgstr ""
+
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:218
 msgid "Custom CSS"
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:166
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:219
 msgid ""
 "Insert custom CSS on the Checkout page. Use to correct elements or conflicts "
 "in the layout."
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:172
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:225
 msgid "Custom JS"
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:173
+#: app/inc/Addons/wpc-theme-compatibility/class-wpc-extension-theme-compatibility.php:226
 msgid ""
 "Insert custom JS on the Checkout page. Use to add visual effects or dynamism "
 "to the checkout fields."
@@ -434,7 +472,7 @@ msgid "View Demo"
 msgstr ""
 
 #: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:90
-#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:221
+#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:224
 msgid "Live Preview"
 msgstr ""
 
@@ -442,8 +480,18 @@ msgstr ""
 msgid "✓ Selected"
 msgstr ""
 
-#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:189
+#: app/inc/Addons/wpc-theme-selector/class-wpc-extension-theme-selector.php:192
 msgid "✓ Active Theme"
+msgstr ""
+
+#: app/inc/Addons/wpc-typography-settings/class-wpc-extension-typography-settings.php:14
+msgid "Typography Selector"
+msgstr ""
+
+#: app/inc/Addons/wpc-typography-settings/class-wpc-extension-typography-settings.php:15
+msgid ""
+"Embedded extension for add text typography support. This extension does not "
+"have configuration options."
 msgstr ""
 
 #: app/inc/Controls/wpc-field-group/class-wpc-control-field-group.php:72
@@ -474,6 +522,14 @@ msgstr ""
 msgid "The field will be removed. Do you want to proceed?"
 msgstr ""
 
+#: app/inc/Controls/wpc-typography/class-wpc-control-typography.php:42
+msgid "Standard Fonts"
+msgstr ""
+
+#: app/inc/Controls/wpc-typography/class-wpc-control-typography.php:50
+msgid "Google Fonts"
+msgstr ""
+
 #: app/setup/view/partials/html-admin-partial-intro.php:12
 #, php-format
 msgid ""
@@ -500,40 +556,37 @@ msgstr ""
 msgid "Additional information"
 msgstr ""
 
-#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-billing.php:21
-msgid "Enter buyer information"
-msgstr ""
-
-#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-checkout.php:10
+#: app/inc/Addons/wpc-onepage-checkout/templates/steps.php:4
 msgid "Shopping Cart"
 msgstr ""
 
-#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-checkout.php:19
+#: app/inc/Addons/wpc-onepage-checkout/templates/steps.php:13
 msgid "Delivery and Payment"
 msgstr ""
 
-#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-checkout.php:26
+#: app/inc/Addons/wpc-onepage-checkout/templates/steps.php:20
 msgid "Confirmation"
 msgstr ""
 
-#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-checkout.php:72
-#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-checkout.php:88
-msgid "Select the desired option below"
+#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/cart-review.php:44
+msgid "Apply"
 msgstr ""
 
-#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-checkout.php:101
-msgid "Order summary"
+#: app/inc/Addons/wpc-onepage-checkout/templates/checkout/form-login.php:33
+msgid ""
+"If you have shopped with us before, please enter your details below. If you "
+"are a new customer, please proceed to the Billing &amp; Shipping section."
 msgstr ""
 
 #. Name of the plugin
-msgid "WPC - The Best Checkout Page Customizer"
+msgid "WPC - Checkout Editor for WooCommerce"
 msgstr ""
 
 #. Description of the plugin
 msgid ""
-"WPC is a complete suite of tools for WooCommerce to optimize and scale the "
-"purchase process. Provides what you need to build a high conversion checkout "
-"page. It's free."
+"WPC is a complete set of tools developed to scale the purchase process in "
+"WooCommerce stores. Provides what you need to build a high conversion "
+"checkout page. It's free."
 msgstr ""
 
 #. URI of the plugin

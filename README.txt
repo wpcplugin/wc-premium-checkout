@@ -1,10 +1,10 @@
 === WPC - Checkout Editor for WooCommerce ===
 Contributors: williansantana
 Tags: WPC, WooCommerce, Premium Checkout, Checkout Editor, Checkout, Checkout Fields, Checkout Steps, Field Validation, Field Mask, Custom Fields, Field Manager
-Requires at Least: 4.9
-Tested up to: 5.5.1
-Stable tag: 1.3.7
-Requires PHP: 5.6
+Requires at Least: 5.5.1
+Tested up to: 5.6.0
+Stable tag: 2.0.0
+Requires PHP: 7.2.33
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,18 +33,6 @@ Currently a 3-column checkout theme is included - Onepage Checkout Lite Version.
 ✓ Checkout layout inspired by the world's largest e-Commerce
 ✓ Clean and easy to understand design
 ✓ Color and style customization controls (Basic)
-
-In the future Onepage Checkout will have a PRO version with more features:
-
-✓ Header editor
-✓ Footer editor
-✓ Various fields of style customization
-✓ Support for shotcodes and custom HTML
-✓ Thank you page
-✓ Login page and email capture before the checkout screen
-✓ Optimization of field groups
-✓ Custom typography
-✓ One click demo import
 
 == Installation ==
 
@@ -122,3 +110,6 @@ You should have received a copy of the GNU General Public License along with Nom
 
 = 1.3.7 =
 * Fix bugs.
+
+= 2.0.0 =
+* New major release.
