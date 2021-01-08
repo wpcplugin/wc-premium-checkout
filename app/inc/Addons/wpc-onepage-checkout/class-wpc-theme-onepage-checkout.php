@@ -174,7 +174,7 @@ class Onepage_Checkout extends \WPC\Abstract_Addon
 	public function controls_active_callback( $status, $type, $slug, $id ) 
 	{
 		$is_wp_theme = 'wp_theme' === get_option( 'wpc_theme_compatibility_page_template', 'wp_theme' );
-		$is_full_container = 'full' === get_option( 'wpc_theme_compatibility_page_template_wp_theme_container', 'default' );
+		$is_full_container = 'full' === get_option( 'wpc_theme_compatibility_page_template_wp_theme_container', 'full' );
 		
 		if ( 'wpc_theme_onepage_checkout_container_max_width' === $id ) {
 			return ( $is_wp_theme && $is_full_container ) || ( !$is_wp_theme );

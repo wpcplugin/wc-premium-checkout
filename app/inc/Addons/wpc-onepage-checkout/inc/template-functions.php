@@ -136,7 +136,7 @@ if ( ! function_exists( 'wpc_onepage_checkout_print_css' ) ) {
 	{
 		$css = '';
 		$page_template = get_option( 'wpc_theme_compatibility_page_template', 'wp_theme' );
-		$page_template_container = get_option( 'wpc_theme_compatibility_page_template_wp_theme_container', 'default' );
+		$page_template_container = get_option( 'wpc_theme_compatibility_page_template_wp_theme_container', 'full' );
 
 		if( !is_wc_endpoint_url() && is_checkout() ) {
 			$css_vars = apply_filters( 'wpc_onepage_checkout_css_vars', array(
