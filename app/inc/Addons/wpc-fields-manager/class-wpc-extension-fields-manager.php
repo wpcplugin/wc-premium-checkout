@@ -87,7 +87,7 @@ class Fields_Manager extends \WPC\Abstract_Addon
 	{		
 		wp_enqueue_script( 
 			'jquery-mask', 
-			plugins_url( 'assets/js/mask/mask.min', __FILE__ ), 
+			plugins_url( 'assets/js/mask/mask.min.js', __FILE__ ), 
 			array( 'jquery' ),
 			'1.14.10',
 			true 
@@ -95,7 +95,7 @@ class Fields_Manager extends \WPC\Abstract_Addon
 
 		wp_enqueue_script( 
 			'jquery-validate', 
-			plugins_url( 'assets/js/validate/validate.min', __FILE__ ), 
+			plugins_url( 'assets/js/validate/validate.min.js', __FILE__ ), 
 			array( 'jquery' ),
 			'1.13.0',
 			true 

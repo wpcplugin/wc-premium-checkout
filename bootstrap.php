@@ -6,7 +6,7 @@
  * Plugin Name:       WPC - Checkout Editor for WooCommerce
  * Plugin URI:        https://wpcplugin.com/
  * Description:       WPC is a complete set of tools developed to scale the purchase process in WooCommerce stores. Provides what you need to build a high conversion checkout page. It's free.
- * Version:           2.0.0
+ * Version:           2.0.1
  * Author:            WILLIAN SANTANA
  * Author URI:        https://github.com/santanamic
  * License:           GPL-2.0+

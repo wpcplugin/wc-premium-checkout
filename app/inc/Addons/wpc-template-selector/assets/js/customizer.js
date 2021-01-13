@@ -9,7 +9,7 @@
 				control.container.find( 'select, input, textarea' ).val( value ).trigger( 'change' );
 				break;
 			case 'wpc_range_value':
-				control.container.find( 'input.range-slider__range' ).val( value.replaceAll( control.params.input_attrs.suffix, '' ) ).trigger( 'input' );
+				control.container.find( 'input.range-slider__range' ).val( value.split( control.params.input_attrs.suffix).join( '' ) ).trigger( 'input' );
 				break;
 			case 'color':
 				control.container.find( 'input.color-picker-hex.wp-color-picker' ).val( value ).trigger( 'change' );

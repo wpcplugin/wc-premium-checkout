@@ -3,7 +3,7 @@ Contributors: williansantana
 Tags: WPC, WooCommerce, Premium Checkout, Checkout Editor, Checkout, Checkout Fields, Checkout Steps, Field Validation, Field Mask, Custom Fields, Field Manager
 Requires at Least: 5.5.1
 Tested up to: 5.6.0
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 Requires PHP: 7.2.33
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -113,3 +113,6 @@ You should have received a copy of the GNU General Public License along with Nom
 
 = 2.0.0 =
 * New major release.
+
+= 2.0.1 =
+* Fix JS error.
